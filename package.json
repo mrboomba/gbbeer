@@ -4,6 +4,7 @@
   "description": "web application for seel beer and Suggestion function",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/mrboomba/gbbeer/issues"
   },
-  "homepage": "https://github.com/mrboomba/gbbeer#readme"
+  "homepage": "https://github.com/mrboomba/gbbeer#readme",
+  "dependencies": {
+    "nodemon": "^1.11.0",
+    "winston": "^2.3.1"
+  }
 }
