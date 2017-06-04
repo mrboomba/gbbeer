@@ -1,6 +1,6 @@
 import { GbbeerPage } from './app.po';
 
-describe('gbbeer App', () => {
+describe('gbbeer App', function() {
   let page: GbbeerPage;
 
   beforeEach(() => {
