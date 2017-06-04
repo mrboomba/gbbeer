@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/mrboomba/gbbeer#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.10.4",
     "nodemon": "^1.11.0",
     "winston": "^2.3.1"
   }

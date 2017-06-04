@@ -3,7 +3,8 @@ const express    = require('express');        // call express
 const app        = express();                 // define our app using express
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const CONFIG = require('../config/config');
+const logger = require('../config/logger')
+
 
 
 // app.use(session({
@@ -18,6 +19,11 @@ const CONFIG = require('../config/config');
 app.use(bodyParser.json());
 const port = process.env.PORT || 3000;        // set our port
 
-app.use('/', require('./routers'));
+app.use('/', require('./router'));
 
-app.listen(port);
+app.listen(port,function(err){
+  if(err)
+  logger.log('error',err);
+  else
+  logger.log('info','Magic happens on port ' + port);
+});
