@@ -23,7 +23,15 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;        // set our port
 
 app.use('/', require('./router'));
+<<<<<<< HEAD
  app.use(express.static(path.join(__dirname, 'dist')));
+=======
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'img')));
+
+
+
+>>>>>>> f45541660263f831591a60d9c24a790dcf187933
 const server = http.createServer(app);
 server.listen(port,function(err){
   if(err)
