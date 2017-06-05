@@ -10,7 +10,7 @@ module.exports = (() => {
   })
 
   router.get('/index',function(req,res){
-    res.sendFile(path.resolve(__dirname,"../../views/index.html"));
+    res.sendFile(path.resolve(__dirname,"../../dist/index.html"));
   })
 
 
