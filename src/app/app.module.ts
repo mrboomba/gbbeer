@@ -10,9 +10,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { BeerComponent } from './beer/beer.component';
 import { CartComponent } from './cart/cart.component';
+import { BestsellerComponent } from './bestseller/bestseller.component';
+import { NewproductComponent } from './newproduct/newproduct.component';
+import { ReviewComponent } from './review/review.component';
+import { AdvertiseComponent } from './advertise/advertise.component';
 
 const appRoutes: Routes =  [
-  {path:'home', component: HomeComponent},
+  {path:'', component: HomeComponent},
   {path:'beer', component: BeerComponent},
   {path:'cart', component: CartComponent},
 ]
@@ -23,7 +27,11 @@ const appRoutes: Routes =  [
     NavbarComponent,
     HomeComponent,
     BeerComponent,
-    CartComponent
+    CartComponent,
+    BestsellerComponent,
+    NewproductComponent,
+    ReviewComponent,
+    AdvertiseComponent
   ],
   imports: [
     BrowserModule,
