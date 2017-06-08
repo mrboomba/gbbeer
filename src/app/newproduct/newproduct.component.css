@@ -29,7 +29,7 @@ ul{
     margin: 0; 
 }
 
-#centeredmenu ul li a {
+#centeredmenu ul li #each {
    display:block;
    margin:20px 0 0 40px;
    padding:3px 10px;
@@ -41,11 +41,10 @@ ul{
    width:250px;
 }
 
-#centeredmenu ul li a:hover {
+#centeredmenu ul li #each:hover {
    background:#F0D041;
    color:#fff;
 }
-
 ul li {
     position: relative;
     text-align: center;
