@@ -1,0 +1,38 @@
+#imgeach{
+	width: 400px;
+	height: 400px;
+	 margin: 10%;
+}
+#pic{
+	border: 2px solid black;
+	 text-align: center;
+}
+#detail{
+	/*background-color: #F5F5F5;*/
+}
+#content{
+	width: 600px;
+	height: 400px;
+	margin: 7%;
+	border: 1px solid #D2D2D2;
+	background-color: #FFF;
+}
+#addtocart{
+	background-color: #F0D041;
+	color: black;
+	border: 1px solid #D2D2D2;
+	border-radius: 10px;
+	width: 30%;
+	height: 50px;
+	right: 100px;
+	position: absolute;
+	bottom: 60px;
+}
+#imgcart{
+	width: 20%;
+}
+#review{
+	border: 1px solid #D2D2D2;
+	background-color: #FFF;
+	margin: 2%;
+}
