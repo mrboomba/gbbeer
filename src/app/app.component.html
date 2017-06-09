@@ -1,2 +1,48 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div id="container">
+    <div id="header">
+        <h3 id="textheader"><a href="#popup1"(click)="toggleExists()"  
+            (click)="toggleExists3()">register / login</a></h3>
+        <img id="imgheader" src="assets/lo.png">
+    </div>
+    <div id="body">
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col-md-6" style="text-align: left;">
+                <p id="copyright">Copyright &copy; 2017 GBBeer&trade; - gmine&boomba beer service |Privacy Policy</p>
+            </div>
+            <div class="col-md-6" id="copyright2">
+                <ul class="social-network social-circle">
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" class="icoig" title="ig"><i class=" fa fa-instagram"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-github-alt"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup1" class="overlay">
+    <div class="popup" [ngClass]="{'three': pop, 'four': !pop}">
+        <h3>
+            <a  id="login" [ngClass]="{'one': check, 'two': !check}"
+                            (click)="toggleExists3()"
+                            (click)="toggleExists()"  >Login</a>|
+
+            <a  id="regis" [ngClass]="{'one': !check, 'two': check}"
+                            (click)="toggleExists4()"
+                           (click)="toggleExists2()" >Register</a>
+        </h3>
+        <a class="close" href="#">&times;</a>
+        <app-login *ngIf="exists" ></app-login>
+        <app-register *ngIf="!exists"></app-register>
+    </div>
+</div>
+<!-- <some-element [ngClass]="'first second'">...</some-element>
+<some-element [ngClass]="['first', 'second']">...</some-element>
+<some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
+<some-element [ngClass]="stringExp|arrayExp|objExp">...</some-element>
+<some-element [ngClass]="{'class1 class2 class3' : true}">...</some-element> -->

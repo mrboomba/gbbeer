@@ -4,5 +4,15 @@
 .navbar-nav{
 	margin: 0;
 }
+#imgcart{
+	width: 10%;
+	margin-top: 2%;
 
+}
+
+.navbar-right {
+text-align: right;
+width: 40%;
+/*padding-left:15%;*/
+}
 
