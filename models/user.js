@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var reviewSchema = new Schema({
+var userSchema = new Schema({
   id:String,
   password:String,
   type:String,
@@ -19,5 +19,5 @@ var reviewSchema = new Schema({
   }
 });
 
-var Review = mongoose.model('Review',reviewSchema);
-module.exports = Review;
+var User = mongoose.model('User',userSchema);
+module.exports = User;

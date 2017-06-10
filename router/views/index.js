@@ -16,7 +16,8 @@ module.exports = (() => {
   router.get('/img/:name',function(req,res){
 
     res.sendFile(path.resolve(__dirname,"../../img/"+req.params.name));
-    
+
+
   })
 
 
