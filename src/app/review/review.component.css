@@ -1,0 +1,92 @@
+#review{
+    margin: 0 30px 0 30px;
+}
+.col-lg-4{
+    height: 300px;
+    border: 2px solid blue;
+    padding: 0;
+    margin: 0;
+}
+#seemore{
+    color: #CACACA;
+    background-color: #FFF;
+    border: 1px solid #818181;
+    height: 30px;
+}
+ h3{
+    margin: 0;
+    font-size: 100%;
+}
+
+#button{
+    text-align: center;
+    margin: 2% 0 2% 0;
+    padding: 0;
+}
+ul{ 
+    /*text-align:center;*/
+    padding: 0;
+    margin: 0; 
+}
+
+#centeredmenu ul li #each {
+   display:block;
+   margin:20px 0 0 40px;
+   padding:3px 10px;
+   background:#FFF;
+   color:#000;
+   text-decoration:none;
+   line-height:1.3em;
+   height: 360px;
+   width:250px;
+}
+
+#centeredmenu ul li #each:hover {
+   background:#F0D041;
+   color:#fff;
+}
+
+ul li {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+} 
+
+
+header {
+    display:table;
+    width:100%;
+    max-width:100%;
+}
+header div {
+    display:table-row;
+    line-height:1.5em;
+    font-size:2em;
+    white-space:nowrap;
+}
+header h1 {
+    font-size:0.75em; 
+    overflow:hidden;
+    display:table-cell;
+    vertical-align:middle;
+    width:1px;
+}
+header span.spacer {
+    display:table-cell;
+}
+header h1 {
+    padding:0 15px;
+}
+header span.spacer:after {
+    display:inline-block;
+    width:100%;
+    content:".";
+    font-size:0;
+    color:transparent;
+    height:2px;
+    background:#CACACA;
+    vertical-align:middle;
+    position:relative;
+    top:-1px;
+}

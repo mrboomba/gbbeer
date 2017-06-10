@@ -5,6 +5,26 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'app works!';
+  exists = true;
+  check= true;
+  pop=true;
+
+  toggleExists() {
+    this.exists = true;
+  }
+  toggleExists2() {
+    this.exists = false;
+  }
+  toggleExists3() {
+    this.check= true;
+    this.pop=true;
+  }
+  toggleExists4() {
+    this.check= false;
+    this.pop = false;
+  }
+   
+   
 }
