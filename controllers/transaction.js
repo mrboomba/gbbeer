@@ -17,5 +17,5 @@ module.exports = (() => {
 
 
 
-  return {getMappingCoach ,setMappingCoach};
+  return {getTransaction};
 })();

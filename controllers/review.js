@@ -42,5 +42,5 @@ module.exports = (() => {
 
 
 
-  return {getReview ,getReviewByBeer};
+  return {getReview ,getReviewByBeerId,getStarByBeerId};
 })();

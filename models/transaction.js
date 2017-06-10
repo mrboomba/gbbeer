@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var transactionSchema = new Schema({
-  ,
   date:{
     type:Date,
     default: Date.now
@@ -21,5 +20,5 @@ var transactionSchema = new Schema({
 
 });
 
-var Transaction = mongoose.model('Transaction',transactionSchema);
+const Transaction = mongoose.model('Transaction',transactionSchema);
 module.exports = Transaction;

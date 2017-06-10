@@ -7,11 +7,22 @@ var beerSchema = new Schema({
   color:String,
   brand:String,
   country:String,
-  price:Number,
+  price:{
+    type:Number,
+    default: 0
+  },
   type:String,
-  rate:Number
+  rate:{
+    type:Number,
+    default: 0
+  },
+  img:String,
+  date:{
+    type:Date,
+    default: Date.now
+  }
 
 });
 
-var Beer = mongoose.model('Beer',beerSchema);
+const Beer = mongoose.model('Beer',beerSchema);
 module.exports = Beer;
