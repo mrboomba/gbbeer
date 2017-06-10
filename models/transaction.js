@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var transactionSchema = new Schema({
-  amount:Number,
+  ,
   date:{
     type:Date,
     default: Date.now
@@ -11,10 +11,12 @@ var transactionSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  beer:{
-    type: Schema.Types.ObjectId,
-    ref: 'Beer'
-  }
+  beers:[{
+    beer:{ type: Schema.Types.ObjectId,
+            ref: 'Beer'
+          },
+    amount:Number
+  }]
 
 
 });

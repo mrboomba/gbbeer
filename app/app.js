@@ -3,10 +3,7 @@ const express    = require('express');        // call express
 const app        = express();                 // define our app using express
 const session = require('express-session');
 const bodyParser = require('body-parser');
-const logger = require('./config/logger');
-const http = require('http');
-
-
+const logger = require('../config/logger')
 
 
 
@@ -24,11 +21,7 @@ const port = process.env.PORT || 3000;        // set our port
 
 app.use('/', require('./router'));
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use(express.static(path.join(__dirname, 'img')));
-
-const server = http.createServer(app);
-server.listen(port,function(err){
+app.listen(port,function(err){
   if(err)
   logger.log('error',err);
   else

@@ -11,15 +11,13 @@ module.exports = (() => {
 
   router.get('/index',function(req,res){
     res.sendFile(path.resolve(__dirname,"../../dist/index.html"));
-<<<<<<< HEAD
-=======
 
   })
   router.get('/img/:name',function(req,res){
 
     res.sendFile(path.resolve(__dirname,"../../img/"+req.params.name));
-    
->>>>>>> f45541660263f831591a60d9c24a790dcf187933
+
+
   })
 
 
