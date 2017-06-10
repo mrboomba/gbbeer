@@ -36,3 +36,23 @@
 	background-color: #FFF;
 	margin: 2%;
 }
+#writereview{
+	background-color: #F0D041;
+	color: black;
+	border: 1px solid #D2D2D2;
+	border-radius: 10px;
+	width: 50%;
+	height: 50px;
+	bottom: 0;
+}
+#sarm{
+	border: 1px solid #D2D2D2;
+	text-align: left;
+}
+#comment{
+	border: 1px solid #D2D2D2;
+	width: 80%;
+	margin-left: 5%;
+	 /*display: inline;*/
+	/*float: left;*/
+}
