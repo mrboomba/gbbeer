@@ -56,3 +56,13 @@
 	 /*display: inline;*/
 	/*float: left;*/
 }
+#loop{
+	/*text-decoration: none;*/
+}
+ul li {
+    position: relative;
+    text-align: center;
+    /*display: inline-block;*/
+    vertical-align: top;
+    list-style-type: none;
+} 
