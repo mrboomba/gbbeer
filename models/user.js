@@ -2,21 +2,15 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-  id:String,
+  username:String,
   password:String,
-  type:String,
+  role:{
+    type:String,
+    default:"User"
+  },
   name:String,
   birthday:Date,
-  address:{
-    region: String,
-    province: String,
-    district: String,
-    subdistrict: String,
-    coordinates: {
-      type: [Number],
-      index: '2dsphere'
-    }
-  }
+  address:String
 });
 
 var User = mongoose.model('User',userSchema);

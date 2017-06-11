@@ -19,6 +19,28 @@ module.exports = (() => {
       });
   });
 
+  router.route('/beer/bestsell?').get((req, res) => {
+    ModelControllers.beer.getBeerBySell((err, doc) => {
+        if (err) {
+          res.status(400).send(err);
+          return;
+        }
+        res.json(doc);
+        return;
+      });
+  });
+
+  router.route('/beer/popular?').get((req, res) => {
+    ModelControllers.beer.getBeerByStar((err, doc) => {
+        if (err) {
+          res.status(400).send(err);
+          return;
+        }
+        res.json(doc);
+        return;
+      });
+  });
+
   router.route('/beer/newcoming?').get((req, res) => {
     ModelControllers.beer.getBeerByDate((err, doc) => {
       if (err) {
