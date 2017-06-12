@@ -15,6 +15,11 @@ module.exports = (() => {
     }
   }
 
+  const createTransaction = (createObject, callback) => {
+    models.transaction.create(createObject).exec((err,doc) => callback(err,doc));
+    return ;
+  }
+
 
 
   return {getTransaction};

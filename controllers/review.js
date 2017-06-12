@@ -7,16 +7,21 @@ module.exports = (() => {
 
   const getReview = (searchObj, callback) => {
     if (searchObj.user) {
-      models.Review.find({user : searchObj.user}).exec((err, doc) => callback(err, doc));
+      models.review.find({user : searchObj.user}).exec((err, doc) => callback(err, doc));
       return;
     }
     else if (searchObj.beer) {
-      models.Review.find({beer : searchObj.beer}).exec((err, doc) => callback(err, doc));
+      models.review.find({beer : searchObj.beer}).exec((err, doc) => callback(err, doc));
       return;
     } else {
-      models.Review.find(searchObj).exec((err, doc) => callback(err, doc));
+      models.review.find(searchObj).exec((err, doc) => callback(err, doc));
       return;
     }
+  }
+
+  const createReview = (createObj, callback) => {
+      models.review.create(createObj).exec((err,doc) => callback(err,doc));
+      return ;
   }
 
   const getReviewByBeerId = (searchObj, callback) => {
@@ -42,5 +47,5 @@ module.exports = (() => {
 
 
 
-  return {getReview ,getReviewByBeerId,getStarByBeerId};
+  return {getReview ,getReviewByBeerId,getStarByBeerId,createReview};
 })();

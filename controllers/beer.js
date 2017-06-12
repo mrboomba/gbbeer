@@ -14,57 +14,60 @@ module.exports = (() => {
       return;
     }
   }
+
+  const createBeer = (createObj, callback) => {
+    models.beer.create(createObj).exec((err) => callback(err));
+    return;
+  }
+
   const getBeerByDate = (callback) => {
     models.beer.find({}).sort({'date':-1}).limit(5).exec((err, doc) => callback(err, doc));
-
-    return ;
+    return;
   }
-
   const getBeerBySell = (callback)=>{
-  //   models.Transaction.aggregate([
-  //       {
-  //          $unwind: "$beers" },
-  //         {
-  //           $group: {
-  //             _id: {
-  //               title: '$beers.beer',
-  //             },
-  //       count: { $sum: '$beers.amount' }
-  //    }
-  // },
-  //           // Sorting pipeline
-  //       { "$sort": { "count": -1 } },
-  //       // Optionally limit results
-  //       { "$limit": 5 }
-  //
-  //   ], function (err, result) {
-  //       if (err) {
-  //           callback(err);
-  //       } else {
-  //           models.Beer.find({'_id':{$in:result._id}}).exec((err,doc)) => callback(error,docs);
-  //       }
-  //       return;
-  //   });
-  }
+    models.transaction.aggregate([
+        {
+           $unwind: "$beers" },
+          {
+            $group: {
+              _id: {
+                title: '$beers.beer',
+              },
+        count: { $sum: '$beers.amount' }
+     }
+  },
+        // Sorting pipeline
+        { "$sort": { "count": -1 } },
+        // Optionally limit results
+        { "$limit": 5 }
 
+    ], function (err, result) {
+        if (err) {
+            callback(err);
+        } else {
+            models.beer.find({'_id':{$in:result._id}}).exec((err, doc) => callback(err, doc));
+        }
+        return;
+    });
+  }
 
   const getBeerByStar = (callback)=>{
-//     models.Review.aggregate([
-//         { $group: {
-//             _id: '$beer',
-//             starAvg: { $avg: '$star'}
-//         }},
-//         { "$sort": { "starAvg": -1 } },
-//         // Optionally limit results
-//         { "$limit": 5 }
-//     ], function (err, results) {
-//         if (err) {
-//             callback(err);
-//         } else {
-//             models.Beer.find({'_id':{$in:result._id}}).exec((err,doc)) => callback(error,docs);
-//         }
-//     }
-// );
+    models.Review.aggregate([
+        { $group: {
+            _id: '$beer',
+            starAvg: { $avg: '$star'}
+        }},
+        { "$sort": { "starAvg": -1 } },
+        // Optionally limit results
+        { "$limit": 5 }
+    ], function (err, results) {
+        if (err) {
+            callback(err);
+        } else {
+          models.beer.find({'_id':{$in:result._id}}).exec((err, doc) => callback(err, doc));
+        }
+    }
+);
   }
 
 
