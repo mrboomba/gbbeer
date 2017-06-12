@@ -6,9 +6,10 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const logger = require('./config/logger');
 const http = require('http');
+const cors = require('cors')
 
 
-
+app.use(cors());
 
 
 // app.use(session({

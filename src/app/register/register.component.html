@@ -34,8 +34,8 @@
     <textarea rows="4" cols="37" [(ngModel)]="address" placeholder="Address" value="gmine"></textarea>
         </div>
     </div>
-    
+
     <br>
     <br>
-    <button id="bttnsignin">Register</button>
+    <button id="bttnsignin" (click) ='register(username,password,firstname,lastname,expDate.value,address,email)'>Register</button>
 </div>

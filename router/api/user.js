@@ -9,7 +9,6 @@ module.exports = (() => {
 
 
   router.route('/register').post((req, res) => {
-console.log(req.body);
     var b = req.body.birthday.split("/");
     userBirthday = new Date(b);
     let newUser = {
@@ -21,8 +20,7 @@ console.log(req.body);
       address:req.body.address,
       email:req.body.email
     }
-
-    ModelControllers.user.createUser(newUser, (err, doc) => {
+   ModelControllers.user.createUser(newUser, (err, doc) => {
         if (err) {
           res.status(400).send(err);
           return;

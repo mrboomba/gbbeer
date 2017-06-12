@@ -4,121 +4,18 @@
         <div id="top">1</div>
         <div id="content">
             <ul>
-                <li>
+                <li *ngFor="let all of allProduct; let i = index; trackBy: trackByFn">
                     <div id="each">
                         <a [routerLink]="['/each']">
                             <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
                             <br>
                             <br>
                         </a>
-                        <h3>$$$$</h3>
+                         <h3>{{all.name}}</h3>
+                        <h3>{{all.price}}</h3>
                         <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
-                    </div>
-                </li>
-                <li>
-                    <div id="each">
-                        <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                            <br>
-                            <br>
-                        </a>
-                        <h3>$$$$</h3>
-                        <br>
-                        <button id="seemore">
-                            <h3>ADD TO CART</h3></button>
+                        <button id="ADD" (click)="getId(all._id)">
+                            <h3>ADD TO CART</h3>  </button>
                     </div>
                 </li>
               

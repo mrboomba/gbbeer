@@ -10,41 +10,16 @@
 
 
 <div id="centeredmenu">
-   <ul>
-      <li>
-      <div id="each">
+  <ul >
+
+      <li *ngFor="let product of newProduct; let i = index; trackBy: trackByFn">
+      <div id="each" *ngIf = "i<4">
       <a href="">
 			<img src="" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
       </a>
-     		 <h3>$$$$</h3><br>
-      		<button id="seemore"><h3 >ADD TO CART</h3></button>
-      </div>
-      </li>
-      <li>
-      <div id="each">
-      <a href="">
-			<img src="" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
-      </a>
-     		 <h3>$$$$</h3><br>
-      		<button id="seemore"><h3 >ADD TO CART</h3></button>
-      </div>
-      </li>
-      <li>
-      <div id="each">
-      <a href="">
-			<img src="" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
-      </a>
-     		 <h3>$$$$</h3><br>
-      		<button id="seemore"><h3 >ADD TO CART</h3></button>
-      </div>
-      </li>
-      <li>
-      <div id="each">
-      <a href="">
-			<img src="" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
-      </a>
-     		 <h3>$$$$</h3><br>
-      		<button id="seemore"><h3 >ADD TO CART</h3></button>
+      	 <h3>{{product.name}} .</h3><br>
+     		 <h3>{{product.price}} Bath.</h3><br>
+      		<button id="ADD"><h3 >ADD TO CART</h3></button>
       </div>
       </li>
    </ul>
