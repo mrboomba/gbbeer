@@ -8,7 +8,9 @@ var userSchema = new Schema({
     type:String,
     default:"User"
   },
-  name:String,
+  firstname:String,
+  lastname:String,
+  email:String,
   birthday:Date,
   address:String
 });
