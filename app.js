@@ -5,9 +5,10 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('./config/logger');
 const http = require('http');
+const cors = require('cors')
 
 
-
+app.use(cors());
 
 
 // app.use(session({

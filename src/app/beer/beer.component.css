@@ -1,9 +1,15 @@
 #left{
 	background-color: #FFF;
-	height: 1400px;
+	height: 1850px;
 	border: 1px solid #D2D2D2;
 
 	
+}
+#ADD{
+    color: #000;
+    background-color: #F0D041;
+    border: 1px solid #818181;
+    height: 30px;
 }
 #right{
 	padding: 0;
@@ -46,6 +52,6 @@
     border: 1px solid #818181;
     height: 30px;
 }h3{
-    margin: 0;
+    margin-top: 3px;
     font-size: 100%;
 }
