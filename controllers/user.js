@@ -21,11 +21,9 @@ module.exports = (() => {
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newuser.password, salt, (err, hash) => {
           if(err) throw err;
-          console.log(hash);
             newuser.password = hash;
             newuser.save(function(err){
               if(err) console.log(err);
-              console.log(newuser);
               callback(err,newuser)
             });
           });

@@ -5,14 +5,7 @@ module.exports = (() => {
   const express = require('express');
   const router = express.Router();
 
-  router.get('/',function(req,res){
-    res.end('test run');
-  })
 
-  router.get('/index',function(req,res){
-    res.sendFile(path.resolve(__dirname,"../../dist/index.html"));
-
-  })
   router.get('/img/:name',function(req,res){
 
     res.sendFile(path.resolve(__dirname,"../../img/"+req.params.name));

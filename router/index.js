@@ -4,6 +4,6 @@ module.exports = (() => {
   const debug = require('debug')('router setting');
   debug('setting up router');
   router.use('/api', require('./api'));
-  router.use('/', require('./views'));
+  router.use('/view',require('./views'));
   return router;
 })();

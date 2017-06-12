@@ -7,7 +7,7 @@
                 <li *ngFor="let all of allProduct; let i = index; trackBy: trackByFn">
                     <div id="each">
                         <a [routerLink]="['/each']">
-                            <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
+                            <img src="http://localhost:3000/view/img/{{all.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
                             <br>
                             <br>
                         </a>
@@ -18,7 +18,7 @@
                             <h3>ADD TO CART</h3>  </button>
                     </div>
                 </li>
-              
+
             </ul>
         </div>
     </div>

@@ -36,7 +36,9 @@ app.use('/', require('./router'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'img')));
-
+app.get('./*',function(req,res){
+  res.sendFile( path.resolve(__dirname,"../dist/index.html"));
+});
 const server = http.createServer(app);
 server.listen(port,function(err){
   if(err)
