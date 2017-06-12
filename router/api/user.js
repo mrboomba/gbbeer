@@ -8,13 +8,18 @@ module.exports = (() => {
 
 
 
-  router.route('/register').get((req, res) => {
+  router.route('/register').post((req, res) => {
+console.log(req.body);
+    var b = req.body.birthday.split("/");
+    userBirthday = new Date(b);
     let newUser = {
       username: req.body.username,
       password: req.body.password,
-      name: req.body.name,
-      birthday:req.body.birthday,
-      address:req.body.address
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      birthday:userBirthday,
+      address:req.body.address,
+      email:req.body.email
     }
 
     ModelControllers.user.createUser(newUser, (err, doc) => {
@@ -22,7 +27,6 @@ module.exports = (() => {
           res.status(400).send(err);
           return;
         }
-        res.json(doc);
         return;
       });
   });
