@@ -1,37 +1,41 @@
 <div class="content">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h5><b>Username</b></h5>
-                    <input id="textbox" type="text" name="" placeholder=" Username">
-                    <h5><b>E-Mail</b></h5>
-                    <input id="textbox" type="text" name="" placeholder=" E-Mail">
-                    <h5><b>Password</b></h5>
-                    <input id="textbox" type="Password" name="" placeholder=" Password">
-                    
-                    <br>
-                    <br>
-                </div>
-                <div class="col-lg-6" id="right">
-                    <h5><b>Gender</b></h5>
-                    <div class="fieldgroup">
-                        <input type="radio" name="payment_method" value="Bill Me">
-                        <label for="payment1"> Male
-                        </label>
-                    </div>
-                    <div class="fieldgroup">
-                        <input type="radio" name="payment_method" value="Bill Me">
-                        <label for="payment2"> FeMale</label>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <h5><b>Date of birth</b></h5>
-                        <input #expDate type="date" name="sdate" value="" maxlength="15" class="form-control required" title="Please fill Start Date">
-                    </div>
-                    
-                </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h5><b>Firstname</b></h5>
+            <input id="textbox"  [(ngModel)]="firstname" type="text" name="" placeholder=" Firstname">
+            <h5><b>Lastname</b></h5>
+            <input id="textbox" [(ngModel)]="lastname" type="text" name="" placeholder=" Lastname">
+            <h5><b>Username</b></h5>
+            <input id="textbox" [(ngModel)]="username" type="text" name="" placeholder=" Username">
+            <h5><b>E-Mail</b></h5>
+            <input id="textbox" [(ngModel)]="email" type="text" name="" placeholder=" E-Mail">
+            <h5><b>Password</b></h5>
+            <input id="textbox" [(ngModel)]="password" type="Password" name="" placeholder=" Password">
+            <br>
+            <br>
+        </div>
+        <div class="col-lg-6" id="right">
+            <h5><b>Gender</b></h5>
+            <div class="fieldgroup">
+                <input type="radio"  [(ngModel)]="result" name="payment_method" value="Bill Me">
+                <label for="payment1"> Male
+                </label>
+            </div>
+            <div class="fieldgroup">
+                <input type="radio" [(ngModel)]="result" name="payment_method" value="Bill Me">
+                <label for="payment2"> FeMale</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <h5><b>Date of birth</b></h5>
+                <input #expDate type="date" name="sdate" value="" maxlength="15" class="form-control required" title="Please fill Start Date">
             </div>
             <h5><b>Address</b></h5>
-            <textarea rows="4" cols="37" placeholder="Address" value="gmine"></textarea>
-            <br><br>
-            <button id="bttnsignin">Register</button>
+    <textarea rows="4" cols="37" [(ngModel)]="address" placeholder="Address" value="gmine"></textarea>
         </div>
+    </div>
+    
+    <br>
+    <br>
+    <button id="bttnsignin">Register</button>
+</div>

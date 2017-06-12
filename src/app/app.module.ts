@@ -20,6 +20,9 @@ import { RegisterComponent } from './register/register.component';
 import { CatagoryComponent } from './catagory/catagory.component';
 import { AllproComponent } from './allpro/allpro.component';
 
+import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
+
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
   {path:'beer', component: BeerComponent},
@@ -51,7 +54,7 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes)
    
   ],
-  providers: [],
+  providers: [ValidateService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
