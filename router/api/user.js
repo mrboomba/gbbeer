@@ -1,36 +1,36 @@
 module.exports = (() => {
-  const express = require('express');
-  const path = require('path');
-  const router = express.Router();
-  const logger = require(path.resolve(__dirname, '../../config/logger'));
-  const ModelControllers = require(path.resolve(__dirname, '../../controllers'));
-  // middleware to use for all requests
+    const express = require('express');
+    const path = require('path');
+    const router = express.Router();
+    const logger = require(path.resolve(__dirname, '../../config/logger'));
+    const ModelControllers = require(path.resolve(__dirname, '../../controllers'));
+    // middleware to use for all requests
 
 
 
-  router.route('/register').post((req, res) => {
-    let newUser = {
-      username: req.body.username,
-      password: req.body.password,
-      name: req.body.name,
-     // birthday:req.body.birthday,
-      address:req.body.address
-    }
-
-    console.log(newUser)
-res.json(newUser);
-   /* ModelControllers.user.createUser(newUser, (err, doc) => {
-        if (err) {
-          res.status(400).send(err);
-          return;
+    router.route('/register').post((req, res) => {
+        let newUser = {
+            username: req.body.username,
+            password: req.body.password,
+            name: req.body.name,
+            // birthday:req.body.birthday,
+            address: req.body.address
         }
-        res.json(doc);
-        return;
-      });*/
-  });
+
+        console.log(newUser)
+        res.json(newUser);
+        /* ModelControllers.user.createUser(newUser, (err, doc) => {
+             if (err) {
+               res.status(400).send(err);
+               return;
+             }
+             res.json(doc);
+             return;
+           });*/
+    });
 
 
 
 
-  return router;
+    return router;
 })();
