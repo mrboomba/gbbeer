@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-6">
             <h5><b>Firstname</b></h5>
-            <input id="textbox"  [(ngModel)]="firstname" type="text" name="" placeholder=" Firstname">
+            <input id="textbox" [(ngModel)]="firstname" type="text" name="" placeholder=" Firstname">
             <h5><b>Lastname</b></h5>
             <input id="textbox" [(ngModel)]="lastname" type="text" name="" placeholder=" Lastname">
             <h5><b>Username</b></h5>
@@ -17,12 +17,12 @@
         <div class="col-lg-6" id="right">
             <h5><b>Gender</b></h5>
             <div class="fieldgroup">
-                <input type="radio"  [(ngModel)]="result" name="payment_method" value="Bill Me">
+                <input type="radio" [(ngModel)]="result" name="payment_method" ng-value="'pass'">
                 <label for="payment1"> Male
                 </label>
             </div>
             <div class="fieldgroup">
-                <input type="radio" [(ngModel)]="result" name="payment_method" value="Bill Me">
+                <input type="radio" [(ngModel)]="result" name="payment_method" value="fail">
                 <label for="payment2"> FeMale</label>
             </div>
             <br>
@@ -31,11 +31,10 @@
                 <input #expDate type="date" name="sdate" value="" maxlength="15" class="form-control required" title="Please fill Start Date">
             </div>
             <h5><b>Address</b></h5>
-    <textarea rows="4" cols="37" [(ngModel)]="address" placeholder="Address" value="gmine"></textarea>
+            <textarea rows="4" cols="37" [(ngModel)]="address" placeholder="Address" value="gmine"></textarea>
         </div>
     </div>
-
     <br>
     <br>
-    <button id="bttnsignin" (click) ='register(username,password,firstname,lastname,expDate.value,address,email)'>Register</button>
+    <button id="bttnsignin" (click)='register(username,password,firstname,lastname,expDate.value,address,email)'>Register</button>
 </div>

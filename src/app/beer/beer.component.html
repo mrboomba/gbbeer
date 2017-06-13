@@ -1,24 +1,79 @@
 <div class="row">
-    <div class="col-lg-3" id="left" >k</div>
+    <div class="col-lg-3" id="left">
+        <h3 id="all3">Catagory
+            </h3>
+        <h2 id="all4">Price</h2>
+        <form id="check">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">0 - 100</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">101-200</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" disabled>201-300</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" disabled>301-400</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" disabled>401-500</label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="" disabled>500++</label>
+            </div>
+        </form>
+        <h2 id="all4">Color</h2>
+        <select id="sel">
+            <option value="Amber">Amber <div id="cl1"></div></option>
+            <option value="Blond">Blond <div id="cl2"></div></option>
+            <option value="Rose">Rose <div id="cl3"></div></option>
+            <option value="Ruby">Ruby <div id="cl4"></div></option>
+            <option value="Wit">White <div id="cl5"></div></option>
+            <!-- <option value="audi">Audi</option> -->
+        </select>
+        <h2 id="all4">Country</h2>
+        <select>
+            <option value="Belgium">Belgium </option>
+            <option value="CzechRepublic">Czech Republic</option>
+            <option value="Japan">Japan</option>
+            <option value="Spain ">Spain </option>
+            <option value="Thailand">Thailand</option>
+            <!-- <option value="audi">Audi</option> -->
+        </select>
+    </div>
     <div class="col-lg-9" id="right">
-        <div id="top">1</div>
+        <div id="top">
+            <h3 id="all">ALL PRODUCT</h3>
+            <h4 id="all2">Sort By&nbsp;&nbsp;<select>
+                <option value="Name">Name</option>
+                <option value="Price">Price</option>
+                <option value="Popular">Popular</option>
+                <!-- <option value="audi">Audi</option> -->
+            </select></h4>
+        </div>
         <div id="content">
             <ul>
-                <li *ngFor="let all of allProduct; let i = index; trackBy: trackByFn">
+                <li *ngFor="let all of allProduct; let i = index; trackBy: trackByFn ">
                     <div id="each">
                         <a [routerLink]="['/each']">
                             <img src="http://localhost:3000/view/img/{{all.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
                             <br>
                             <br>
                         </a>
-                         <h3>{{all.name}}</h3>
+                        <h3>{{all.name}}</h3>
                         <h3>{{all.price}}</h3>
                         <br>
                         <button id="ADD" (click)="getId(all._id)">
-                            <h3>ADD TO CART</h3>  </button>
+                            <h3>ADD TO CART</h3> </button>
                     </div>
                 </li>
-
             </ul>
         </div>
     </div>

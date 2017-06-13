@@ -1,33 +1,34 @@
 <div id="bestseller">
-	<header>
-		<div>
-			<span class="spacer"></span>
-				<h1>BEST SELLERS</h1>
-			<span class="spacer"></span>
-		</div>
-	</header>
-<div id="centeredmenu">
-   <ul>
-      <li>
-      <div id="each">
-      <a [routerLink]="['/each']">
-			<img src="" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
-      </a>
-     		 <h3>$$$$</h3><br>
-      		<button id="ADD"><h3 >ADD TO CART</h3></button>
-      </div>
-
-      </li>
-
-     
-     <!--  <li><a href="#" >Tab two</a></li>
-      <li><a href="#">Tab three</a></li>
-      <li><a href="#">Tab four</a></li> -->
-   </ul>
+    <header>
+        <div>
+            <span class="spacer"></span>
+            <h1>BEST SELLERS</h1>
+            <span class="spacer"></span>
+        </div>
+    </header>
+    <div id="centeredmenu">
+        <ul>
+            <li  *ngFor="let product of bestProduct; let i = index; trackBy: trackByFn">
+                <div id="each">
+                    <a [routerLink]="['/each']">
+                        <img src="http://localhost:3000/view/img/{{product.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
+                        <br>
+                        <br>
+                    </a>
+                    <h3>{{product.name}}</h3>
+                    <h3>{{product.price}}</h3>
+                    <br>
+                    <button id="ADD">
+                        <h3>ADD TO CART</h3></button>
+                </div>
+            </li>
+        </ul>
+        <div   *ngIf="product==null">
+             <div id="no"><h3 id="nono">NO PRODUCT YET</h3></div>
+        </div>
+    </div>
+    <div id="button">
+        <button id="seemore" *ngIf="product!=null"  [routerLink]="['/beer']">
+            <h3>SEE MORE</h3></button>
+    </div>
 </div>
-	<div id="button">
-		<button id="seemore" [routerLink]="['/beer']"><h3 >SEE MORE</h3></button>
-	</div>
-</div>
-
-

@@ -21,6 +21,15 @@ export class RegisterService {
     let options = new RequestOptions({ headers: headers });
     return this.http.post('http://localhost:3000/api/register', body, options).map(data => data);
   }
+  public login(data: Object): Observable<any> {
+    console.log("loginjoin")
+    console.log(data)
+    
+    let body = JSON.stringify(data);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post('http://localhost:3000/api/login', body, options).map(data => data);
+  }
 
 
 
