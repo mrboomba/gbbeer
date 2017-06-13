@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReviewService} from '../services/register.service';
 
 @Component({
   selector: 'app-each',

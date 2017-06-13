@@ -1,0 +1,35 @@
+#ad {
+    margin: 0;
+    padding: 0;
+}
+
+#ad1 {
+    /*border: 2px solid red;*/
+    height: 300px;
+    margin: 0;
+    width: 58.25%;
+    /*display: inline;*/
+    padding: 0;
+    float: left;
+}
+
+#ad2,
+#ad3 {
+    /*border: 2px solid pink;*/
+    height: 150px;
+    width: 100%;
+}
+
+.bgimg1 {
+    background: url('assets/beer12.png') ;
+
+}
+.bgimg2 {
+    background: url('assets/beer9.png') ;
+
+}
+.bgimg3 {
+    background: url('assets/beer13.png') ;
+}
+
+/*no-repeat center center fixed */

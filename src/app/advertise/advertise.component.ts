@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdvertiseComponent implements OnInit {
 
+	private slideIndex = 1;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
