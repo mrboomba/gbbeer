@@ -20,7 +20,9 @@ module.exports = (() => {
     models.user.create(createObj,function (err,newuser){
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newuser.password, salt, (err, hash) => {
-          if(err) throw err;
+          if(err) {callback (err);
+              return;
+          }
             newuser.password = hash;
             newuser.save(function(err){
               if(err) console.log(err);
@@ -32,12 +34,29 @@ module.exports = (() => {
     return;
   }
 
+
+const logIn = (searchObj,callback) => {
+  getUser({'username':searchObj.username},(err,user) => {
+      if(err) callback(err);
+      console.log('find');
+      comparePassword(searchObj.password,user[0].password,(err,isMatch) =>{
+        if(err) callback(err);
+        console.log('compare');
+        console.log(isMatch);
+        if(isMatch) callback(err,isMatch,user[0]);
+        return;
+      })
+      return;
+  }
+)
+}
+
   const comparePassword = (candidatePassword, hash, callback) => {
    bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-      if(err) throw err;
+      if(err) callback(err);
        callback(null, isMatch);
   });
 }
 
-  return {getUser,createUser};
+  return {getUser,createUser,logIn};
 })();

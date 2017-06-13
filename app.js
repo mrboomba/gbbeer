@@ -12,11 +12,11 @@ const cors = require('cors')
 app.use(cors());
 
 
-// app.use(session({
-//     secret: CONSTANT.SESSION_SECRET,
-//     resave: true,
-//     saveUninitialized: true
-// }));
+app.use(session({
+    secret: 'mrboombaandgminemini',
+    resave: true,
+    saveUninitialized: true
+}));
 
 // app.use(express.static(path.resolve(__dirname,'./public')));
 // app.use(express.static(path.resolve(__dirname,'../bower_components')));
@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 require('./config/passport')(passport);
 

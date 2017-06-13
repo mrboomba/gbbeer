@@ -5,7 +5,14 @@ module.exports = (() => {
   const logger = require(path.resolve(__dirname, '../../config/logger'));
   const ModelControllers = require(path.resolve(__dirname, '../../controllers'));
   // middleware to use for all requests
-
+  const checkAuth = (req, res, next) => {
+  if (!req.session.user_id) {
+    res.send('You are not authorized to view this page');
+  } else {
+    next();
+  }
+  return ;
+  }
 
 
   router.route('/register').post((req, res) => {
@@ -22,12 +29,36 @@ module.exports = (() => {
     }
    ModelControllers.user.createUser(newUser, (err, doc) => {
         if (err) {
-          res.status(400).send(err);
-          return;
+          res.status(200).json({'status':'false'});
+        } else {
+          res.status(200).json({'status':'success'});
         }
-        return;
       });
   });
+
+  router.route('/login').post((req, res) => {
+  var post = req.body;
+  ModelControllers.user.logIn(post,(err,isMatch,user) => {
+    if (isMatch) {
+      req.session.user_id = user._id;
+      res.status(200).json({'status':'success'});
+    } else {
+      res.status(200).json({'status':'false'});
+    }
+  })
+});
+
+
+router.get('/profile',checkAuth,function(req,res,next){
+    res.send('success');
+});
+
+
+
+// app.get('/logout', function (req, res) {
+//   delete req.session.user_id;
+//   res.redirect('/login');
+// });
 
 
 
