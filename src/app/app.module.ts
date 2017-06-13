@@ -19,16 +19,19 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CatagoryComponent } from './catagory/catagory.component';
 import { AllproComponent } from './allpro/allpro.component';
-
+import { WritereviewComponent } from './writereview/writereview.component';
 
 import {ProductService} from './services/product.service';
 import {RegisterService} from './services/register.service';
+import {ReviewService} from './services/review.service';
+
 
 const appRoutes: Routes =  [
   {path:'', component: HomeComponent},
   {path:'beer', component: BeerComponent},
   {path:'each', component: EachComponent},
   {path:'cart', component: CartComponent},
+  {path:'writereview', component: WritereviewComponent},
 ]
 
 @NgModule({
@@ -46,7 +49,9 @@ const appRoutes: Routes =  [
     LoginComponent,
     RegisterComponent,
     CatagoryComponent,
-    AllproComponent
+    AllproComponent,
+    WritereviewComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,7 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes)
    
   ],
-  providers: [RegisterService,ProductService],
+  providers: [RegisterService,ProductService,ReviewService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

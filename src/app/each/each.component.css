@@ -41,21 +41,29 @@
 	color: black;
 	border: 1px solid #D2D2D2;
 	border-radius: 10px;
-	width: 50%;
+	width: 80%;
 	height: 50px;
 	bottom: 0;
 }
 #sarm{
-	border: 1px solid #D2D2D2;
-	text-align: left;
+	text-align: right;
+	margin: 2% 0 5% 40%;
+
 }
-#comment{
-	border: 1px solid #D2D2D2;
+#textwrite{
+	/*border: 1px solid #D2D2D2;*/
+	height: 240px;
+	margin-top: 5%;
+}
+#bor{
+	/*border: 1px solid #D2D2D2;*/
 	width: 80%;
-	margin-left: 5%;
-	 /*display: inline;*/
-	/*float: left;*/
 }
+#com{
+	text-align: left;
+	margin-left: 5%;
+}
+
 #loop{
 	/*text-decoration: none;*/
 }
@@ -66,3 +74,46 @@ ul li {
     vertical-align: top;
     list-style-type: none;
 } 
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+/*body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }*/
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 3em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
