@@ -1,5 +1,17 @@
 #bestseller{
     margin: 0 30px 0 30px;
+
+}
+#no{
+  margin: 1%;
+  border: 1px solid #E5E5E5;
+  height: 250px;
+  text-align: center;
+  background-color: #F1F1F1;
+}
+#nono{
+  margin-top: 10%;
+  font-size: 30px;
 }
 .col-lg-4{
     height: 300px;
@@ -15,7 +27,7 @@
 }
 #ADD{
     color: #000;
-    background-color: #F0D041;
+    background-color: #FFF;
     border: 1px solid #818181;
     height: 30px;
 }

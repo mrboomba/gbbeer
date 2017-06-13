@@ -27,6 +27,20 @@ export class ProductService {
     let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
     return this.http.get('http://localhost:3000/api/beer/all?', options).map(data => data);
   }
+   public getBestproduct(): Observable<any> {
+    console.log("getBestproduct")
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(data => data);
+  }
+  public getPopproduct(): Observable<any> {
+    console.log("getPopproduct")
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(data => data);
+  }
 
 
 
