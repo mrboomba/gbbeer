@@ -34,15 +34,34 @@ module.exports = (() => {
     return;
   }
 
+  const checkAuth = (req, res, next) => {
+  if (!req.session.user_id) {
+    res.redirect('/#popup1');
+  } else {
+    next();
+  }
+  return ;
+  }
+
+  const checkFree = (req, res, next) => {
+  if (!req.session.user_id) {
+    next();
+  }
+  return ;
+  }
+
 
 const logIn = (searchObj,callback) => {
   getUser({'username':searchObj.username},(err,user) => {
-      if(err) callback(err);
-      console.log('find');
+      if(err||!user[0]){
+        callback(err);
+        return;
+      }
       comparePassword(searchObj.password,user[0].password,(err,isMatch) =>{
-        if(err) callback(err);
-        console.log('compare');
-        console.log(isMatch);
+        if(err){
+          callback(err);
+          return;
+        }
         if(isMatch) callback(err,isMatch,user[0]);
         return;
       })
@@ -58,5 +77,5 @@ const logIn = (searchObj,callback) => {
   });
 }
 
-  return {getUser,createUser,logIn};
+  return {getUser,createUser,logIn,checkAuth};
 })();
