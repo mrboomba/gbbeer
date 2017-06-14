@@ -33,7 +33,24 @@ module.exports = (() => {
   }
 
   const getReviewByBeerId = (searchObj, callback) => {
-    getReview({beer:searchObj.beer},(err,doc) => callback(err,doc));
+    getReview({beer:searchObj.beer},(err,doc) => {
+        var tmp = doc.map(function(a){
+          return a.user;
+        })
+        models.user.find({'_id':{$in:tmp}}).exec((err, docs) => {
+          var output = [];
+          var tmp2 ={};
+          docs.forEach(function (value, i) {
+              tmp2["name"] = value.firstname+" "+value.lastname;
+              tmp2["date"] = doc[i].date;
+              tmp2["comment"] = doc[i].comment;
+              output.push(tmp2);
+              console.log(output);
+          });
+          console.log(output);
+          callback(err,output);
+        });
+      });
   }
 
   const getStarByBeerId = (searchObj, callback) => {
