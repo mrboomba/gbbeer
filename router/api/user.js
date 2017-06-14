@@ -4,10 +4,10 @@ module.exports = (() => {
   const router = express.Router();
   const logger = require(path.resolve(__dirname, '../../config/logger'));
   const ModelControllers = require(path.resolve(__dirname, '../../controllers'));
-  var Cart = require(path.resolve(__dirname, '../../models/cart'));
-  // middleware to use for all requests
+
   const checkAuth = (req, res, next) => {
   if (!req.session.user_id) {
+    req.session.redirectTo = req.headers.referer || req.originalUrl || req.url;
     res.redirect('/#popup1');
   } else {
     next();
@@ -21,31 +21,6 @@ module.exports = (() => {
   }
   return ;
   }
-
-  router.get('/addtocart/:id',checkAuth,function(req,res){
-    var productId = req.params.id;
-    var cart = new Cart(req.session.cart ? req.session.cart : {items:{}});
-
-    ModelControllers.beer.getBeer({'_id':productId},(err,beer) =>{
-      if(err){
-        return res.redirect('/');
-      }
-      cart.add(beer,beer._id);
-      req.session.cart = cart;
-      console.log(req.session.cart);
-      res.json({'status':'success'});
-    })
-  });
-
-  router.get('/cart',checkAuth,function(req,res) {
-    if(!req.session.cart){
-      res.json({'status':'empty'});
-    }
-    else{
-      var cart = new Cart(req.session.cart);
-    res.json({beers:cart.generateArray(),totalPrice: cart.totalPrice});
-  }
-  })
 
 
   router.route('/register').post((req, res) => {
@@ -69,12 +44,19 @@ module.exports = (() => {
       });
   });
 
-  router.route('/login').post((req, res) => {
+  router.post('/login',checkFree,function(req, res){
   var post = req.body;
   ModelControllers.user.logIn(post,(err,isMatch,user) => {
     if (isMatch) {
       req.session.user_id = user._id;
-      res.status(200).json({'status':'success'});
+      if(req.session.redirectTo=='undefined'){
+
+        res.status(200).redirect(req.session.redirectTo);
+      }
+      else {
+
+        res.status(200).json({'status':'success'});
+      }
     } else {
       res.status(200).json({'status':'false'});
     }
@@ -82,13 +64,9 @@ module.exports = (() => {
 });
 
 
-router.get('/profile',checkAuth,function(req,res,next){
-    res.send('success');
-});
 
 
-
-router.get('/logout',checkFree, function (req, res) {
+router.get('/logout',checkAuth, function (req, res) {
   delete req.session.user_id;
   res.redirect('/login');
 });

@@ -47,7 +47,6 @@ module.exports = (() => {
         res.status(400).send(err);
         return;
       }
-      console.log(doc.lenght);
       res.json(doc);
       return;
     });
