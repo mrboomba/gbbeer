@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import {ReviewService} from '../services/review.service';
 import { Subscription } from 'rxjs/Subscription';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-each',
@@ -8,17 +9,22 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./each.component.css']
 })
 export class EachComponent implements OnInit {
-
- 
-  constructor() {
- 
+private reView ;
+ 	
+  constructor(private reviewService:ReviewService,private router: Router) {
+	 
   }
 
- 
+ getReProduct(data) {
+  console.log(JSON.parse(data._body))
+  this.reView  = JSON.parse(data._body)
+  }
 
 
 
   ngOnInit() {
+   
   }
+
 
 }

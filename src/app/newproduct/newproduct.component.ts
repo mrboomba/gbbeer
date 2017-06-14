@@ -1,34 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {ProductService} from '../services/product.service';
 import { Subscription } from 'rxjs/Subscription';
 import {ReviewService} from '../services/review.service';
 
+
 @Component({
   selector: 'app-newproduct',
   templateUrl: './newproduct.component.html',
-  styleUrls: ['./newproduct.component.css']
+  styleUrls: ['./newproduct.component.css'],
+ 
 })
 export class NewproductComponent implements OnInit {
 
 	private newProduct ;
   private reView ;
-  private id;
+ 
 
-  public sentID(id :String) {
-    
-    this.reviewService.getReview(id).subscribe(data => this.getReView(data))
-  }
-
-  constructor(private productService:ProductService,
-              private reviewService:ReviewService) {
+constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getNewproduct().subscribe(data => this.getNewProduct(data)) 
   
    
   }
-   ngOnInit() {
+
+  public sentID(id :String) {
+    this.reviewService.getReview(id).subscribe(data => {
+    this.reviewService.storeUserData(data.id);
+      this.router.navigate(['/each']);
+    });
   }
 
   
+   ngOnInit() {
+  }
+
+ 
 
   getNewProduct(data) {
   console.log(JSON.parse(data._body))

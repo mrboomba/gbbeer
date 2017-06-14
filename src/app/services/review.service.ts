@@ -7,7 +7,7 @@ import {RequestOptions, Request, RequestMethod} from '@angular/http';
 
 @Injectable()
 export class ReviewService {
-
+  user: any;
   constructor(private http: Http) {
 
   }
@@ -18,6 +18,11 @@ export class ReviewService {
 
     let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
     return this.http.get('http://localhost:3000/api/review/'+id, options).map(data => data);
+  }
+  storeUserData(user){
+    localStorage.setItem('user', JSON.stringify(user));
+    this.user = user;
+    console.log(user);
   }
   
 
