@@ -23,7 +23,7 @@ export class ReviewService {
    public comment(data: Object): Observable<any> {
     console.log("comment")
     console.log(data)
-    
+
     let body = JSON.stringify(data);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -33,12 +33,12 @@ export class ReviewService {
   storeUserData(user){
     localStorage.setItem('user', JSON.stringify(user));
     this.user = user;
-    console.log(user);
+    console.log(this.user);
   }
   getstoreUser(){
   return this.user;
   }
-  
+
 
 
 

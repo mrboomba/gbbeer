@@ -165,10 +165,21 @@ var ReviewService = (function () {
         var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
         return this.http.get('http://localhost:3000/api/review/' + id, options).map(function (data) { return data; });
     };
+    ReviewService.prototype.comment = function (data) {
+        console.log("comment");
+        console.log(data);
+        var body = JSON.stringify(data);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        return this.http.post('http://localhost:3000/api/comment', body, options).map(function (data) { return data; });
+    };
     ReviewService.prototype.storeUserData = function (user) {
         localStorage.setItem('user', JSON.stringify(user));
         this.user = user;
-        console.log(user);
+        console.log(this.user);
+    };
+    ReviewService.prototype.getstoreUser = function () {
+        return this.user;
     };
     ReviewService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
@@ -631,7 +642,20 @@ var EachComponent = (function () {
     function EachComponent(reviewService, router) {
         this.reviewService = reviewService;
         this.router = router;
+        this.reView = this.reviewService.getstoreUser();
     }
+    EachComponent.prototype.sendComment = function (comment, star, id) {
+        var _this = this;
+        var user = {
+            "comment": comment,
+            "star": star,
+            "beer": id,
+        };
+        this.reviewService.comment(user).subscribe(function (data) { return _this.getUser(data); });
+    };
+    EachComponent.prototype.getUser = function (data) {
+        console.log(JSON.parse(data._body));
+    };
     EachComponent.prototype.getReProduct = function (data) {
         console.log(JSON.parse(data._body));
         this.reView = JSON.parse(data._body);
@@ -806,7 +830,7 @@ var NewproductComponent = (function () {
     NewproductComponent.prototype.sentID = function (id) {
         var _this = this;
         this.reviewService.getReview(id).subscribe(function (data) {
-            _this.reviewService.storeUserData(data.id);
+            _this.reviewService.storeUserData(data);
             _this.router.navigate(['/each']);
         });
     };
@@ -859,7 +883,7 @@ var RegisterComponent = (function () {
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
-    RegisterComponent.prototype.register = function (username, password, firstname, lastname, birthDay, address, email) {
+    RegisterComponent.prototype.register = function (username, password, firstname, lastname, birthDay, address, email, gender) {
         var _this = this;
         var user = {
             "username": username,
@@ -868,7 +892,8 @@ var RegisterComponent = (function () {
             "lastname": lastname,
             "address": address,
             "email": email,
-            "birthday": birthDay
+            "birthday": birthDay,
+            "gender": gender
         };
         this.registerService.register(user).subscribe(function (data) { return _this.getUser(data); });
     };
@@ -1143,7 +1168,7 @@ module.exports = "<p>\n  catagory works!\n</p>\n"
 /***/ 700:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" id=\"maincontent\">\n    <div class=\"col-lg-5\" id=\"pic\">\n        <img src=\"\" id=\"imgeach\">\n    </div>\n    <div class=\"col-lg-7\" id=\"detail\">\n        <div id=\"content\">\n            <button id=\"addtocart\"><b>ADD TO CART </b><img id=\"imgcart\" src=\"assets/cart.png\"></button>\n        </div>\n    </div>\n</div>\n<hr>\n<div id=\"review\">\n    <div class=\"row\">\n        <div class=\"col-lg-1\"></div>\n        <div class=\"col-lg-8\">\n        <h3><b>REVIEW</b></h3>\n            <div id=\"bor\">\n                \n            <ul>\n                <li>\n                    <div class=\"row\">\n                        <div class=\"col-lg-1\">\n                            <h5>name</h5>\n                            <h5>date</h5></div>\n                        <div class=\"col-lg-7\" id=\"com\">\n                            <h4>comment</h4></div>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"row\">\n                        <div class=\"col-lg-1\">\n                            <h5>name</h5>\n                            <h5>date</h5></div>\n                        <div class=\"col-lg-7\" id=\"com\">\n                            <h4>comment</h4></div>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"row\">\n                        <div class=\"col-lg-1\">\n                            <h5>name</h5>\n                            <h5>date</h5></div>\n                        <div class=\"col-lg-7\" id=\"com\">\n                            <h4>comment</h4></div>\n                    </div>\n                </li>\n            </ul>\n            </div>\n            <div id=\"textwrite\">\n                <h5><b>Write Review</b></h5>\n                <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"textarea\" placeholder=\"comment\" value=\"gmine\"></textarea><br>\n                <h6><b>Select Rating</b></h6>\n                <fieldset class=\"rating\">\n                    <input type=\"radio\" id=\"star5\" [(ngModel)]=\"rate5\" name=\"rating\" value=\"5\" />\n                    <label class=\"full\" for=\"star5\" title=\"Awesome - 5 stars\"></label>\n                    <input type=\"radio\" id=\"star4half\" [(ngModel)]=\"rate45\"  name=\"rating\" value=\"4 and a half\" />\n                    <label class=\"half\" for=\"star4half\" title=\"Pretty good - 4.5 stars\"></label>\n                    <input type=\"radio\" id=\"star4\" [(ngModel)]=\"rate4\" name=\"rating\" value=\"4\" />\n                    <label class=\"full\" for=\"star4\" title=\"Pretty good - 4 stars\"></label>\n                    <input type=\"radio\" id=\"star3half\" [(ngModel)]=\"rate35\"  name=\"rating\" value=\"3 and a half\" />\n                    <label class=\"half\" for=\"star3half\" title=\"Meh - 3.5 stars\"></label>\n                    <input type=\"radio\" id=\"star3\" [(ngModel)]=\"rate3\" name=\"rating\" value=\"3\" />\n                    <label class=\"full\" for=\"star3\" title=\"Meh - 3 stars\"></label>\n                    <input type=\"radio\" id=\"star2half\" [(ngModel)]=\"rate25\" name=\"rating\" value=\"2 and a half\" />\n                    <label class=\"half\" for=\"star2half\" title=\"Kinda bad - 2.5 stars\"></label>\n                    <input type=\"radio\" id=\"star2\" [(ngModel)]=\"rate2\" name=\"rating\" value=\"2\" />\n                    <label class=\"full\" for=\"star2\" title=\"Kinda bad - 2 stars\"></label>\n                    <input type=\"radio\" id=\"star1half\" [(ngModel)]=\"rate15\" name=\"rating\" value=\"1 and a half\" />\n                    <label class=\"half\" for=\"star1half\" title=\"Meh - 1.5 stars\"></label>\n                    <input type=\"radio\" id=\"star1\" [(ngModel)]=\"rate1\" name=\"rating\" value=\"1\" />\n                    <label class=\"full\" for=\"star1\" title=\"Sucks big time - 1 star\"></label>\n                    <input type=\"radio\" id=\"starhalf\" [(ngModel)]=\"rate05\" name=\"rating\" value=\"half\" />\n                    <label class=\"half\" for=\"starhalf\" title=\"Sucks big time - 0.5 stars\"></label>\n                </fieldset>\n            </div>\n            <div class=\"col-lg-3\" id=\"sarm\">\n                <button id=\"writereview\" ><b>Submit</b></button>\n                <!-- [routerLink]=\"['/writereview']\" -->\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\" id=\"maincontent\">\n    <div class=\"col-lg-5\" id=\"pic\">\n        <img src=\"\" id=\"imgeach\">\n    </div>\n    <div class=\"col-lg-7\" id=\"detail\">\n        <div id=\"content\">\n            <button id=\"addtocart\"><b>ADD TO CART </b><img id=\"imgcart\" src=\"assets/cart.png\"></button>\n        </div>\n    </div>\n</div>\n<hr>\n<div id=\"review\">\n    <div class=\"row\">\n        <div class=\"col-lg-1\"></div>\n        <div class=\"col-lg-8\">\n        <h3><b>REVIEW</b></h3>\n            <div id=\"bor\">\n                \n            <ul>\n                <li *ngFor=\"let review of reView; let i = index; trackBy: trackByFn\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-1\">\n                            <h5>{{review.name}}</h5>\n                            <h5>{{review.date}}</h5></div>\n                        <div class=\"col-lg-7\" id=\"com\">\n                            <h4>{{review.comment}}</h4></div>\n                    </div>\n                </li>\n                \n            </ul>\n            </div>\n            <div id=\"textwrite\">\n                <h5><b>Write Review</b></h5>\n                <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"textarea\" placeholder=\"comment\" value=\"gmine\"></textarea><br>\n                <h6><b>Select Rating</b></h6>\n                <fieldset class=\"rating\">\n                    <input type=\"radio\" id=\"star5\" [(ngModel)]=\"rate\" name=\"rating\" value=\"5\" />\n                    <label class=\"full\" for=\"star5\" title=\"Awesome - 5 stars\"></label>\n                    <input type=\"radio\" id=\"star4half\" [(ngModel)]=\"rate\"  name=\"rating\" value=\"4 and a half\" />\n                    <label class=\"half\" for=\"star4half\" title=\"Pretty good - 4.5 stars\"></label>\n                    <input type=\"radio\" id=\"star4\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4\" />\n                    <label class=\"full\" for=\"star4\" title=\"Pretty good - 4 stars\"></label>\n                    <input type=\"radio\" id=\"star3half\" [(ngModel)]=\"rate\"  name=\"rating\" value=\"3 and a half\" />\n                    <label class=\"half\" for=\"star3half\" title=\"Meh - 3.5 stars\"></label>\n                    <input type=\"radio\" id=\"star3\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3\" />\n                    <label class=\"full\" for=\"star3\" title=\"Meh - 3 stars\"></label>\n                    <input type=\"radio\" id=\"star2half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2 and a half\" />\n                    <label class=\"half\" for=\"star2half\" title=\"Kinda bad - 2.5 stars\"></label>\n                    <input type=\"radio\" id=\"star2\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2\" />\n                    <label class=\"full\" for=\"star2\" title=\"Kinda bad - 2 stars\"></label>\n                    <input type=\"radio\" id=\"star1half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1 and a half\" />\n                    <label class=\"half\" for=\"star1half\" title=\"Meh - 1.5 stars\"></label>\n                    <input type=\"radio\" id=\"star1\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1\" />\n                    <label class=\"full\" for=\"star1\" title=\"Sucks big time - 1 star\"></label>\n                    <input type=\"radio\" id=\"starhalf\" [(ngModel)]=\"rate\" name=\"rating\" value=\"half\" />\n                    <label class=\"half\" for=\"starhalf\" title=\"Sucks big time - 0.5 stars\"></label>\n                </fieldset>\n            </div>\n            <div class=\"col-lg-3\" id=\"sarm\">\n                <button id=\"writereview\" (click)='sendComment(textarea,rate)'><b>Submit</b></button>\n                <!-- [routerLink]=\"['/writereview']\" -->\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1171,14 +1196,14 @@ module.exports = "\n      <nav class=\"navbar navbar-default\" >\n        <div c
 /***/ 704:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"newproduct\">\n\t<header>\n\t\t<div>\n\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<h1>NEW PRODUCTS</h1>\n\t\t\t<span class=\"spacer\"></span>\n\t\t</div>\n\t</header>\n\n\n\n<div id=\"centeredmenu\">\n  <ul >\n      <li *ngFor=\"let product of newProduct; let i = index; trackBy: trackByFn\">\n      <div id=\"each\" *ngIf = \"i<4\">\n      <a [routerLink]=\"['/each']\" (click)='sentID(product._id)' >\n      <app-each *ngIf=\"product!=null\"></app-each>\n\t\t\t<img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\"><br><br>\n      </a>\n      \t <h3>{{product.name}} .</h3><br>\n     \t\t <h3>{{product.price}} Bath.</h3><br>\n      \t\t<button id=\"ADD\"><h3 >ADD TO CART</h3></button>\n      </div>\n      </li>\n   </ul>\n</div>\n\n\n\t<div id=\"button\">\n\t\t<button id=\"seemore\" [routerLink]=\"['/beer']\"><h3 >SEE MORE</h3></button>\n\t</div>\n</div>\n"
+module.exports = "<div id=\"newproduct\">\n\t<header>\n\t\t<div>\n\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<h1>NEW PRODUCTS</h1>\n\t\t\t<span class=\"spacer\"></span>\n\t\t</div>\n\t</header>\n\n\n\n<div id=\"centeredmenu\">\n  <ul >\n      <li *ngFor=\"let product of newProduct; let i = index; trackBy: trackByFn\">\n      <div id=\"each\" *ngIf = \"i<4\">\n      <a [routerLink]=\"['/each']\" (click)='sentID(product._id)' >\n\t\t\t<img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\"><br><br>\n      </a>\n      \t <h3>{{product.name}} .</h3><br>\n     \t\t <h3>{{product.price}} Bath.</h3><br>\n      \t\t<button id=\"ADD\"><h3 >ADD TO CART</h3></button>\n      </div>\n      </li>\n   </ul>\n</div>\n\n\n\t<div id=\"button\">\n\t\t<button id=\"seemore\" [routerLink]=\"['/beer']\"><h3 >SEE MORE</h3></button>\n\t</div>\n</div>\n"
 
 /***/ }),
 
 /***/ 705:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <h5><b>Firstname</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"firstname\" type=\"text\" name=\"\" placeholder=\" Firstname\">\n            <h5><b>Lastname</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"lastname\" type=\"text\" name=\"\" placeholder=\" Lastname\">\n            <h5><b>Username</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"username\" type=\"text\" name=\"\" placeholder=\" Username\">\n            <h5><b>E-Mail</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"email\" type=\"text\" name=\"\" placeholder=\" E-Mail\">\n            <h5><b>Password</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"password\" type=\"Password\" name=\"\" placeholder=\" Password\">\n            <br>\n            <br>\n        </div>\n        <div class=\"col-lg-6\" id=\"right\">\n            <h5><b>Gender</b></h5>\n            <div class=\"fieldgroup\">\n                <input type=\"radio\" [(ngModel)]=\"result\" name=\"payment_method\" ng-value=\"'pass'\">\n                <label for=\"payment1\"> Male\n                </label>\n            </div>\n            <div class=\"fieldgroup\">\n                <input type=\"radio\" [(ngModel)]=\"result\" name=\"payment_method\" value=\"fail\">\n                <label for=\"payment2\"> FeMale</label>\n            </div>\n            <br>\n            <div class=\"form-group\">\n                <h5><b>Date of birth</b></h5>\n                <input #expDate type=\"date\" name=\"sdate\" value=\"\" maxlength=\"15\" class=\"form-control required\" title=\"Please fill Start Date\">\n            </div>\n            <h5><b>Address</b></h5>\n            <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"address\" placeholder=\"Address\" value=\"gmine\"></textarea>\n        </div>\n    </div>\n    <br>\n    <br>\n    <button id=\"bttnsignin\" (click)='register(username,password,firstname,lastname,expDate.value,address,email)'>Register</button>\n</div>\n"
+module.exports = "<div class=\"content\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <h5><b>Firstname</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"firstname\" type=\"text\" name=\"\" placeholder=\" Firstname\">\n            <h5><b>Lastname</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"lastname\" type=\"text\" name=\"\" placeholder=\" Lastname\">\n            <h5><b>Username</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"username\" type=\"text\" name=\"\" placeholder=\" Username\">\n            <h5><b>E-Mail</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"email\" type=\"text\" name=\"\" placeholder=\" E-Mail\">\n            <h5><b>Password</b></h5>\n            <input id=\"textbox\" [(ngModel)]=\"password\" type=\"Password\" name=\"\" placeholder=\" Password\">\n            <br>\n            <br>\n        </div>\n        <div class=\"col-lg-6\" id=\"right\">\n            <h5><b>Gender</b></h5>\n            <div class=\"fieldgroup\">\n                <input type=\"radio\" [(ngModel)]=\"result\" name=\"payment_method\" ng-value=\"'pass'\">\n                <label for=\"payment1\"> Male\n                </label>\n            </div>\n            <div class=\"fieldgroup\">\n                <input type=\"radio\" [(ngModel)]=\"result\" name=\"payment_method\" value=\"fail\">\n                <label for=\"payment2\"> FeMale</label>\n            </div>\n            <br>\n            <div class=\"form-group\">\n                <h5><b>Date of birth</b></h5>\n                <input #expDate type=\"date\" name=\"sdate\" value=\"\" maxlength=\"15\" class=\"form-control required\" title=\"Please fill Start Date\">\n            </div>\n            <h5><b>Address</b></h5>\n            <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"address\" placeholder=\"Address\" value=\"gmine\"></textarea>\n        </div>\n    </div>\n    <br>\n    <br>\n    <button id=\"bttnsignin\" (click)='register(username,password,firstname,lastname,expDate.value,address,email,result)'>Register</button>\n</div>\n"
 
 /***/ }),
 
