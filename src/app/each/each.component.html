@@ -15,18 +15,20 @@
         <div class="col-lg-8">
         <h3><b>REVIEW</b></h3>
             <div id="bor">
-                
+
             <ul>
                 <li *ngFor="let review of reView; let i = index; trackBy: trackByFn">
                     <div class="row">
-                        <!-- <div class="col-lg-1"> -->
+
+                        <!-- <div class="col-lg-1"> -->3
                             <h5>{{review.user}}</h5>
                             <h5>{{review.date}}</h5></div>
                         <!-- <div class="col-lg-7" id="com"> -->
                             <h4>{{review.comment}}</h4></div>
                     </div>
-                </li> 
-                
+
+                </li>
+
             </ul>
             </div>
             <div id="textwrite">

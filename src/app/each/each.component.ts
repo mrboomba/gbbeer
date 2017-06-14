@@ -43,13 +43,6 @@ getUser(data) {
 
   }
 
- getReProduct(data) {
-  console.log(JSON.parse(data._body))
-  this.reView  = JSON.parse(data._body)
-  console.log(this.reView)
-  }
-
-
 
   ngOnInit() {
 
