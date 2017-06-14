@@ -31,8 +31,12 @@ export class ReviewService {
   }
 
   storeUserData(user){
+<<<<<<< HEAD
     localStorage.setItem('user', JSON.stringify(user));
     this.user = user;
+=======
+    this.user = JSON.parse(user._body)
+>>>>>>> bafe9263969a6bf00b9cd8252429cee318f26691
     console.log(this.user);
   }
   getstoreUser(){
