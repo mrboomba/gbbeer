@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {ProductService} from '../services/product.service';
+import { Subscription } from 'rxjs/Subscription';
+import {ReviewService} from '../services/review.service';
 import {RegisterService} from '../services/register.service';
-
 
 @Component({
   selector: 'app-register',
@@ -31,5 +34,6 @@ export class RegisterComponent implements OnInit {
   console.log(JSON.parse(data._body))
 
   }
+ 
 
 }

@@ -50,6 +50,14 @@ export class ProductService {
     return this.http.get('http://localhost:3000/api/addtocart/'+id, options).map(data => data);
   }
 
+  public getCartproduct(id :String): Observable<any> {
+    console.log("getCartproduct")
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/cart', options).map(data => data);
+  }
+
 
 
   public join(id: String): Observable<any> {

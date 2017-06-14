@@ -8,7 +8,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                <!-- <li *ngIf="!cart"><img [routerLink]="['/cart']"   id="imgcart" src="assets/cart.png"></li> -->
-               <li ><img [routerLink]="['/cart']"   id="imgcart" src="assets/cart.png"></li>
+               <li ><img [routerLink]="['/cart']"  (click)='sendService()' id="imgcart" src="assets/cart.png"></li>
                <!-- <li *ngIf="cart"><img [routerLink]="['/cart']"   id="imgcart" src="assets/redcart.png"></li> -->
             </ul>
           </div>

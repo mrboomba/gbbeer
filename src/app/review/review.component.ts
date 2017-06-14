@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {ProductService} from '../services/product.service';
 import { Subscription } from 'rxjs/Subscription';
+import {ReviewService} from '../services/review.service';
+import {RegisterService} from '../services/register.service';
 
 @Component({
   selector: 'app-review',
@@ -11,7 +14,7 @@ export class ReviewComponent implements OnInit {
 
   private popProduct ;
 
-  constructor(private productService:ProductService) {
+  constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getPopproduct().subscribe(data => this.getPopproduct(data)) }
 
   getPopproduct(data) {

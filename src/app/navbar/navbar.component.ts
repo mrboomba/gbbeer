@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {ProductService} from '../services/product.service';
+import { Subscription } from 'rxjs/Subscription';
+import {ReviewService} from '../services/review.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +11,18 @@ import {Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+private newProduct ;
+
+  constructor(private productService:ProductService) { }
 
   ngOnInit() {
+
   }
+ public sendService(){
+	this.productService.getCartproduct().subscribe(data => this.getcart(data))
+  }
+  getcart(data){
+  console.log(JSON.parse(data._body))
+ }
 
 }
