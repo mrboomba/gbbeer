@@ -18,11 +18,7 @@ private newProduct ;
   ngOnInit() {
 
   }
- public sendService(){
-	this.productService.getCartproduct().subscribe(data => this.getcart(data))
-  }
-  getcart(data){
-  console.log(JSON.parse(data._body))
- }
+
+
 
 }
