@@ -4,6 +4,16 @@
     </div>
     <div class="col-lg-7" id="detail">
         <div id="content">
+            <h3 id="name1"><b>  {{name}}. </b></h3>
+            <hr>
+            <h3 id="name"><b>Brand:</b> {{brand}}.</h3>
+            <h3 id="name"><b>Country:</b> {{country}}.</h3>
+            <h3 id="name"><b>Color:</b>  {{color}}.</h3>
+            <h3 id="name"><b>ABV%:</b> {{degree}}.</h3>
+            <h3 id="name"><b>Price:</b>  {{price}} Bath.</h3>
+            <h3 id="name"><b>Type:</b>  {{type}}.</h3>
+
+
             <button id="addtocart"><b>ADD TO CART </b><img id="imgcart" src="assets/cart.png"></button>
         </div>
     </div>
@@ -59,7 +69,7 @@
                     <input type="radio" id="starhalf" [(ngModel)]="rate" name="rating" value="0.5" />
                     <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                 </fieldset>
-                <h1>{{rate}}</h1>
+                <!-- <h1>{{rate}}</h1> -->
             </div>
             <div class="col-lg-3" id="sarm">
                 <button id="writereview" (click)='sendComment(textarea,rate)'><b>Submit</b></button>

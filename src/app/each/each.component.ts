@@ -10,9 +10,18 @@ import {Router} from '@angular/router';
 })
 export class EachComponent implements OnInit {
 private reView ;
-private beer
-private img
+private beer;
+private img;
 private id;
+private name;
+private brand;
+private country;
+private color;
+private date;
+private degree;
+private price;
+private rate;
+private type;
 
   constructor(private reviewService:ReviewService,private router: Router) {
 	//this.reView= this.reviewService.getstoreUser()
@@ -32,7 +41,15 @@ private id;
   public getBeer(data){
   this.beer= JSON.parse(data._body)
   console.log(this.beer)
-  console.log(this.beer.img)
+  this.name = this.beer.name
+  this.brand = this.beer.brand
+  this.country = this.beer.country
+  this.color = this.beer.color
+  this.date = this.beer.date
+  this.degree = this.beer.degree
+  this.price = this.beer.price
+  this.rate = this.beer.rate
+  this.type = this.beer.type
   this.img = 'http://localhost:3000/view/img/'+this.beer.img
 
   }
