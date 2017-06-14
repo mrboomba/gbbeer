@@ -42,6 +42,14 @@ export class ProductService {
     return this.http.get('http://localhost:3000/api/beer/popular?', options).map(data => data);
   }
 
+  public getSendToCartproduct(id :String): Observable<any> {
+    console.log("getSendToCartproduct")
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/addtocart/'+id, options).map(data => data);
+  }
+
 
 
   public join(id: String): Observable<any> {

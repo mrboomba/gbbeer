@@ -22,6 +22,11 @@ constructor(private productService:ProductService,private reviewService:ReviewSe
   
    
   }
+  
+public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+
 
   public sentID(id :String) {
     this.reviewService.getReview(id).subscribe(data => {
@@ -30,19 +35,17 @@ constructor(private productService:ProductService,private reviewService:ReviewSe
     });
   }
 
-  
-   ngOnInit() {
-  }
-
- 
 
   getNewProduct(data) {
   console.log(JSON.parse(data._body))
   this.newProduct  = JSON.parse(data._body)
   }
 
- 
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
 
- 
+ ngOnInit() {
+  }
 
 }
