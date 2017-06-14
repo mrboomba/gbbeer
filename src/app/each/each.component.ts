@@ -22,7 +22,7 @@ public sendComment(comment:String, star:String,id: String) {
   "star" : star,
   "beer":id,
   }
-  	this.reviewService.comment(user).subscribe(data => this.getUser(data)) }
+  	this.reviewService.comment(user).subscribe(data => this.getUser(data))  }
 
 getUser(data) {
   console.log(JSON.parse(data._body))

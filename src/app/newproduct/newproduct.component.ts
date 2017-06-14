@@ -14,7 +14,7 @@ import {ReviewService} from '../services/review.service';
 export class NewproductComponent implements OnInit {
 
 	private newProduct ;
-  private reView ;
+  
  
 
 constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
@@ -41,10 +41,7 @@ constructor(private productService:ProductService,private reviewService:ReviewSe
   this.newProduct  = JSON.parse(data._body)
   }
 
-  getReView(data) {
-  console.log(JSON.parse(data._body))
-  this.reView  = JSON.parse(data._body)
-  }
+ 
 
  
 
