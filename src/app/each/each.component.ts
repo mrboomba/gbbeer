@@ -30,8 +30,8 @@ getUser(data) {
   }
 
  getReProduct(data) {
-  console.log(JSON.parse(data._body))
-  this.reView  = JSON.parse(data._body)
+  console.log(JSON.parse(data._body.beer))
+  this.reView  = JSON.parse(data._body.beer)
   }
 
 

@@ -1,93 +1,20 @@
 [{
-  "name":"Kirin",
-  "degree":4.9,
-  "color":"Blond",
-  "brand":"Kirin Brewery Company",
-  "country":"Japan",
-  "price":65,
-  "type":"Pale Lager",
-  "rate":0,
-  "img":"kirin.jpg"
-},
-{
-  "name":"Bacchus Kriekenbier",
-  "degree":5.8,
-  "color":"Ruby",
-  "brand":"Brouwerij Van Honsebrouck",
-  "country":"Belgium",
-  "price":220,
-  "type":"Fruit/Vegetable Beer",
-  "img":"bacchus-kriekenbier.jpg"
+  "username":"gmine",
+  "password":"",
+  "firstname":"Kirin Brewery Company",
+  "lastname":"Japan",
+  "email":65,
+  "birthday":"Pale Lager",
+  "address":0,
+  "gender":"kirin.jpg"
 },{
-    "name":"Phuket Beer",
-    "degree":5,
-    "color":"Blond",
-    "brand":"San Miguel Thailand",
-    "country":"Thailand",
-    "price":70,
-    "type":"Pale Lager",
-    "img":"phuket-beer.jpg"
-},{
-    "name":"Estrella Damm Inedit",
-    "degree":4.8,
-    "color":"Blond",
-    "brand":"Damm",
-    "country":"Spain",
-    "price":459,
-    "type":"Witbier",
-    "img":"estrella-damm-inedit.jpg"
-},{
-    "name":"Brewdog Punk IPA",
-    "degree":5.6,
-    "color":"Blond",
-    "brand":"Brewdog",
-    "country":"Scotland",
-    "price":190,
-    "type":"India Pale Ale (IPA)",
-    "img":"brewdog-punk-ipa.jpg"
-},{
-    "name":"Hoegaarden Rosee",
-    "degree":3,
-    "color":"Rose",
-    "brand":"Brouwerij Hoegaarden (InBev)",
-    "country":"Belgium",
-    "price":139,
-    "type":"Fruit/Vegetable Beer",
-    "img":"hoegaarden-rosee.jpg"
-},{
-    "name":"Chiang Mai Beer Weizen",
-    "degree":5,
-    "color":"Wit",
-    "brand":"Chiang Mai Brewery",
-    "country":"Thailand",
-    "price":119,
-    "type":"Hefeweizen",
-    "img":"chiang-mai-weizen.jpg"
-},{
-    "name":"Pilsner Urquell",
-    "degree":4.4,
-    "color":"Blond",
-    "brand":"Plzensky Prazdroj (Asahi)",
-    "country":"Czech Republic",
-    "price":129,
-    "type":"Czech Pilsener",
-    "img":"pilsner-urquell.jpg"
-},{
-    "name":"Duvel",
-    "degree":8.5,
-    "color":"Blond",
-    "brand":"Duvel Moortgat",
-    "country":"Belgium",
-    "price":129,
-    "type":"Belgian Pale Ale",
-    "img":"duvel.jpg"
-},{
-    "name":"Full Moon Chalawan Pale Ale",
-    "degree":4.7,
-    "color":"Amber",
-    "brand":"Full Moon Brewworks",
-    "country":"Thailand",
-    "price":129,
-    "type":"American Pale Ale (APA)",
-    "img":"chalawan-pale-ale.jpg"
-}]
+  "username":"Kirin",
+  "password":4.9,
+  "firstname":"Kirin Brewery Company",
+  "lastname":"Japan",
+  "email":65,
+  "birthday":"Pale Lager",
+  "address":0,
+  "gender":"kirin.jpg"
+}
+]
