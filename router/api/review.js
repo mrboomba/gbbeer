@@ -29,13 +29,12 @@ module.exports = (() => {
       if(err){
         return res.json({'status':'false'});
       }
-      if(!beer[0]){
-        beer[0] = {}
-      }
-      beer[0]['status'] = 'success';
-      console.log(beer[0]);
 
-      res.json(beer[0]);
+      var output ={};
+      output['status'] = 'success';
+      output['beer'] = beer;
+
+      res.json(output);
     })
   });
 
