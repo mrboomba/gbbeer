@@ -52,7 +52,7 @@ module.exports = (() => {
   }
 
   const getBeerByStar = (callback)=>{
-    models.Review.aggregate([
+    models.review.aggregate([
         { $group: {
             _id: '$beer',
             starAvg: { $avg: '$star'}
@@ -64,7 +64,21 @@ module.exports = (() => {
         if (err) {
             callback(err);
         } else {
-          models.beer.find({'_id':{$in:result._id}}).exec((err, doc) => callback(err, doc));
+
+          var tmp = results.map(function(a){
+            return a._id;
+          })
+          var tmp2 = results.map(function(a){
+            return a.starAvg;
+          })
+
+          models.beer.find({'_id':{$in:tmp}}).exec((err, doc) => {
+
+            tmp2.forEach(function (value, i) {
+                doc[i].rate = value;
+              });
+              callback(err,doc);
+          });
         }
     }
 );
