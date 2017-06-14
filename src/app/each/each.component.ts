@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class EachComponent implements OnInit {
 private reView ;
 private beer
+private img
 private id;
 
   constructor(private reviewService:ReviewService,private router: Router) {
@@ -22,13 +23,20 @@ private id;
   
   }
 
+
   public getReview(data){
   this.reView= JSON.parse(data._body).beer
   }
 
+
   public getBeer(data){
   this.beer= JSON.parse(data._body)
+  console.log(this.beer)
+  console.log(this.beer.img)
+  this.img = 'http://localhost:3000/view/img/'+this.beer.img
+
   }
+
 
 public sendComment(comment:String, star:String) {
   let user = {

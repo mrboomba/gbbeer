@@ -2,10 +2,11 @@
 	width: 400px;
 	height: 400px;
 	 margin: 10%;
+	 border: 2px solid #D2D2D2;
 }
 #pic{
-	border: 2px solid black;
-	 text-align: center;
+	
+	 text-align: right;
 }
 #detail{
 	/*background-color: #F5F5F5;*/
