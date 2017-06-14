@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class EachComponent implements OnInit {
 private reView ;
+private beer
 private id;
 
   constructor(private reviewService:ReviewService,private router: Router) {
@@ -17,27 +18,16 @@ private id;
   this.id = this.reviewService.getstoreUser()
   console.log(this.id)
   this.reviewService.getReview(this.id).subscribe(data => this.getReview(data))
-  /*this.reView= [{
-    'name':'eiei',
-    'date':11,
-    'comment':"dfdssds"
-    },{
-    'name':'eiei',
-    'date':11,
-    'comment':"dfdssds"
-    },{
-    'name':'eiei',
-    'date':11,
-    'comment':"dfdssds"
-    },{
-    'name':'eiei',
-    'date':11,
-    'comment':"dfdssds"
-    }]*/
+  this.reviewService.getBeer(this.id).subscribe(data => this.getBeer(data))
+  
   }
 
   public getReview(data){
   this.reView= JSON.parse(data._body).beer
+  }
+
+  public getBeer(data){
+  this.beer= JSON.parse(data._body)
   }
 
 public sendComment(comment:String, star:String) {

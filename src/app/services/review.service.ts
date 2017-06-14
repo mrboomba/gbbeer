@@ -22,6 +22,15 @@ export class ReviewService {
     return this.http.get('http://localhost:3000/api/review/'+id, options).map(data => data);
   }
 
+  public getBeer(id :String): Observable<any> {
+    console.log("get Beer")
+    this.id = id;
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/beer/'+id, options).map(data => data);
+  }
+
    public comment(data: Object): Observable<any> {
     console.log("comment")
     console.log(data)
