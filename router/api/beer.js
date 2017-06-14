@@ -18,16 +18,6 @@ module.exports = (() => {
         return;
       });
   });
-  router.route('/beer/:id').get((req, res) => {
-    ModelControllers.beer.getBeer({'_id':req.params.id}, (err, doc) => {
-        if (err) {
-          res.status(400).send(err);
-          return;
-        }
-        res.json(doc);
-        return;
-      });
-  });
 
   router.route('/beer/bestsell?').get((req, res) => {
     ModelControllers.beer.getBeerBySell((err, doc) => {
@@ -61,6 +51,18 @@ module.exports = (() => {
       return;
     });
   });
+
+  router.route('/beer/:id').get((req, res) => {
+    ModelControllers.beer.getBeer({'_id':req.params.id}, (err, doc) => {
+        if (err) {
+          res.status(400).send(err);
+          return;
+        }
+        res.json(doc);
+        return;
+      });
+  });
+
 
 
   return router;
