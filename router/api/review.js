@@ -25,12 +25,17 @@ module.exports = (() => {
 
   router.get('/review/:id',function(req,res){
     var productId = req.params.id;
-    ModelControllers.review.getReviewByBeerId({'_id':productId},(err,beer) =>{
+    ModelControllers.review.getReviewByBeerId({'beer':productId},(err,beer) =>{
       if(err){
         return res.json({'status':'false'});
       }
-      beer['status'] = 'success';
-      res.json(beer);
+      if(!beer[0]){
+        beer[0] = {}
+      }
+      beer[0]['status'] = 'success';
+      console.log(beer[0]);
+
+      res.json(beer[0]);
     })
   });
 

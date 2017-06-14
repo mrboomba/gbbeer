@@ -33,7 +33,8 @@ module.exports = (() => {
       lastname: req.body.lastname,
       birthday:userBirthday,
       address:req.body.address,
-      email:req.body.email
+      email:req.body.email,
+      gender:req.body.gender
     }
    ModelControllers.user.createUser(newUser, (err, doc) => {
         if (err) {

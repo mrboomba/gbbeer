@@ -5,9 +5,9 @@ webpackJsonp([1,4],{
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
@@ -74,14 +74,14 @@ var ProductService = (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterService; });
@@ -130,14 +130,14 @@ var RegisterService = (function () {
 
 /***/ }),
 
-/***/ 333:
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewService; });
@@ -165,6 +165,11 @@ var ReviewService = (function () {
         var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
         return this.http.get('http://localhost:3000/api/review/' + id, options).map(function (data) { return data; });
     };
+    ReviewService.prototype.storeUserData = function (user) {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.user = user;
+        console.log(user);
+    };
     ReviewService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
@@ -176,7 +181,7 @@ var ReviewService = (function () {
 
 /***/ }),
 
-/***/ 389:
+/***/ 390:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -185,17 +190,17 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 389;
+webpackEmptyContext.id = 390;
 
 
 /***/ }),
 
-/***/ 390:
+/***/ 391:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(478);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__environments_environment__ = __webpack_require__(524);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_app_module__ = __webpack_require__(511);
@@ -338,9 +343,9 @@ var AppComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_home_component__ = __webpack_require__(517);
@@ -357,8 +362,8 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__allpro_allpro_component__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__writereview_writereview_component__ = __webpack_require__(523);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_product_service__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_register_service__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_review_service__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_register_service__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_review_service__ = __webpack_require__(219);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -607,6 +612,8 @@ var CatagoryComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_review_service__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(214);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EachComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -618,9 +625,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var EachComponent = (function () {
-    function EachComponent() {
+    function EachComponent(reviewService, router) {
+        this.reviewService = reviewService;
+        this.router = router;
     }
+    EachComponent.prototype.getReProduct = function (data) {
+        console.log(JSON.parse(data._body));
+        this.reView = JSON.parse(data._body);
+    };
     EachComponent.prototype.ngOnInit = function () {
     };
     EachComponent = __decorate([
@@ -629,9 +644,10 @@ var EachComponent = (function () {
             template: __webpack_require__(700),
             styles: [__webpack_require__(685)]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_review_service__["a" /* ReviewService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_review_service__["a" /* ReviewService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === 'function' && _b) || Object])
     ], EachComponent);
     return EachComponent;
+    var _a, _b;
 }());
 //# sourceMappingURL=/home/mrboomba/gbbeer/src/each.component.js.map
 
@@ -677,7 +693,7 @@ var HomeComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(218);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -762,8 +778,9 @@ var NavbarComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_review_service__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(219);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewproductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -777,16 +794,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NewproductComponent = (function () {
-    function NewproductComponent(productService, reviewService) {
+    function NewproductComponent(productService, reviewService, router) {
         var _this = this;
         this.productService = productService;
         this.reviewService = reviewService;
+        this.router = router;
         this.productService.getNewproduct().subscribe(function (data) { return _this.getNewProduct(data); });
     }
     NewproductComponent.prototype.sentID = function (id) {
         var _this = this;
-        this.reviewService.getReview(id).subscribe(function (data) { return _this.getReView(data); });
+        this.reviewService.getReview(id).subscribe(function (data) {
+            _this.reviewService.storeUserData(data.id);
+            _this.router.navigate(['/each']);
+        });
     };
     NewproductComponent.prototype.ngOnInit = function () {
     };
@@ -802,12 +824,12 @@ var NewproductComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
             selector: 'app-newproduct',
             template: __webpack_require__(704),
-            styles: [__webpack_require__(689)]
+            styles: [__webpack_require__(689)],
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_review_service__["a" /* ReviewService */]) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_review_service__["a" /* ReviewService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_review_service__["a" /* ReviewService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object])
     ], NewproductComponent);
     return NewproductComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=/home/mrboomba/gbbeer/src/newproduct.component.js.map
 
@@ -818,7 +840,7 @@ var NewproductComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(218);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1149,7 +1171,7 @@ module.exports = "\n      <nav class=\"navbar navbar-default\" >\n        <div c
 /***/ 704:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"newproduct\">\n\t<header>\n\t\t<div>\n\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<h1>NEW PRODUCTS</h1>\n\t\t\t<span class=\"spacer\"></span>\n\t\t</div>\n\t</header>\n\n\n\n<div id=\"centeredmenu\">\n  <ul >\n      <li *ngFor=\"let product of newProduct; let i = index; trackBy: trackByFn\">\n      <div id=\"each\" *ngIf = \"i<4\">\n      <a [routerLink]=\"['/each']\" (click)='sentID(product._id)'>\n\t\t\t<img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\"><br><br>\n      </a>\n      \t <h3>{{product.name}} .</h3><br>\n     \t\t <h3>{{product.price}} Bath.</h3><br>\n      \t\t<button id=\"ADD\"><h3 >ADD TO CART</h3></button>\n      </div>\n      </li>\n   </ul>\n</div>\n\n\n\t<div id=\"button\">\n\t\t<button id=\"seemore\" [routerLink]=\"['/beer']\"><h3 >SEE MORE</h3></button>\n\t</div>\n</div>\n"
+module.exports = "<div id=\"newproduct\">\n\t<header>\n\t\t<div>\n\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<h1>NEW PRODUCTS</h1>\n\t\t\t<span class=\"spacer\"></span>\n\t\t</div>\n\t</header>\n\n\n\n<div id=\"centeredmenu\">\n  <ul >\n      <li *ngFor=\"let product of newProduct; let i = index; trackBy: trackByFn\">\n      <div id=\"each\" *ngIf = \"i<4\">\n      <a [routerLink]=\"['/each']\" (click)='sentID(product._id)' >\n      <app-each *ngIf=\"product!=null\"></app-each>\n\t\t\t<img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\"><br><br>\n      </a>\n      \t <h3>{{product.name}} .</h3><br>\n     \t\t <h3>{{product.price}} Bath.</h3><br>\n      \t\t<button id=\"ADD\"><h3 >ADD TO CART</h3></button>\n      </div>\n      </li>\n   </ul>\n</div>\n\n\n\t<div id=\"button\">\n\t\t<button id=\"seemore\" [routerLink]=\"['/beer']\"><h3 >SEE MORE</h3></button>\n\t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1177,7 +1199,7 @@ module.exports = "<p>\n  writereview works!\n</p>\n"
 /***/ 724:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(390);
+module.exports = __webpack_require__(391);
 
 
 /***/ })
