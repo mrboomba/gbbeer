@@ -17,33 +17,16 @@
             <div id="bor">
                 
             <ul>
-                <li>
+                <li *ngFor="let review of reView; let i = index; trackBy: trackByFn">
                     <div class="row">
                         <div class="col-lg-1">
-                            <h5>name</h5>
-                            <h5>date</h5></div>
+                            <h5>{{review.name}}</h5>
+                            <h5>{{review.date}}</h5></div>
                         <div class="col-lg-7" id="com">
-                            <h4>comment</h4></div>
+                            <h4>{{review.comment}}</h4></div>
                     </div>
                 </li>
-                <li>
-                    <div class="row">
-                        <div class="col-lg-1">
-                            <h5>name</h5>
-                            <h5>date</h5></div>
-                        <div class="col-lg-7" id="com">
-                            <h4>comment</h4></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="row">
-                        <div class="col-lg-1">
-                            <h5>name</h5>
-                            <h5>date</h5></div>
-                        <div class="col-lg-7" id="com">
-                            <h4>comment</h4></div>
-                    </div>
-                </li>
+                
             </ul>
             </div>
             <div id="textwrite">
@@ -51,30 +34,30 @@
                 <textarea rows="4" cols="37" [(ngModel)]="textarea" placeholder="comment" value="gmine"></textarea><br>
                 <h6><b>Select Rating</b></h6>
                 <fieldset class="rating">
-                    <input type="radio" id="star5" [(ngModel)]="rate5" name="rating" value="5" />
+                    <input type="radio" id="star5" [(ngModel)]="rate" name="rating" value="5" />
                     <label class="full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" [(ngModel)]="rate45"  name="rating" value="4 and a half" />
+                    <input type="radio" id="star4half" [(ngModel)]="rate"  name="rating" value="4 and a half" />
                     <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                    <input type="radio" id="star4" [(ngModel)]="rate4" name="rating" value="4" />
+                    <input type="radio" id="star4" [(ngModel)]="rate" name="rating" value="4" />
                     <label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" [(ngModel)]="rate35"  name="rating" value="3 and a half" />
+                    <input type="radio" id="star3half" [(ngModel)]="rate"  name="rating" value="3 and a half" />
                     <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                    <input type="radio" id="star3" [(ngModel)]="rate3" name="rating" value="3" />
+                    <input type="radio" id="star3" [(ngModel)]="rate" name="rating" value="3" />
                     <label class="full" for="star3" title="Meh - 3 stars"></label>
-                    <input type="radio" id="star2half" [(ngModel)]="rate25" name="rating" value="2 and a half" />
+                    <input type="radio" id="star2half" [(ngModel)]="rate" name="rating" value="2 and a half" />
                     <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                    <input type="radio" id="star2" [(ngModel)]="rate2" name="rating" value="2" />
+                    <input type="radio" id="star2" [(ngModel)]="rate" name="rating" value="2" />
                     <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                    <input type="radio" id="star1half" [(ngModel)]="rate15" name="rating" value="1 and a half" />
+                    <input type="radio" id="star1half" [(ngModel)]="rate" name="rating" value="1 and a half" />
                     <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                    <input type="radio" id="star1" [(ngModel)]="rate1" name="rating" value="1" />
+                    <input type="radio" id="star1" [(ngModel)]="rate" name="rating" value="1" />
                     <label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                    <input type="radio" id="starhalf" [(ngModel)]="rate05" name="rating" value="half" />
+                    <input type="radio" id="starhalf" [(ngModel)]="rate" name="rating" value="half" />
                     <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                 </fieldset>
             </div>
             <div class="col-lg-3" id="sarm">
-                <button id="writereview" ><b>Submit</b></button>
+                <button id="writereview" (click)='sendComment(textarea,rate)'><b>Submit</b></button>
                 <!-- [routerLink]="['/writereview']" -->
             </div>
         </div>

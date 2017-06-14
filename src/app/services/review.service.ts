@@ -19,10 +19,24 @@ export class ReviewService {
     let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
     return this.http.get('http://localhost:3000/api/review/'+id, options).map(data => data);
   }
+
+   public comment(data: Object): Observable<any> {
+    console.log("comment")
+    console.log(data)
+    
+    let body = JSON.stringify(data);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post('http://localhost:3000/api/comment', body, options).map(data => data);
+  }
+
   storeUserData(user){
     localStorage.setItem('user', JSON.stringify(user));
     this.user = user;
     console.log(user);
+  }
+  getstoreUser(){
+  return this.user;
   }
   
 

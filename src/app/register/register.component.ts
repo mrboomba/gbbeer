@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  public register(username :String, password:String, firstname:String,lastname:String,birthDay :String,address:String,email:String) {
+  public register(username :String, password:String, firstname:String,lastname:String,birthDay :String,address:String,email:String,gender:String) {
   let user = {
   "username" : username,
   "password" : password,
@@ -22,7 +22,8 @@ export class RegisterComponent implements OnInit {
   "lastname" : lastname,
   "address" : address,
   "email" : email,
-  "birthday":birthDay
+  "birthday":birthDay,
+  "gender" : gender
   }
   	this.registerService.register(user).subscribe(data => this.getUser(data)) }
 

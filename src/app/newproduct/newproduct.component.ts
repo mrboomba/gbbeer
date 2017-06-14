@@ -25,7 +25,7 @@ constructor(private productService:ProductService,private reviewService:ReviewSe
 
   public sentID(id :String) {
     this.reviewService.getReview(id).subscribe(data => {
-    this.reviewService.storeUserData(data.id);
+    this.reviewService.storeUserData(data);
       this.router.navigate(['/each']);
     });
   }
