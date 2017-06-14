@@ -12,6 +12,7 @@ import {ReviewService} from '../services/review.service';
 export class CartComponent implements OnInit {
 
   private cart ;
+  private totalPrice ;
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
 
@@ -23,6 +24,9 @@ export class CartComponent implements OnInit {
   
 	public getcart(data){
   		this.cart= JSON.parse(data._body)
+  		this.totalPrice =JSON.parse(data._body).totalPrice
+  		console.log(this.cart)
+  		console.log(this.totalPrice)
   	}
 
   ngOnInit() {
