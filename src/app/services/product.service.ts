@@ -39,7 +39,7 @@ export class ProductService {
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
 
     let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
-    return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(data => data);
+    return this.http.get('http://localhost:3000/api/beer/popular?', options).map(data => data);
   }
 
 
