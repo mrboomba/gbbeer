@@ -13,7 +13,7 @@
   <ul >
       <li *ngFor="let product of newProduct; let i = index; trackBy: trackByFn">
       <div id="each" *ngIf = "i<4">
-      <a [routerLink]="['/each']">
+      <a [routerLink]="['/each']" (click)='sentID(product._id)'>
 			<img src="http://localhost:3000/view/img/{{product.img}}" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
       </a>
       	 <h3>{{product.name}} .</h3><br>

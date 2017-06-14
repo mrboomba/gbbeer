@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ReviewService} from '../services/register.service';
+import {ReviewService} from '../services/review.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-each',
@@ -8,7 +9,14 @@ import {ReviewService} from '../services/register.service';
 })
 export class EachComponent implements OnInit {
 
-  constructor() { }
+ 
+  constructor() {
+ 
+  }
+
+ 
+
+
 
   ngOnInit() {
   }
