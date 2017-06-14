@@ -1,6 +1,7 @@
 var Promise = require('es6-promise').Promise;
 var beerModels = require('../models/beer');
 var userModels = require('../models/user');
+var reviewModels = require('../models/review');
 
 function createDB() {
 
@@ -8,10 +9,12 @@ function createDB() {
         var beerJson = JSON.parse(require('fs').readFileSync(__dirname + '/testcase/beer.json', 'utf8'));
         beerModels.remove({},function(error){
           userModels.remove({},function(error){
-          if (error) reject(error);
-              beerModels.create(beerJson, function(error){
+              reviewModels.remove({},function(error){
                 if (error) reject(error);
-                  resolve();
+                beerModels.create(beerJson, function(error){
+                  if (error) reject(error);
+                    resolve();
+                  });
                 });
             });
         });

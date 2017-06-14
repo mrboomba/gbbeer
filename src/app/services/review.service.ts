@@ -8,12 +8,14 @@ import {RequestOptions, Request, RequestMethod} from '@angular/http';
 @Injectable()
 export class ReviewService {
   user: any;
+  private id;
   constructor(private http: Http) {
 
   }
 
    public getReview(id :String): Observable<any> {
     console.log("getReview")
+    this.id = id;
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
 
     let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
@@ -30,13 +32,12 @@ export class ReviewService {
     return this.http.post('http://localhost:3000/api/comment', body, options).map(data => data);
   }
 
+  getBeerId():String{
+  return this.id;
+  }
+
   storeUserData(user){
-<<<<<<< HEAD
-    localStorage.setItem('user', JSON.stringify(user));
-    this.user = user;
-=======
     this.user = JSON.parse(user._body)
->>>>>>> bafe9263969a6bf00b9cd8252429cee318f26691
     console.log(this.user);
   }
   getstoreUser(){

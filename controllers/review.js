@@ -20,7 +20,15 @@ module.exports = (() => {
   }
 
   const createReview = (createObj, callback) => {
-      models.review.create(createObj).exec((err,doc) => callback(err,doc));
+      models.review.create(createObj,function(err,doc){
+        if(err){
+          callback(err);
+          return;
+        }
+        else{
+          callback(err,doc);
+        }
+      });
       return ;
   }
 

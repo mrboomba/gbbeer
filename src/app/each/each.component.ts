@@ -10,22 +10,22 @@ import {Router} from '@angular/router';
 })
 export class EachComponent implements OnInit {
 private reView ;
- 	
+
   constructor(private reviewService:ReviewService,private router: Router) {
 	this.reView= this.reviewService.getstoreUser()
   }
 
 
-public sendComment(comment:String, star:String,id: String) {
+public sendComment(comment:String, star:String) {
   let user = {
   "comment" : comment,
   "star" : star,
-  "beer":id,
+  "beer": this.reviewService.getBeerId(),
   }
   	this.reviewService.comment(user).subscribe(data => this.getUser(data))  }
 
 getUser(data) {
-  console.log(JSON.parse(data._body))
+  console.log(data._body)
 
   }
 
@@ -37,7 +37,7 @@ getUser(data) {
 
 
   ngOnInit() {
-   
+
   }
 
 

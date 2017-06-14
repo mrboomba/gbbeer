@@ -8,6 +8,7 @@ module.exports = (() => {
   const checkAuth = (req, res, next) => {
   if (!req.session.user_id) {
     req.session.redirectTo = req.headers.referer || req.originalUrl || req.url;
+    console.log(checkAuth);
     res.redirect('/#popup1');
   } else {
     next();
