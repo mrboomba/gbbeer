@@ -1,136 +1,6 @@
 webpackJsonp([1,4],{
 
-/***/ 105:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var ProductService = (function () {
-    function ProductService(http) {
-        this.http = http;
-    }
-    ProductService.prototype.getNewproduct = function () {
-        console.log("getNewproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/newcoming?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getAllproduct = function () {
-        console.log("getAllproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/all?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getBestproduct = function () {
-        console.log("getBestproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getPopproduct = function () {
-        console.log("getPopproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/popular?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.join = function (id) {
-        console.log("join");
-        var data = {
-            "id": id
-        };
-        var body = JSON.stringify(data);
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:3000/join_activity', body, options).map(function (data) { return data; });
-    };
-    ProductService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
-    ], ProductService);
-    return ProductService;
-    var _a;
-}());
-//# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/product.service.js.map
-
-/***/ }),
-
-/***/ 218:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var RegisterService = (function () {
-    function RegisterService(http) {
-        this.http = http;
-    }
-    RegisterService.prototype.register = function (data) {
-        console.log("join");
-        console.log(data);
-        var body = JSON.stringify(data);
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:3000/api/register', body, options).map(function (data) { return data; });
-    };
-    RegisterService.prototype.login = function (data) {
-        console.log("loginjoin");
-        console.log(data);
-        var body = JSON.stringify(data);
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:3000/api/login', body, options).map(function (data) { return data; });
-    };
-    RegisterService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
-    ], RegisterService);
-    return RegisterService;
-    var _a;
-}());
-//# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/register.service.js.map
-
-/***/ }),
-
-/***/ 219:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -198,6 +68,62 @@ var ReviewService = (function () {
     var _a;
 }());
 //# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/review.service.js.map
+
+/***/ }),
+
+/***/ 219:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var RegisterService = (function () {
+    function RegisterService(http) {
+        this.http = http;
+    }
+    RegisterService.prototype.register = function (data) {
+        console.log("join");
+        console.log(data);
+        var body = JSON.stringify(data);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        return this.http.post('http://localhost:3000/api/register', body, options).map(function (data) { return data; });
+    };
+    RegisterService.prototype.login = function (data) {
+        console.log("loginjoin");
+        console.log(data);
+        var body = JSON.stringify(data);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        return this.http.post('http://localhost:3000/api/login', body, options).map(function (data) { return data; });
+    };
+    RegisterService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
+    ], RegisterService);
+    return RegisterService;
+    var _a;
+}());
+//# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/register.service.js.map
 
 /***/ }),
 
@@ -361,11 +287,11 @@ var AppComponent = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_home_component__ = __webpack_require__(517);
@@ -381,9 +307,9 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__catagory_catagory_component__ = __webpack_require__(515);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__allpro_allpro_component__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__writereview_writereview_component__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_product_service__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_register_service__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_review_service__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_product_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_register_service__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_review_service__ = __webpack_require__(107);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -468,7 +394,7 @@ var AppModule = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(66);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BeerComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -517,7 +443,9 @@ var BeerComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(107);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BestsellerComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -530,15 +458,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var BestsellerComponent = (function () {
-    function BestsellerComponent(productService) {
+    function BestsellerComponent(productService, reviewService, router) {
         var _this = this;
         this.productService = productService;
+        this.reviewService = reviewService;
+        this.router = router;
         this.productService.getBestproduct().subscribe(function (data) { return _this.getBestproduct(data); });
     }
     BestsellerComponent.prototype.getBestproduct = function (data) {
         console.log(JSON.parse(data._body));
         this.bestProduct = JSON.parse(data._body);
+    };
+    BestsellerComponent.prototype.sentID = function (id) {
+        var _this = this;
+        this.reviewService.getReview(id).subscribe(function (data) {
+            _this.reviewService.storeUserData(data);
+            _this.router.navigate(['/each']);
+        });
     };
     BestsellerComponent.prototype.ngOnInit = function () {
     };
@@ -548,10 +487,10 @@ var BestsellerComponent = (function () {
             template: __webpack_require__(697),
             styles: [__webpack_require__(682)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_review_service__["a" /* ReviewService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_review_service__["a" /* ReviewService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object])
     ], BestsellerComponent);
     return BestsellerComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/bestseller.component.js.map
 
@@ -562,6 +501,7 @@ var BestsellerComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(66);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -573,8 +513,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CartComponent = (function () {
-    function CartComponent() {
+    function CartComponent(productService) {
+        this.productService = productService;
     }
     CartComponent.prototype.ngOnInit = function () {
     };
@@ -584,9 +526,10 @@ var CartComponent = (function () {
             template: __webpack_require__(698),
             styles: [__webpack_require__(683)]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object])
     ], CartComponent);
     return CartComponent;
+    var _a;
 }());
 //# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/cart.component.js.map
 
@@ -632,8 +575,8 @@ var CatagoryComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_review_service__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_review_service__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(104);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EachComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -744,7 +687,7 @@ var HomeComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(219);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -794,6 +737,7 @@ var LoginComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(66);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -805,10 +749,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NavbarComponent = (function () {
-    function NavbarComponent() {
+    function NavbarComponent(productService) {
+        this.productService = productService;
     }
     NavbarComponent.prototype.ngOnInit = function () {
+    };
+    NavbarComponent.prototype.sendService = function () {
+        var _this = this;
+        this.productService.getCartproduct().subscribe(function (data) { return _this.getcart(data); });
+    };
+    NavbarComponent.prototype.getcart = function (data) {
+        console.log(JSON.parse(data._body));
     };
     NavbarComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -816,9 +769,10 @@ var NavbarComponent = (function () {
             template: __webpack_require__(703),
             styles: [__webpack_require__(688)]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object])
     ], NavbarComponent);
     return NavbarComponent;
+    var _a;
 }());
 //# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/navbar.component.js.map
 
@@ -829,9 +783,9 @@ var NavbarComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(107);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewproductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -854,6 +808,10 @@ var NewproductComponent = (function () {
         this.router = router;
         this.productService.getNewproduct().subscribe(function (data) { return _this.getNewProduct(data); });
     }
+    NewproductComponent.prototype.sentIDToCart = function (id) {
+        var _this = this;
+        this.productService.getSendToCartproduct(id).subscribe(function (data) { return _this.getaddcart(data); });
+    };
     NewproductComponent.prototype.sentID = function (id) {
         var _this = this;
         this.reviewService.getReview(id).subscribe(function (data) {
@@ -861,11 +819,14 @@ var NewproductComponent = (function () {
             _this.router.navigate(['/each']);
         });
     };
-    NewproductComponent.prototype.ngOnInit = function () {
-    };
     NewproductComponent.prototype.getNewProduct = function (data) {
         console.log(JSON.parse(data._body));
         this.newProduct = JSON.parse(data._body);
+    };
+    NewproductComponent.prototype.getaddcart = function (data) {
+        console.log(JSON.parse(data._body));
+    };
+    NewproductComponent.prototype.ngOnInit = function () {
     };
     NewproductComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -887,7 +848,7 @@ var NewproductComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_register_service__ = __webpack_require__(219);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -943,7 +904,9 @@ var RegisterComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(107);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -956,10 +919,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var ReviewComponent = (function () {
-    function ReviewComponent(productService) {
+    function ReviewComponent(productService, reviewService, router) {
         var _this = this;
         this.productService = productService;
+        this.reviewService = reviewService;
+        this.router = router;
         this.productService.getPopproduct().subscribe(function (data) { return _this.getPopproduct(data); });
     }
     ReviewComponent.prototype.getPopproduct = function (data) {
@@ -974,10 +941,10 @@ var ReviewComponent = (function () {
             template: __webpack_require__(706),
             styles: [__webpack_require__(691)]
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_review_service__["a" /* ReviewService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__services_review_service__["a" /* ReviewService */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object])
     ], ReviewComponent);
     return ReviewComponent;
-    var _a;
+    var _a, _b, _c;
 }());
 //# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/review.component.js.map
 
@@ -1034,6 +1001,92 @@ var environment = {
 
 /***/ }),
 
+/***/ 66:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(64);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ProductService = (function () {
+    function ProductService(http) {
+        this.http = http;
+    }
+    ProductService.prototype.getNewproduct = function () {
+        console.log("getNewproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/newcoming?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getAllproduct = function () {
+        console.log("getAllproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/all?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getBestproduct = function () {
+        console.log("getBestproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getPopproduct = function () {
+        console.log("getPopproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/popular?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getSendToCartproduct = function (id) {
+        console.log("getSendToCartproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/addtocart/' + id, options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getCartproduct = function () {
+        console.log("getCartproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/cart', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.join = function (id) {
+        console.log("join");
+        var data = {
+            "id": id
+        };
+        var body = JSON.stringify(data);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        return this.http.post('http://localhost:3000/join_activity', body, options).map(function (data) { return data; });
+    };
+    ProductService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
+    ], ProductService);
+    return ProductService;
+    var _a;
+}());
+//# sourceMappingURL=/home/mrboomba/Desktop/gbbeer/gbbeer/src/product.service.js.map
+
+/***/ }),
+
 /***/ 678:
 /***/ (function(module, exports) {
 
@@ -1072,7 +1125,7 @@ module.exports = "#bestseller{\n    margin: 30px 30px 0 30px;\n\n}\n#no{\n  marg
 /***/ 683:
 /***/ (function(module, exports) {
 
-module.exports = "#content{\n\toverflow-x: hidden;\n\theight: 800px;\n\tbackground-color: #FFF;\n\tmargin:5%;\n\t border: 1px solid #D2D2D2;\n}\n#cart{\n\tmargin-left: 3%;\n\tmargin-bottom: 5%;\n}\n#proincart{\n\tborder: 1px solid #D2D2D2;\n\tmargin: 5px;\n\tpadding: 2%;\n}#ADD{\n    color: #000;\n    background-color: #F0D041;\n    border: 1px solid #818181;\n    height: 30px;\n} \n#addto{\n    margin: 0;\n    font-size: 100%;\n}ul{ \n    /*text-align:center;*/\n    padding: 0;\n    margin: 0; \n}\n\n#centeredmenu ul li #each {\n   display:block;\n   margin:20px 0 0 40px;\n   padding:3px 10px;\n   background:#FFF;\n   color:#000;\n   text-decoration:none;\n   line-height:1.3em;\n   height: 360px;\n   width:250px;\n}\n\n#centeredmenu ul li #each:hover {\n   background:#F0D041;\n   color:#fff;\n}\nul li {\n    position: relative;\n    text-align: center;\n    display: inline-block;\n    vertical-align: top;\n} \n#col{\n\tmargin-top: 15%;\n}"
+module.exports = "#content{\n\toverflow-x: hidden;\n\theight: 800px;\n\tbackground-color: #FFF;\n\tmargin:5%;\n\t border: 1px solid #D2D2D2;\n}\n#cart{\n\tmargin-left: 3%;\n\tmargin-bottom: 5%;\n}\n#proincart{\n\tborder: 1px solid #D2D2D2;\n\tmargin: 5px;\n\tpadding: 2%;\n}#ADD{\n    color: #000;\n    background-color: #F0D041;\n    border: 1px solid #818181;\n    height: 30px;\n} \n#addto{\n    margin: 0;\n    font-size: 100%;\n}ul{ \n    /*text-align:center;*/\n    padding: 0;\n    margin: 0; \n}\n\n#centeredmenu ul li #each {\n   display:block;\n   margin:20px 0 0 40px;\n   padding:3px 10px;\n   background:#FFF;\n   color:#000;\n   text-decoration:none;\n   line-height:1.3em;\n   height: 280px;\n   width:250px;\n}\n\n#centeredmenu ul li #each:hover {\n   background:#F0D041;\n   color:#fff;\n}\nul li {\n    position: relative;\n    text-align: center;\n    display: inline-block;\n    vertical-align: top;\n} \n#col{\n\tmargin-top: 10%;\n}"
 
 /***/ }),
 
@@ -1177,7 +1230,7 @@ module.exports = "<div id=\"bestseller\">\n    <header>\n        <div>\n        
 /***/ 698:
 /***/ (function(module, exports) {
 
-module.exports = "<app-advertise></app-advertise>\n<div id=\"content1\">\n    <div id=\"content\">\n        <h3 id=\"cart\"><b>CART</b></h3>\n        <div class=\"row\">\n            <div class=\"col-lg-4\"></div>\n            <div class=\"col-lg-2\">Description</div>\n            <div class=\"col-lg-2\">Price</div>\n            <div class=\"col-lg-2\">amount</div>\n            <div class=\"col-lg-2\">Total</div>\n        </div>\n        <div id=\"proincart\">\n            <div class=\"row\">\n            <div class=\"col-lg-4\">\n            \t<div id=\"centeredmenu\">\n                <ul>\n                <!-- *ngFor=\"let product of bestProduct; let i = index; trackBy: trackByFn\" -->\n                    <li  >\n                        <div id=\"each\" >\n                            <a href=\"\">\n                                <img src=\"http://localhost:3000/view/img/kirin.jpg\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                                <br>\n                                <br>\n                            </a>\n                            <h3></h3>\n                            <br>\n                            <h3> Bath.</h3>\n                            <br>\n                            <button id=\"ADD\">\n                                <h3 id=\"addto\">ADD TO CART</h3></button>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n            </div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n        </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<app-advertise></app-advertise>\n<div id=\"content1\">\n    <div id=\"content\">\n        <h3 id=\"cart\"><b>CART</b></h3>\n        <div class=\"row\">\n            <div class=\"col-lg-4\"></div>\n            <div class=\"col-lg-2\">Description</div>\n            <div class=\"col-lg-2\">Price</div>\n            <div class=\"col-lg-2\">amount</div>\n            <div class=\"col-lg-2\">Total</div>\n        </div>\n        <div id=\"proincart\">\n            <div class=\"row\">\n            <div class=\"col-lg-4\">\n            \t<div id=\"centeredmenu\">\n                <ul>\n                <!-- *ngFor=\"let product of bestProduct; let i = index; trackBy: trackByFn\" -->\n                    <li  >\n                        <div id=\"each\" >\n                            <a href=\"\">\n                                <img src=\"\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                                <br>\n                                <br>\n                            </a>\n                            <h3></h3>\n                            <br>\n                           \n                            <!-- <button id=\"ADD\"> -->\n                                <!-- <h3 id=\"addto\">ADD TO CART</h3></button> -->\n                        </div>\n                    </li>\n                </ul>\n            </div>\n            </div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n            <div class=\"col-lg-2\" id=\"col\">test</div>\n        </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1191,7 +1244,7 @@ module.exports = "<p>\n  catagory works!\n</p>\n"
 /***/ 700:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" id=\"maincontent\">\n    <div class=\"col-lg-5\" id=\"pic\">\n        <img src='{{img}}' id=\"imgeach\">\n    </div>\n    <div class=\"col-lg-7\" id=\"detail\">\n        <div id=\"content\">\n            <h3 id=\"name1\"><b>  {{name}}. </b></h3>\n            <hr>\n            <h3 id=\"name\"><b>Brand:</b> {{brand}}.</h3>\n            <h3 id=\"name\"><b>Country:</b> {{country}}.</h3>\n            <h3 id=\"name\"><b>Color:</b>  {{color}}.</h3>\n            <h3 id=\"name\"><b>ABV%:</b> {{degree}}.</h3>\n            <h3 id=\"name\"><b>Price:</b>  {{price}} Bath.</h3>\n            <h3 id=\"name\"><b>Type:</b>  {{type}}.</h3>\n\n\n            <button id=\"addtocart\"><b>ADD TO CART </b><img id=\"imgcart\" src=\"assets/cart.png\"></button>\n        </div>\n    </div>\n</div>\n<hr>\n<div id=\"review\">\n    <div class=\"row\">\n        <div class=\"col-lg-1\"></div>\n        <div class=\"col-lg-8\">\n        <h3><b>REVIEW</b></h3>\n            <div id=\"bor\">\n\n            <ul>\n                <li *ngFor=\"let review of reView; let i = index; trackBy: trackByFn\">\n                    <div class=\"row\">\n\n                        <!-- <div class=\"col-lg-1\"> -->\n                            <h5>{{review.name}}</h5>\n                            <h5>{{review.date}}</h5>\n\n                        <!-- <div class=\"col-lg-7\" id=\"com\"> -->\n                            <h4>{{review.comment}}</h4>\n\n                    </div>\n\n                </li>\n\n            </ul>\n            </div>\n            <div id=\"textwrite\">\n                <h5><b>Write Review</b></h5>\n                <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"textarea\" placeholder=\"comment\" value=\"gmine\"></textarea><br>\n                <h6><b>Select Rating</b></h6>\n                <fieldset class=\"rating\">\n                    <input type=\"radio\" id=\"star5\" [(ngModel)]=\"rate\" name=\"rating\" value=\"5\" />\n                    <label class=\"full\" for=\"star5\" title=\"Awesome - 5 stars\"></label>\n                    <input type=\"radio\" id=\"star4half\" [(ngModel)]=\"rate\"  name=\"rating\" value=\"4.5\" />\n                    <label class=\"half\" for=\"star4half\" title=\"Pretty good - 4.5 stars\"></label>\n                    <input type=\"radio\" id=\"star4\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4\" />\n                    <label class=\"full\" for=\"star4\" title=\"Pretty good - 4 stars\"></label>\n                    <input type=\"radio\" id=\"star3half\" [(ngModel)]=\"rate\"  name=\"rating\" value=\"3.5\" />\n                    <label class=\"half\" for=\"star3half\" title=\"Meh - 3.5 stars\"></label>\n                    <input type=\"radio\" id=\"star3\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3\" />\n                    <label class=\"full\" for=\"star3\" title=\"Meh - 3 stars\"></label>\n                    <input type=\"radio\" id=\"star2half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2.5\" />\n                    <label class=\"half\" for=\"star2half\" title=\"Kinda bad - 2.5 stars\"></label>\n                    <input type=\"radio\" id=\"star2\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2\" />\n                    <label class=\"full\" for=\"star2\" title=\"Kinda bad - 2 stars\"></label>\n                    <input type=\"radio\" id=\"star1half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1.5\" />\n                    <label class=\"half\" for=\"star1half\" title=\"Meh - 1.5 stars\"></label>\n                    <input type=\"radio\" id=\"star1\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1\" />\n                    <label class=\"full\" for=\"star1\" title=\"Sucks big time - 1 star\"></label>\n                    <input type=\"radio\" id=\"starhalf\" [(ngModel)]=\"rate\" name=\"rating\" value=\"0.5\" />\n                    <label class=\"half\" for=\"starhalf\" title=\"Sucks big time - 0.5 stars\"></label>\n                </fieldset>\n                <!-- <h1>{{rate}}</h1> -->\n            </div>\n            <div class=\"col-lg-3\" id=\"sarm\">\n                <button id=\"writereview\" (click)='sendComment(textarea,rate)'><b>Submit</b></button>\n                <!-- [routerLink]=\"['/writereview']\" -->\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\" id=\"maincontent\">\n    <div class=\"col-lg-5\" id=\"pic\">\n        <img src='{{img}}' id=\"imgeach\">\n    </div>\n    <div class=\"col-lg-7\" id=\"detail\">\n        <div id=\"content\">\n            <h3 id=\"name1\"><b>  {{name}}. </b></h3>\n            <hr>\n            <h3 id=\"name\"><b>Brand:</b> {{brand}}.</h3>\n            <h3 id=\"name\"><b>Country:</b> {{country}}.</h3>\n            <h3 id=\"name\"><b>Color:</b>  {{color}}.</h3>\n            <h3 id=\"name\"><b>ABV%:</b> {{degree}}.</h3>\n            <h3 id=\"name\"><b>Price:</b>  {{price}} Bath.</h3>\n            <h3 id=\"name\"><b>Type:</b>  {{type}}.</h3>\n            <h3 id=\"name\"><b>Type:</b>  {{date | date: 'dd/MM/yyyy'}}.</h3>\n\n\n            <button id=\"addtocart\"><b>ADD TO CART </b><img id=\"imgcart\" src=\"assets/cart.png\"></button>\n        </div>\n    </div>\n</div>\n<hr>\n<div id=\"review\">\n    <div class=\"row\">\n        <div class=\"col-lg-1\"></div>\n        <div class=\"col-lg-8\">\n        <h3><b>REVIEW</b></h3>\n            <div id=\"bor\">\n\n            <ul>\n                <li *ngFor=\"let review of reView; let i = index; trackBy: trackByFn\">\n                    <div class=\"row\">\n\n                        <!-- <div class=\"col-lg-1\"> -->\n\n                            <h5>{{review.name}}</h5>\n                            <h5>{{review.date}}</h5>\n\n                        <!-- <div class=\"col-lg-7\" id=\"com\"> -->\n                            <h4>{{review.comment}}</h4>\n\n                    </div>\n\n                </li>\n\n            </ul>\n            </div>\n            <div id=\"textwrite\">\n                <h5><b>Write Review</b></h5>\n                <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"textarea\" placeholder=\"comment\" value=\"gmine\"></textarea><br>\n                <h6><b>Select Rating</b></h6>\n                <fieldset class=\"rating\">\n                    <input type=\"radio\" id=\"star5\" [(ngModel)]=\"rate\" name=\"rating\" value=\"5\" />\n                    <label class=\"full\" for=\"star5\" title=\"Awesome - 5 stars\"></label>\n                    <input type=\"radio\" id=\"star4half\" [(ngModel)]=\"rate\"  name=\"rating\" value=\"4.5\" />\n                    <label class=\"half\" for=\"star4half\" title=\"Pretty good - 4.5 stars\"></label>\n                    <input type=\"radio\" id=\"star4\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4\" />\n                    <label class=\"full\" for=\"star4\" title=\"Pretty good - 4 stars\"></label>\n                    <input type=\"radio\" id=\"star3half\" [(ngModel)]=\"rate\"  name=\"rating\" value=\"3.5\" />\n                    <label class=\"half\" for=\"star3half\" title=\"Meh - 3.5 stars\"></label>\n                    <input type=\"radio\" id=\"star3\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3\" />\n                    <label class=\"full\" for=\"star3\" title=\"Meh - 3 stars\"></label>\n                    <input type=\"radio\" id=\"star2half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2.5\" />\n                    <label class=\"half\" for=\"star2half\" title=\"Kinda bad - 2.5 stars\"></label>\n                    <input type=\"radio\" id=\"star2\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2\" />\n                    <label class=\"full\" for=\"star2\" title=\"Kinda bad - 2 stars\"></label>\n                    <input type=\"radio\" id=\"star1half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1.5\" />\n                    <label class=\"half\" for=\"star1half\" title=\"Meh - 1.5 stars\"></label>\n                    <input type=\"radio\" id=\"star1\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1\" />\n                    <label class=\"full\" for=\"star1\" title=\"Sucks big time - 1 star\"></label>\n                    <input type=\"radio\" id=\"starhalf\" [(ngModel)]=\"rate\" name=\"rating\" value=\"0.5\" />\n                    <label class=\"half\" for=\"starhalf\" title=\"Sucks big time - 0.5 stars\"></label>\n                </fieldset>\n                <!-- <h1>{{rate}}</h1> -->\n            </div>\n            <div class=\"col-lg-3\" id=\"sarm\">\n                <button id=\"writereview\" (click)='sendComment(textarea,rate)'><b>Submit</b></button>\n                <!-- [routerLink]=\"['/writereview']\" -->\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1212,14 +1265,14 @@ module.exports = "<div class=\"content\">\n        <h5><b>Username</b></h5>\n   
 /***/ 703:
 /***/ (function(module, exports) {
 
-module.exports = "\n      <nav class=\"navbar navbar-default\" >\n        <div class=\"container-fluid\">\n          <div id=\"navbar\" class=\"navbar-collapse collapse\">\n            <ul class=\"nav navbar-nav\">\n              <li class=\"\"><a [routerLink]=\"['']\"><h4>HOME</h4></a></li>\n              <li><a [routerLink]=\"['/beer']\"><h4>BEER</h4></a></li>\n            </ul>\n            <ul class=\"nav navbar-nav navbar-right\">\n               <!-- <li *ngIf=\"!cart\"><img [routerLink]=\"['/cart']\"   id=\"imgcart\" src=\"assets/cart.png\"></li> -->\n               <li ><img [routerLink]=\"['/cart']\"   id=\"imgcart\" src=\"assets/cart.png\"></li>\n               <!-- <li *ngIf=\"cart\"><img [routerLink]=\"['/cart']\"   id=\"imgcart\" src=\"assets/redcart.png\"></li> -->\n            </ul>\n          </div>\n        </div>\n      </nav>\n    "
+module.exports = "\n      <nav class=\"navbar navbar-default\" >\n        <div class=\"container-fluid\">\n          <div id=\"navbar\" class=\"navbar-collapse collapse\">\n            <ul class=\"nav navbar-nav\">\n              <li class=\"\"><a [routerLink]=\"['']\"><h4>HOME</h4></a></li>\n              <li><a [routerLink]=\"['/beer']\"><h4>BEER</h4></a></li>\n            </ul>\n            <ul class=\"nav navbar-nav navbar-right\">\n               <!-- <li *ngIf=\"!cart\"><img [routerLink]=\"['/cart']\"   id=\"imgcart\" src=\"assets/cart.png\"></li> -->\n               <li ><img [routerLink]=\"['/cart']\"  (click)='sendService()' id=\"imgcart\" src=\"assets/cart.png\"></li>\n               <!-- <li *ngIf=\"cart\"><img [routerLink]=\"['/cart']\"   id=\"imgcart\" src=\"assets/redcart.png\"></li> -->\n            </ul>\n          </div>\n        </div>\n      </nav>\n    "
 
 /***/ }),
 
 /***/ 704:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"newproduct\">\n\t<header>\n\t\t<div>\n\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<h1>NEW PRODUCTS</h1>\n\t\t\t<span class=\"spacer\"></span>\n\t\t</div>\n\t</header>\n\n\n\n<div id=\"centeredmenu\">\n  <ul >\n      <li *ngFor=\"let product of newProduct; let i = index; trackBy: trackByFn\">\n      <div id=\"each\" *ngIf = \"i<4\">\n      <a [routerLink]=\"['/each']\" (click)='sentID(product._id)' >\n\t\t\t<img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\"><br><br>\n      </a>\n      \t <h3>{{product.name}} .</h3><br>\n     \t\t <h3>{{product.price}} Bath.</h3><br>\n      \t\t<button id=\"ADD\"><h3 >ADD TO CART</h3></button>\n      </div>\n      </li>\n   </ul>\n</div>\n\n\n\t<div id=\"button\">\n\t\t<button id=\"seemore\" [routerLink]=\"['/beer']\"><h3 >SEE MORE</h3></button>\n\t</div>\n</div>\n"
+module.exports = "<div id=\"newproduct\">\n\t<header>\n\t\t<div>\n\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<h1>NEW PRODUCTS</h1>\n\t\t\t<span class=\"spacer\"></span>\n\t\t</div>\n\t</header>\n\n\n\n<div id=\"centeredmenu\">\n  <ul >\n      <li *ngFor=\"let product of newProduct; let i = index; trackBy: trackByFn\">\n      <div id=\"each\" *ngIf = \"i<4\">\n      <a [routerLink]=\"['/each']\" (click)='sentID(product._id)' >\n\t\t\t<img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\"><br><br>\n      </a>\n      \t <h3>{{product.name}} .</h3><br>\n     \t\t <h3>{{product.price}} Bath.</h3><br>\n      \t\t<button id=\"ADD\" (click)='sentIDToCart(product._id)'><h3 >ADD TO CART</h3></button>\n      </div>\n      </li>\n   </ul>\n</div>\n\n\n\t<div id=\"button\">\n\t\t<button id=\"seemore\" [routerLink]=\"['/beer']\"><h3 >SEE MORE</h3></button>\n\t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1233,7 +1286,7 @@ module.exports = "<div class=\"content\">\n    <div class=\"row\">\n        <div
 /***/ 706:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"review\">\n    <header>\n        <div>\n            <span class=\"spacer\"></span>\n            <h1>REVIEW</h1>\n            <span class=\"spacer\"></span>\n        </div>\n    </header>\n    <div id=\"centeredmenu\">\n        <ul>\n            <li *ngFor=\"let product of popProduct; let i = index; trackBy: trackByFn \">\n                <div id=\"each\">\n                    <a [routerLink]=\"['/each']\">\n                        <img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                        <br>\n                        <br>\n                    </a>\n                    <h3>{{product.name}}</h3>\n                    <h3>{{product.price}}</h3>\n                    <br>\n                    <span>star review</span>\n                    <br>\n                    <button id=\"seemore\">\n                        <h3>ADD TO CART</h3></button>\n                </div>\n            </li>\n        </ul>\n        <div   *ngIf=\"product==null\">\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\n        </div>\n    </div>\n    <div id=\"button\">\n        <button id=\"seemore\" *ngIf=\"product!=null\" [routerLink]=\"['/beer']\">\n            <h3>SEE MORE</h3></button>\n    </div>\n</div>\n"
+module.exports = "<div id=\"review\">\n    <header>\n        <div>\n            <span class=\"spacer\"></span>\n            <h1>REVIEW</h1>\n            <span class=\"spacer\"></span>\n        </div>\n    </header>\n    <div id=\"centeredmenu\">\n        <ul>\n            <li *ngFor=\"let product of popProduct; let i = index; trackBy: trackByFn \">\n                <div id=\"each\">\n                    <a [routerLink]=\"['/each']\" (click)='sentID(product._id)'>\n                        <img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                        <br>\n                        <br>\n                    </a>\n                    <h3>{{product.name}}</h3>\n                    <h3>{{product.price}}</h3>\n                    <br>\n                    <span>star review</span>\n                    <br>\n                    <button id=\"seemore\">\n                        <h3>ADD TO CART</h3></button>\n                </div>\n            </li>\n        </ul>\n        <div   *ngIf=\"product==null\">\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\n        </div>\n    </div>\n    <div id=\"button\">\n        <button id=\"seemore\" *ngIf=\"product!=null\" [routerLink]=\"['/beer']\">\n            <h3>SEE MORE</h3></button>\n    </div>\n</div>\n"
 
 /***/ }),
 

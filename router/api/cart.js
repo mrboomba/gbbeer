@@ -29,12 +29,14 @@ module.exports = (() => {
 
     ModelControllers.beer.getBeer({'_id':productId},(err,beer) =>{
       if(err){
-        return res.redirect('/');
+        return res.json({'status':'fail'});
       }
+      if(beer){
       cart.add(beer,beer._id);
       req.session.cart = cart;
       console.log(req.session.cart);
       res.json({'status':'success'});
+    }
     })
   });
 

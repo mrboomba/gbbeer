@@ -50,7 +50,7 @@ export class ProductService {
     return this.http.get('http://localhost:3000/api/addtocart/'+id, options).map(data => data);
   }
 
-  public getCartproduct(id :String): Observable<any> {
+  public getCartproduct(): Observable<any> {
     console.log("getCartproduct")
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
 
