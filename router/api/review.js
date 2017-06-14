@@ -10,7 +10,7 @@ module.exports = (() => {
   if (!req.session.user_id) {
     req.session.redirectTo = req.headers.referer || req.originalUrl || req.url;
     console.log('checkAuth');
-    res.redirect('localhost:3000/#popup1');
+    res.redirect('localhost:3000/#popup');
   } else {
     next();
   }

@@ -10,17 +10,41 @@ import {Router} from '@angular/router';
 })
 export class EachComponent implements OnInit {
 private reView ;
+private id;
 
   constructor(private reviewService:ReviewService,private router: Router) {
-	this.reView= this.reviewService.getstoreUser()
+	//this.reView= this.reviewService.getstoreUser()
+  this.id = this.reviewService.getstoreUser()
+  console.log(this.id)
+  this.reviewService.getReview(this.id).subscribe(data => this.getReview(data))
+  /*this.reView= [{
+    'name':'eiei',
+    'date':11,
+    'comment':"dfdssds"
+    },{
+    'name':'eiei',
+    'date':11,
+    'comment':"dfdssds"
+    },{
+    'name':'eiei',
+    'date':11,
+    'comment':"dfdssds"
+    },{
+    'name':'eiei',
+    'date':11,
+    'comment':"dfdssds"
+    }]*/
   }
 
+  public getReview(data){
+  this.reView= JSON.parse(data._body).beer
+  }
 
 public sendComment(comment:String, star:String) {
   let user = {
   "comment" : comment,
   "star" : star,
-  "beer": this.reviewService.getBeerId(),
+  "beer":this.id
   }
   	this.reviewService.comment(user).subscribe(data => this.getUser(data))  }
 
@@ -32,6 +56,7 @@ getUser(data) {
  getReProduct(data) {
   console.log(JSON.parse(data._body))
   this.reView  = JSON.parse(data._body)
+  console.log(this.reView)
   }
 
 

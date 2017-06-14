@@ -38,10 +38,10 @@ export class ReviewService {
 
   storeUserData(user){
     this.user = JSON.parse(user._body)
-    console.log(this.user);
+     
   }
   getstoreUser(){
-  return this.user;
+  return this.id;
   }
 
 
