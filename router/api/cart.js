@@ -23,31 +23,31 @@ module.exports = (() => {
   return ;
   }
 
-  router.get('/review/:id',function(req,res){
+  router.get('/addtocart/:id',checkAuth,function(req,res){
     var productId = req.params.id;
-    ModelControllers.review.getReviewByBeerId({'_id':productId},(err,beer) =>{
+    var cart = new Cart(req.session.cart ? req.session.cart : {items:{}});
+
+    ModelControllers.beer.getBeer({'_id':productId},(err,beer) =>{
       if(err){
-        return res.json({'status':'false'});
+        return res.redirect('/');
       }
-      beer['status'] = 'success';
-      res.json(beer);
+      cart.add(beer,beer._id);
+      req.session.cart = cart;
+      console.log(req.session.cart);
+      res.json({'status':'success'});
     })
   });
 
-  router.post('/comment',checkAuth,function(req,res){
-    var createObj =req.body;
-    createObj['user'] = req.session.user_id;
-    ModelControllers.review.createReview(createObj,(err,doc)=>{
-      if(err) res.status(500).json({'status':false});
-      else res.status(200).json({'status':'success'});
-    });
-  });
+  router.get('/cart',checkAuth,function(req,res) {
+    if(!req.session.cart){
+      res.json({'status':'empty'});
+    }
+    else{
+      var cart = new Cart(req.session.cart);
+    res.json({beers:cart.generateArray(),totalPrice: cart.totalPrice});
+  }
+});
 
 
-
-
-
-
-
-    return router;
+  return router;
 })();
