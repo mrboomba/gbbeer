@@ -22,10 +22,7 @@ constructor(private productService:ProductService,private reviewService:ReviewSe
   
    
   }
-  
-public sentIDToCart(id :String) {
-    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
-  }
+
 
 
   public sentID(id :String) {
@@ -35,11 +32,15 @@ public sentIDToCart(id :String) {
     });
   }
 
+public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
 
   getNewProduct(data) {
   console.log(JSON.parse(data._body))
   this.newProduct  = JSON.parse(data._body)
   }
+
 
  getaddcart(data){
   console.log(JSON.parse(data._body))
