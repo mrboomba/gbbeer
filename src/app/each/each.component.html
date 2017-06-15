@@ -13,9 +13,7 @@
             <h3 id="name"><b>Price:</b>  {{price}} Bath.</h3>
             <h3 id="name"><b>Type:</b>  {{type}}.</h3>
             <h3 id="name"><b>Type:</b>  {{date | date: 'dd/MM/yyyy'}}.</h3>
-
-
-            <button id="addtocart"><b>ADD TO CART </b><img id="imgcart" src="assets/cart.png"></button>
+            <button id="addtocart" (click)='sentIDToCart(id)'><b>ADD TO CART </b><img id="imgcart" src="assets/cart.png"></button>
         </div>
     </div>
 </div>
@@ -24,39 +22,31 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-8">
-        <h3><b>REVIEW</b></h3>
+            <h3><b>REVIEW</b></h3>
             <div id="bor">
-
-            <ul>
-                <li *ngFor="let review of reView; let i = index; trackBy: trackByFn">
-                    <div class="row">
-
-                        <!-- <div class="col-lg-1"> -->
-
-                            <h5>{{review.name}}</h5>
-                            <h5>{{review.date}}</h5>
-
-                        <!-- <div class="col-lg-7" id="com"> -->
-                            <h4>{{review.comment}}</h4>
-
-                    </div>
-
-                </li>
-
-            </ul>
+                <ul>
+                    <li *ngFor="let review of reView; let i = index; trackBy: trackByFn">
+                        <div class="row" id="left">
+                            <h5><b>Name:</b> {{review.name}}</h5>
+                            <h5><b>Date:</b>{{review.date}}</h5>
+                            <h4><b>Comment:</b>{{review.comment}}</h4>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div id="textwrite">
                 <h5><b>Write Review</b></h5>
-                <textarea rows="4" cols="37" [(ngModel)]="textarea" placeholder="comment" value="gmine"></textarea><br>
+                <textarea rows="4" cols="37" [(ngModel)]="textarea" placeholder="comment" value="gmine"></textarea>
+                <br>
                 <h6><b>Select Rating</b></h6>
                 <fieldset class="rating">
                     <input type="radio" id="star5" [(ngModel)]="rate" name="rating" value="5" />
                     <label class="full" for="star5" title="Awesome - 5 stars"></label>
-                    <input type="radio" id="star4half" [(ngModel)]="rate"  name="rating" value="4.5" />
+                    <input type="radio" id="star4half" [(ngModel)]="rate" name="rating" value="4.5" />
                     <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
                     <input type="radio" id="star4" [(ngModel)]="rate" name="rating" value="4" />
                     <label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                    <input type="radio" id="star3half" [(ngModel)]="rate"  name="rating" value="3.5" />
+                    <input type="radio" id="star3half" [(ngModel)]="rate" name="rating" value="3.5" />
                     <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
                     <input type="radio" id="star3" [(ngModel)]="rate" name="rating" value="3" />
                     <label class="full" for="star3" title="Meh - 3 stars"></label>

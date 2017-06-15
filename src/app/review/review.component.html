@@ -25,12 +25,12 @@
                 </div>
             </li>
         </ul>
-        <div   *ngIf="product==null">
+        <div   *ngIf="popProduct2===0">
              <div id="no"><h3 id="nono">NO PRODUCT YET</h3></div>
         </div>
     </div>
     <div id="button">
-        <button id="seemore" *ngIf="product!=null" [routerLink]="['/beer']">
+        <button id="seemore" *ngIf="popProduct!=0" [routerLink]="['/beer']">
             <h3>SEE MORE</h3></button>
     </div>
 </div>

@@ -18,6 +18,9 @@
     text-transform: uppercase;
 	margin-top: 20px;
 }
+#left{
+	text-align: left;
+}
 #pic{
 	
 	 text-align: right;

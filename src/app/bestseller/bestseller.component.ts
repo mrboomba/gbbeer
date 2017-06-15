@@ -14,12 +14,14 @@ import {RegisterService} from '../services/register.service';
 export class BestsellerComponent implements OnInit {
 
   private bestProduct ;
+  private bestProduct2 ;
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getBestproduct().subscribe(data => this.getBestproduct(data)) }
 
   getBestproduct(data) {
   console.log(JSON.parse(data._body))
+  this.bestProduct2  = JSON.parse(data._body).length
   this.bestProduct  = JSON.parse(data._body)
   }
    public sentID(id :String) {

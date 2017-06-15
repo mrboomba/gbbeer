@@ -31,6 +31,21 @@ export class RegisterService {
     return this.http.post('http://localhost:3000/api/login', body, options).map(data => data);
   }
 
+   public checkAuth(): Observable<any> {
+    console.log("checkAuth")
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/islogin', options).map(data => data);
+  }
+
+public logout(): Observable<any> {
+    console.log("logoutlogouts")
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+
+    let options = new RequestOptions({ method: RequestMethod.Get, headers: headers });
+    return this.http.get('http://localhost:3000/api/logout', options).map(data => data);
+  }
 
 
 
