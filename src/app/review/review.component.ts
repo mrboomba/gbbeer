@@ -13,14 +13,30 @@ import {RegisterService} from '../services/register.service';
 export class ReviewComponent implements OnInit {
 
   private popProduct ;
+  private popProduct2 ;
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getPopproduct().subscribe(data => this.getPopproduct(data)) }
 
   getPopproduct(data) {
   console.log(JSON.parse(data._body))
+  this.popProduct2  = JSON.parse(data._body).length
   this.popProduct  = JSON.parse(data._body)
+  console.log(this.popProduct2)
   }
+
+  public sentID(id :String) {
+    this.reviewService.getReview(id).subscribe(data => {
+    this.reviewService.storeUserData(data);
+      this.router.navigate(['/each']);
+    });
+  }
+  public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
 
   ngOnInit() {
   }

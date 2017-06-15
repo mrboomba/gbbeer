@@ -18,17 +18,17 @@
                     <h3>{{product.name}}</h3>
                     <h3>{{product.price}}</h3>
                     <br>
-                    <button id="ADD">
-                        <h3>ADD TO CART</h3></button>
+                    <button id="ADD" (click)='sentIDToCart(product._id)'>
+                        <h3 >ADD TO CART</h3></button>
                 </div>
             </li>
         </ul>
-        <div   *ngIf="product==null">
+        <div   *ngIf="bestProduct2===0">
              <div id="no"><h3 id="nono">NO PRODUCT YET</h3></div>
         </div>
     </div>
     <div id="button">
-        <button id="seemore" *ngIf="product!=null"  [routerLink]="['/beer']">
+        <button id="seemore" *ngIf="bestProduct2!=0"  [routerLink]="['/beer']">
             <h3>SEE MORE</h3></button>
     </div>
 </div>

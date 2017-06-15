@@ -1,9 +1,19 @@
 #content{
 	overflow-x: hidden;
-	height: 800px;
+	/*height: 800px;*/
 	background-color: #FFF;
 	margin:5%;
 	 border: 1px solid #D2D2D2;
+}#no{
+  margin: 1%;
+  border: 1px solid #E5E5E5;
+  height: 300px;
+  text-align: center;
+  background-color: #F1F1F1;
+}
+#nono{
+  margin-top: 10%;
+  font-size: 30px;
 }
 
 #addtocart{
@@ -13,12 +23,17 @@
   border-radius: 10px;
   width: 30%;
   height: 50px;
-  right: 400px;
-  position: absolute;
-  bottom: 400px;
+  /*right: 400px;*/
+  /*position: absolute;*/
+  margin: 2%;
+  /*bottom: 0px;*/
+}#sub{
+  text-align: center;
 }
 
 #total{
+  margin-bottom: 2%;
+  margin-top: 2%;
    margin-right: 16%;
    /*border: 1px solid black;*/
    text-align: right;

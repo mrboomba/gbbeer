@@ -10,38 +10,39 @@
         </div>
         <div id="proincart" *ngFor="let crt of cart; let i = index; trackBy: trackByFn">
             <div class="row">
-            <div class="col-lg-4">
-            	<div id="centeredmenu">
-                <ul>
-                    <li  >
-                        <div id="each" >
-                            <a href="">
-                                <img src="" style="width: 170px;height: 200px ;margin-top: 20px;">
-                                <br>
-                                <h3>{{crt.item.name}}</h3>
-                                <br>
-                            </a>
-                            <h3></h3>
-                            <br>
-
-                            <!-- <button id="ADD"> -->
-                                <!-- <h3 id="addto">ADD TO CART</h3></button> -->
-                        </div>
-                    </li>
-                </ul>
+                <div class="col-lg-4">
+                    <div id="centeredmenu">
+                        <ul>
+                            <li>
+                                <div id="each">
+                                    <a >
+                                        <img src="http://localhost:3000/view/img/{{crt.item.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
+                                        <br>
+                                        <h3>{{crt.item.name}}</h3>
+                                        <br>
+                                    </a>
+                                    <h3></h3>
+                                    <br>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2" id="col">{{crt.item.price}}</div>
+                <div class="col-lg-2" id="col">{{crt.qty}}</div>
+                <div class="col-lg-2" id="col">{{crt.price}} Bath.</div>
             </div>
-            </div>
-            <div class="col-lg-2" id="col">{{crt.item.price}}</div>
-            <div class="col-lg-2" id="col">{{crt.qty}}</div>
-            <div class="col-lg-2" id="col">{{crt.price}} Bath.</div>
         </div>
+        <div   *ngIf="cart2===0">
+             <div id="no"><h3 id="nono">NO PRODUCT YET</h3></div>
         </div>
-        <div id="total">
-             <h3 ><b>Total Price: </b> {{totalPrice}} Bath.</h3>
+        <div   *ngIf="cart2!=0" id="total">
+             <h3><b>Total Price: </b> {{totalPrice}} Bath.</h3>
         </div>
-        <div id="sub">
-             <button id="addtocart" ><h3 >BUY !!</h3></button>
-        </div>
-
+       
     </div>
+     <div id="sub" *ngIf="cart2!=0">
+            <button id="addtocart">
+                <h3 [routerLink]="['/writereview']>BUY !!</h3></button>
+        </div>
 </div>

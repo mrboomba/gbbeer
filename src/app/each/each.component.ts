@@ -1,8 +1,9 @@
-import { Component, OnInit ,Input} from '@angular/core';
-import {ReviewService} from '../services/review.service';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-
+import {ProductService} from '../services/product.service';
+import { Subscription } from 'rxjs/Subscription';
+import {ReviewService} from '../services/review.service';
+import {RegisterService} from '../services/register.service';
 @Component({
   selector: 'app-each',
   templateUrl: './each.component.html',
@@ -23,7 +24,7 @@ private price;
 private rate;
 private type;
 
-  constructor(private reviewService:ReviewService,private router: Router) {
+  constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
 	//this.reView= this.reviewService.getstoreUser()
   this.id = this.reviewService.getstoreUser()
   console.log(this.id)
@@ -36,6 +37,12 @@ private type;
   public getReview(data){
   this.reView= JSON.parse(data._body).beer
   }
+  public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
 
 
   public getBeer(data){

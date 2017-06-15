@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {ProductService} from '../services/product.service';
 import { Subscription } from 'rxjs/Subscription';
+import {ReviewService} from '../services/review.service';
+import {RegisterService} from '../services/register.service';
 
 @Component({
   selector: 'app-beer',
@@ -11,7 +14,7 @@ export class BeerComponent implements OnInit {
 
  private allProduct ;
 
-  constructor(private productService:ProductService) {
+  constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getAllproduct().subscribe(data => this.getAllproduct(data)) }
 
   getAllproduct(data) {
@@ -22,6 +25,18 @@ export class BeerComponent implements OnInit {
   ngOnInit() {
   }
 
+  public sentID(id :String) {
+    this.reviewService.getReview(id).subscribe(data => {
+    this.reviewService.storeUserData(data);
+      this.router.navigate(['/each']);
+    });
+  }
+public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
   public getId(id:String) {
   console.log(id)
   console.log("id")
