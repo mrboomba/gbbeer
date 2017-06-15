@@ -28,7 +28,12 @@ export class BestsellerComponent implements OnInit {
       this.router.navigate(['/each']);
     });
   }
-
+public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
   ngOnInit() {
   }
 

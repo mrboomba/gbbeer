@@ -62,7 +62,7 @@
             <ul>
                 <li *ngFor="let all of allProduct; let i = index; trackBy: trackByFn ">
                     <div id="each">
-                        <a [routerLink]="['/each']">
+                        <a [routerLink]="['/each']" (click)='sentID(all._id)'>
                             <img src="http://localhost:3000/view/img/{{all.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
                             <br>
                             <br>
@@ -70,8 +70,8 @@
                         <h3>{{all.name}}</h3>
                         <h3>{{all.price}}</h3>
                         <br>
-                        <button id="ADD" (click)="getId(all._id)">
-                            <h3>ADD TO CART</h3> </button>
+                        <button id="ADD" (click)="getId(all._id)" (click)='sentIDToCart(all._id)'>
+                            <h3 >ADD TO CART</h3> </button>
                     </div>
                 </li>
             </ul>

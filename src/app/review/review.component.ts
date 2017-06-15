@@ -22,6 +22,19 @@ export class ReviewComponent implements OnInit {
   this.popProduct  = JSON.parse(data._body)
   }
 
+  public sentID(id :String) {
+    this.reviewService.getReview(id).subscribe(data => {
+    this.reviewService.storeUserData(data);
+      this.router.navigate(['/each']);
+    });
+  }
+  public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
+
   ngOnInit() {
   }
 
