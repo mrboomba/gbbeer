@@ -24,17 +24,26 @@ module.exports = (() => {
   }
   function compare(a,b) {
   if (a.qty < b.qty)
-    return -1;
-  if (a.qty > b.qty)
     return 1;
+  if (a.qty > b.qty)
+    return -1;
   return 0;
 }
+function compare2(a,b) {
+if (a.qty < b.qty)
+  return 1;
+if (a.qty > b.qty)
+  return -1;
+return 0;
+}
   const getRecomend = (bill,callback) => {
-    console.log(bill);
     bill.sort(compare);
-    console.log(bill);
-      models.review.find({'beers.beer':bill[0].item._id},function(err,doc){
-        console.log(doc);
+    console.log(bill[0].item._id);
+      models.transaction.find({'beers.beer':bill[0].item._id},function(err,doc){
+        var tmp = doc.map(function(a){
+          return a.beers;
+        });
+        console.log(tmp);
         callback(doc);
       })
 
