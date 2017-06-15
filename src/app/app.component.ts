@@ -33,7 +33,7 @@ export class AppComponent {
   getDataLogout(data){
   let value = JSON.parse(data._body)
      console.log(value.status)
-     this.isLogout = value.status
+      this.register.checkAuth().subscribe(data => this.getData(data))
   }
 
 
