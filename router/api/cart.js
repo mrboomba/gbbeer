@@ -73,6 +73,7 @@ router.get('/buy',checkAuth,function(req,res) {
       res.json({'status':'success'});
       return ;
     })
+    return ;
 
 }
 });
@@ -80,12 +81,15 @@ router.get('/buy',checkAuth,function(req,res) {
 router.get('/recommend',function (req,res) {
   var cart = new Cart(req.session.cart);
   var tmp = cart.generateArray();
-  ModelControllers.transaction.getRecomend(tmp,function(err,doc){
-    if(err) {res.json({'status':'fail'})}
+  ModelControllers.transaction.getRecomend(tmp,(err,doc)=>{
+    if(err){res.json({'status':'fail'});
+    return;
+    }
     else
     res.json(doc);
+    return;
   });
-  return;
+
 });
 
   return router;

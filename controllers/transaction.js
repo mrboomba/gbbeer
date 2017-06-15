@@ -64,19 +64,20 @@ return 0;
           newArraySeries.push({'beer' : b, 'amount' : amount[b]})
        }
        if(newArraySeries.length<3){
-         beerController.getBeerByDate(function(err,doc) {
-           var output = doc.slice(0,3);
-           callback(err,output);
-           return;
+         beerController.getBeerByDate(function(err,docs) {
+           var ssss = docs.slice(0,3);
+          return  callback(err,ssss);
+
        })
-     }
+     }else{
         var output = newArraySeries.sort(compare2).slice(0,3);
         var boom = output.map(function(a){
           return a.beer;
         })
-        
+
         models.beer.find({'_id':{$in:boom}}).exec((err, doc) => callback(err, doc));
         return;
+      }
         }
         else{
           beerController.getBeerByDate(function(err,doc) {
