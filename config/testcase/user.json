@@ -1,20 +1,9 @@
-[{
-  "username":"gmine",
-  "password":"1234",
+{
+  "username":"b",
+  "password":"1",
   "firstname":"Gmine",
   "lastname":"mini",
   "email":"gmiemini@gmail.com",
-  "birthday":"1111/11/11",
   "address":"Thammasat University",
   "gender":"female"
-},{
-  "username":"b",
-  "password":"1",
-  "firstname":"Mrboomba",
-  "lastname":"Thanataweeroj",
-  "email":"mrboomba161@mail.com",
-  "birthday":"1111/2/11",
-  "address":"55/32",
-  "gender":"male"
 }
-]

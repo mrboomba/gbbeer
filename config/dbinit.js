@@ -2,6 +2,7 @@ var Promise = require('es6-promise').Promise;
 var beerModels = require('../models/beer');
 var userModels = require('../models/user');
 var reviewModels = require('../models/review');
+var userController = require('../controllers/user');
 
 function createDB() {
 
@@ -15,7 +16,7 @@ function createDB() {
                 if (error) reject(error);
                 beerModels.create(beerJson, function(error){
 
-                  userModels.create(userJson, function (error) {
+                  userController.createUser(userJson, function (error) {
                     if (error) reject(error);
                     resolve();
                     })

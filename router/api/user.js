@@ -9,7 +9,7 @@ module.exports = (() => {
   if (!req.session.user_id) {
     req.session.redirectTo = req.headers.referer || req.originalUrl || req.url;
     console.log(checkAuth);
-    res.redirect('/#popup1');
+    res.json('status':'fail');
   } else {
     next();
   }
@@ -80,7 +80,7 @@ module.exports = (() => {
 
 router.get('/logout',checkAuth, function (req, res) {
   delete req.session.user_id;
-  res.redirect('/login');
+  res.json('status':'success');
 });
 
 

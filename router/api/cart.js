@@ -9,7 +9,7 @@ module.exports = (() => {
   const checkAuth = (req, res, next) => {
   if (!req.session.user_id) {
     req.session.redirectTo = req.headers.referer || req.originalUrl || req.url;
-    res.redirect('/#popup1');
+    res.json('status':'fail');
   } else {
     next();
   }
@@ -34,7 +34,6 @@ module.exports = (() => {
       if(beer){
       cart.add(beer,beer._id);
       req.session.cart = cart;
-      console.log(req.session.cart);
       res.json({'status':'success'});
     }
     })
@@ -78,6 +77,13 @@ router.get('/buy',checkAuth,function(req,res) {
 }
 });
 
+router.get('/recommend',function (req,res) {
+  var cart = new Cart(req.session.cart);
+  var tmp = cart.generateArray();
+  ModelControllers.transaction.getRecomend(tmp,function(err,doc){
+    res.json({'status':'success'});
+  });
+})
 
   return router;
 })();
