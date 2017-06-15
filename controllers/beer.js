@@ -30,9 +30,7 @@ module.exports = (() => {
            $unwind: "$beers" },
           {
             $group: {
-              _id: {
-                title: '$beers.beer',
-              },
+              _id:'$beers.beer',
         count: { $sum: '$beers.amount' }
      }
   },
@@ -45,7 +43,10 @@ module.exports = (() => {
         if (err) {
             callback(err);
         } else {
-            models.beer.find({'_id':{$in:result._id}}).exec((err, doc) => callback(err, doc));
+          var tmp = result.map(function(a){
+            return a._id;
+          })
+            models.beer.find({'_id':{$in:tmp}}).exec((err, doc) => callback(err, doc));
         }
         return;
     });
