@@ -12,10 +12,11 @@ mongoose.connect(DB.url,function(err){
   else
     {
       DBinit.createDB().then(function(message){
-        logger.log('Connect to Database at port 27017');
+        logger.log('info','Connect to Database at port 27017');
         require('./app');
+        logger.log('info',"It's a Drink Time!");
       }).catch(function(error){
-        console.log(error);
+        log,logger('error',error);
       })
   }
 })
