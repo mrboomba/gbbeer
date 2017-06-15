@@ -13,12 +13,17 @@ export class NavbarComponent implements OnInit {
 
 private newProduct ;
 
+
   constructor(private productService:ProductService) { }
 
   ngOnInit() {
 
   }
-
-
+ public sendService(){
+	this.productService.getCartproduct().subscribe(data => this.getcart(data))
+  }
+  getcart(data){
+  console.log(JSON.parse(data._body))
+ }
 
 }

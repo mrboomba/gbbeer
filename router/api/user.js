@@ -23,6 +23,16 @@ module.exports = (() => {
   return ;
   }
 
+  router.route('/islogin').get((req,res) => {
+    if(!req.session.user_id){
+      res.json({'status':'fail'});
+    }
+    else{
+      res.json({'status':'success'});
+    }
+    return;
+  })
+
 
   router.route('/register').post((req, res) => {
     var b = req.body.birthday.split("/");

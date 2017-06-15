@@ -16,14 +16,14 @@ export class CartComponent implements OnInit {
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
 
-   this.productService.getCartproduct().subscribe(data => this.getcart(data))  
+   this.productService.getCartproduct().subscribe(data => this.getcart(data))
    }
-   
 
 
-  
+
+
 	public getcart(data){
-  		this.cart= JSON.parse(data._body)
+  		this.cart= JSON.parse(data._body).beers
   		this.totalPrice =JSON.parse(data._body).totalPrice
   		console.log(this.cart)
   		console.log(this.totalPrice)
@@ -33,4 +33,3 @@ export class CartComponent implements OnInit {
   }
 
 }
-

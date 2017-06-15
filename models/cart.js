@@ -11,13 +11,13 @@ module.exports = function Cart(oldCart){
       storedItem.qty++;
       storedItem.price = storedItem.item.price * storedItem.qty;
       this.totalQty++;
-      this.totalPrice += storedItem.price;
+      this.totalPrice += storedItem.item.price;
     };
 
     this.generateArray = function(){
       var arr =[];
       for(var id in this.items){
-        arr.push(this.item[id]);
+        arr.push(this.items[id]);
       }
       return arr;
 
