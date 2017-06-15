@@ -103,6 +103,98 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 
 /***/ }),
 
+/***/ 41:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(66);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ProductService = (function () {
+    function ProductService(http) {
+        this.http = http;
+    }
+    ProductService.prototype.getNewproduct = function () {
+        console.log("getNewproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/newcoming?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getAllproduct = function () {
+        console.log("getAllproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/all?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getBestproduct = function () {
+        console.log("getBestproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getPopproduct = function () {
+        console.log("getPopproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/beer/popular?', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getSendToCartproduct = function (id) {
+        console.log("getSendToCartproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/addtocart/' + id, options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getCartproduct = function () {
+        console.log("getCartproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/cart', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.getRecommend = function () {
+        console.log("getCartproduct");
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
+        return this.http.get('http://localhost:3000/api/recommend', options).map(function (data) { return data; });
+    };
+    ProductService.prototype.join = function (id) {
+        console.log("join");
+        var data = {
+            "id": id
+        };
+        var body = JSON.stringify(data);
+        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
+        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
+        return this.http.post('http://localhost:3000/join_activity', body, options).map(function (data) { return data; });
+    };
+    ProductService = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
+    ], ProductService);
+    return ProductService;
+    var _a;
+}());
+//# sourceMappingURL=C:/Users/gmineminii/Desktop/5709680077/3term2/cs485/FinalProject/gbbeer/src/product.service.js.map
+
+/***/ }),
+
 /***/ 508:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -253,7 +345,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(510);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__navbar_navbar_component__ = __webpack_require__(519);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_home_component__ = __webpack_require__(517);
@@ -269,7 +361,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__catagory_catagory_component__ = __webpack_require__(515);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__allpro_allpro_component__ = __webpack_require__(509);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__writereview_writereview_component__ = __webpack_require__(523);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_register_service__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -356,8 +448,8 @@ var AppModule = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BeerComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -425,8 +517,8 @@ var BeerComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BestsellerComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -491,8 +583,8 @@ var BestsellerComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -520,8 +612,7 @@ var CartComponent = (function () {
         this.cart = JSON.parse(data._body).beers;
         this.cart2 = JSON.parse(data._body).beers.length;
         this.totalPrice = JSON.parse(data._body).totalPrice;
-        console.log(this.cart.item.img);
-        console.log(this.totalPrice);
+        console.log(this.cart2);
     };
     CartComponent.prototype.ngOnInit = function () {
     };
@@ -580,8 +671,8 @@ var CatagoryComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EachComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -703,7 +794,7 @@ var HomeComponent = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_register_service__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(56);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -761,7 +852,7 @@ var LoginComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(41);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -807,8 +898,8 @@ var NavbarComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewproductComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -928,8 +1019,8 @@ var RegisterComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_product_service__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_review_service__ = __webpack_require__(68);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -995,6 +1086,7 @@ var ReviewComponent = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__(41);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WritereviewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1006,10 +1098,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var WritereviewComponent = (function () {
-    function WritereviewComponent() {
+    function WritereviewComponent(productService) {
+        var _this = this;
+        this.productService = productService;
+        this.productService.getRecommend().subscribe(function (data) { return _this.getPopproduct(data); });
     }
     WritereviewComponent.prototype.ngOnInit = function () {
+    };
+    WritereviewComponent.prototype.getPopproduct = function (data) {
+        console.log(JSON.parse(data._body));
+        this.rec = JSON.parse(data._body);
     };
     WritereviewComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -1017,9 +1117,10 @@ var WritereviewComponent = (function () {
             template: __webpack_require__(707),
             styles: [__webpack_require__(692)]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]) === 'function' && _a) || Object])
     ], WritereviewComponent);
     return WritereviewComponent;
+    var _a;
 }());
 //# sourceMappingURL=C:/Users/gmineminii/Desktop/5709680077/3term2/cs485/FinalProject/gbbeer/src/writereview.component.js.map
 
@@ -1038,92 +1139,6 @@ var environment = {
     production: false
 };
 //# sourceMappingURL=C:/Users/gmineminii/Desktop/5709680077/3term2/cs485/FinalProject/gbbeer/src/environment.js.map
-
-/***/ }),
-
-/***/ 56:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(66);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var ProductService = (function () {
-    function ProductService(http) {
-        this.http = http;
-    }
-    ProductService.prototype.getNewproduct = function () {
-        console.log("getNewproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/newcoming?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getAllproduct = function () {
-        console.log("getAllproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/all?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getBestproduct = function () {
-        console.log("getBestproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/bestsell?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getPopproduct = function () {
-        console.log("getPopproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/beer/popular?', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getSendToCartproduct = function (id) {
-        console.log("getSendToCartproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/addtocart/' + id, options).map(function (data) { return data; });
-    };
-    ProductService.prototype.getCartproduct = function () {
-        console.log("getCartproduct");
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ method: __WEBPACK_IMPORTED_MODULE_3__angular_http__["d" /* RequestMethod */].Get, headers: headers });
-        return this.http.get('http://localhost:3000/api/cart', options).map(function (data) { return data; });
-    };
-    ProductService.prototype.join = function (id) {
-        console.log("join");
-        var data = {
-            "id": id
-        };
-        var body = JSON.stringify(data);
-        var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
-        var options = new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* RequestOptions */]({ headers: headers });
-        return this.http.post('http://localhost:3000/join_activity', body, options).map(function (data) { return data; });
-    };
-    ProductService = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_3__angular_http__["e" /* Http */]) === 'function' && _a) || Object])
-    ], ProductService);
-    return ProductService;
-    var _a;
-}());
-//# sourceMappingURL=C:/Users/gmineminii/Desktop/5709680077/3term2/cs485/FinalProject/gbbeer/src/product.service.js.map
 
 /***/ }),
 
@@ -1299,7 +1314,7 @@ module.exports = "#review{\r\n    margin: 0 30px 0 30px;\r\n}\r\n.col-lg-4{\r\n 
 /***/ 692:
 /***/ (function(module, exports) {
 
-module.exports = "#content{\r\n\toverflow-x: hidden;\r\n\t/*height: 800px;*/\r\n\tbackground-color: #FFF;\r\n\tmargin:5%;\r\n\t border: 1px solid #D2D2D2;\r\n}"
+module.exports = "#content{\r\n\toverflow-x: hidden;\r\n\t/*height: 800px;*/\r\n\tbackground-color: #FFF;\r\n\tmargin:5%;\r\n\t border: 1px solid #D2D2D2;\r\n}#no{\r\n  margin: 1%;\r\n  border: 1px solid #E5E5E5;\r\n  height: 300px;\r\n  text-align: center;\r\n  background-color: #F1F1F1;\r\n}\r\n#nono{\r\n  margin-top: 10%;\r\n  font-size: 30px;\r\n}\r\n\r\n#addtocart{\r\n  background-color: #F0D041;\r\n  color: black;\r\n  border: 1px solid #D2D2D2;\r\n  border-radius: 10px;\r\n  width: 30%;\r\n  height: 50px;\r\n  /*right: 400px;*/\r\n  display: inline-block;\r\n  /*position: absolute;*/\r\n\r\n  margin: 2%;\r\n  /*bottom: 0px;*/\r\n}#sub{\r\n  text-align: center;\r\n}\r\n\r\n#total{\r\n  margin-bottom: 2%;\r\n  margin-top: 2%;\r\n   margin-right: 16%;\r\n   /*border: 1px solid black;*/\r\n   text-align: right;\r\n}\r\n#cart{\r\n\tmargin-left: 3%;\r\n\tmargin-bottom: 5%;\r\n}\r\n#proincart{\r\n\tborder: 1px solid #D2D2D2;\r\n\tmargin: 5px;\r\n\tpadding: 2%;\r\n\ttext-align: center;\r\n}#ADD{\r\n    color: #000;\r\n    background-color: #F0D041;\r\n    border: 1px solid #818181;\r\n    height: 30px;\r\n} \r\n#addto{\r\n    margin: 0;\r\n    font-size: 100%;\r\n}ul{ \r\n    /*text-align:center;*/\r\n    padding: 0;\r\n    margin: 0; \r\n}#cart2{\r\n\tmargin-left: 7%;\r\n}\r\n#cart{\r\n\tmargin: 5%;\r\n}\r\n#centeredmenu ul li #each {\r\n   display:block;\r\n   margin:20px 0 0 40px;\r\n   padding:3px 10px;\r\n   background:#FFF;\r\n   color:#000;\r\n   text-decoration:none;\r\n   line-height:1.3em;\r\n   height: 280px;\r\n   width:250px;\r\n}\r\n\r\n#centeredmenu ul li #each:hover {\r\n   background:#F0D041;\r\n   color:#fff;\r\n}\r\nul li {\r\n    position: relative;\r\n    text-align: center;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n} \r\n#col{\r\n\tmargin-top: 10%;\r\n}"
 
 /***/ }),
 
@@ -1341,7 +1356,7 @@ module.exports = "<div id=\"bestseller\">\r\n    <header>\r\n        <div>\r\n  
 /***/ 698:
 /***/ (function(module, exports) {
 
-module.exports = "<app-advertise></app-advertise>\r\n<div id=\"content1\">\r\n    <div id=\"content\">\r\n        <h3 id=\"cart\"><b>CART</b></h3>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-4\"></div>\r\n            <div class=\"col-lg-2\">Price</div>\r\n            <div class=\"col-lg-2\">Quantity</div>\r\n            <div class=\"col-lg-2\">Total</div>\r\n        </div>\r\n        <div id=\"proincart\" *ngFor=\"let crt of cart; let i = index; trackBy: trackByFn\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-4\">\r\n                    <div id=\"centeredmenu\">\r\n                        <ul>\r\n                            <li>\r\n                                <div id=\"each\">\r\n                                    <a >\r\n                                        <img src=\"http://localhost:3000/view/img/{{crt.item.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\r\n                                        <br>\r\n                                        <h3>{{crt.item.name}}</h3>\r\n                                        <br>\r\n                                    </a>\r\n                                    <h3></h3>\r\n                                    <br>\r\n                                </div>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.item.price}}</b></div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.qty}}</b></div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.price}} Bath.</b></div>\r\n            </div>\r\n        </div>\r\n        <div   *ngIf=\"cart2===0\">\r\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\r\n        </div>\r\n        <div   *ngIf=\"cart2!=0\" id=\"total\">\r\n             <h3><b>Total Price: </b> {{totalPrice}} Bath.</h3>\r\n        </div>\r\n       \r\n    </div>\r\n     <div id=\"sub\" *ngIf=\"cart2!=0\">\r\n            <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\r\n                <h3 >BUY !!</h3></button>\r\n        </div>\r\n</div>\r\n"
+module.exports = "<app-advertise></app-advertise>\r\n<div id=\"content1\">\r\n    <div id=\"content\">\r\n        <h3 id=\"cart\"><b>CART</b></h3>\r\n        <div class=\"row\" *ngIf=\"cart2!=0\">\r\n            <div class=\"col-lg-4\"></div>\r\n            <div class=\"col-lg-2\">Price</div>\r\n            <div class=\"col-lg-2\">Quantity</div>\r\n            <div class=\"col-lg-2\">Total</div>\r\n        </div>\r\n        <div id=\"proincart\" *ngFor=\"let crt of cart; let i = index; trackBy: trackByFn\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-4\">\r\n                    <div id=\"centeredmenu\">\r\n                        <ul>\r\n                            <li>\r\n                                <div id=\"each\">\r\n                                    <a >\r\n                                        <img src=\"http://localhost:3000/view/img/{{crt.item.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\r\n                                        <br>\r\n                                        <h3>{{crt.item.name}}</h3>\r\n                                        <br>\r\n                                    </a>\r\n                                    <h3></h3>\r\n                                    <br>\r\n                                </div>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.item.price}}</b></div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.qty}}</b></div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.price}} Bath.</b></div>\r\n            </div>\r\n        </div>\r\n        <div   *ngIf=\"cart2===0\">\r\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\r\n        </div>\r\n        <div   *ngIf=\"cart2!=0\" id=\"total\">\r\n             <h3><b>Total Price: </b> {{totalPrice}} Bath.</h3>\r\n        </div>\r\n       \r\n    </div>\r\n     <div id=\"sub\" *ngIf=\"cart2!=0\">\r\n            <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\r\n                <h3 >BUY !!</h3></button>\r\n        </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1355,7 +1370,7 @@ module.exports = "<p>\r\n  catagory works!\r\n</p>\r\n"
 /***/ 700:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" id=\"maincontent\">\r\n    <div class=\"col-lg-5\" id=\"pic\">\r\n        <img src='{{img}}' id=\"imgeach\">\r\n    </div>\r\n    <div class=\"col-lg-7\" id=\"detail\">\r\n        <div id=\"content\">\r\n            <h3 id=\"name1\"><b>  {{name}}. </b></h3>\r\n            <hr>\r\n            <h3 id=\"name\"><b>Brand:</b> {{brand}}.</h3>\r\n            <h3 id=\"name\"><b>Country:</b> {{country}}.</h3>\r\n            <h3 id=\"name\"><b>Color:</b>  {{color}}.</h3>\r\n            <h3 id=\"name\"><b>ABV%:</b> {{degree}}.</h3>\r\n            <h3 id=\"name\"><b>Price:</b>  {{price}} Bath.</h3>\r\n            <h3 id=\"name\"><b>Type:</b>  {{type}}.</h3>\r\n            <h3 id=\"name\"><b>Type:</b>  {{date | date: 'dd/MM/yyyy'}}.</h3>\r\n            <button id=\"addtocart\" (click)='sentIDToCart(id)'><b>ADD TO CART </b><img id=\"imgcart\" src=\"assets/cart.png\"></button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<hr>\r\n<div id=\"review\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-1\"></div>\r\n        <div class=\"col-lg-8\">\r\n            <h3><b>REVIEW</b></h3>\r\n            <div id=\"bor\">\r\n                <ul>\r\n                    <li *ngFor=\"let review of reView; let i = index; trackBy: trackByFn\">\r\n                        <div class=\"row\" id=\"left\">\r\n                            <h5><b>Name:</b> {{review.name}}</h5>\r\n                            <h5><b>Date:</b>{{review.date}}</h5>\r\n                            <h4><b>Comment:</b>{{review.comment}}</h4>\r\n                        </div>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div id=\"textwrite\">\r\n                <h5><b>Write Review</b></h5>\r\n                <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"textarea\" placeholder=\"comment\" value=\"gmine\"></textarea>\r\n                <br>\r\n                <h6><b>Select Rating</b></h6>\r\n                <fieldset class=\"rating\">\r\n                    <input type=\"radio\" id=\"star5\" [(ngModel)]=\"rate\" name=\"rating\" value=\"5\" />\r\n                    <label class=\"full\" for=\"star5\" title=\"Awesome - 5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star4half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4.5\" />\r\n                    <label class=\"half\" for=\"star4half\" title=\"Pretty good - 4.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star4\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4\" />\r\n                    <label class=\"full\" for=\"star4\" title=\"Pretty good - 4 stars\"></label>\r\n                    <input type=\"radio\" id=\"star3half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3.5\" />\r\n                    <label class=\"half\" for=\"star3half\" title=\"Meh - 3.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star3\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3\" />\r\n                    <label class=\"full\" for=\"star3\" title=\"Meh - 3 stars\"></label>\r\n                    <input type=\"radio\" id=\"star2half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2.5\" />\r\n                    <label class=\"half\" for=\"star2half\" title=\"Kinda bad - 2.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star2\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2\" />\r\n                    <label class=\"full\" for=\"star2\" title=\"Kinda bad - 2 stars\"></label>\r\n                    <input type=\"radio\" id=\"star1half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1.5\" />\r\n                    <label class=\"half\" for=\"star1half\" title=\"Meh - 1.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star1\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1\" />\r\n                    <label class=\"full\" for=\"star1\" title=\"Sucks big time - 1 star\"></label>\r\n                    <input type=\"radio\" id=\"starhalf\" [(ngModel)]=\"rate\" name=\"rating\" value=\"0.5\" />\r\n                    <label class=\"half\" for=\"starhalf\" title=\"Sucks big time - 0.5 stars\"></label>\r\n                </fieldset>\r\n                <!-- <h1>{{rate}}</h1> -->\r\n            </div>\r\n            <div class=\"col-lg-3\" id=\"sarm\">\r\n                <button id=\"writereview\" (click)='sendComment(textarea,rate)'><b>Submit</b></button>\r\n                <!-- [routerLink]=\"['/writereview']\" -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row\" id=\"maincontent\">\r\n    <div class=\"col-lg-5\" id=\"pic\">\r\n        <img src='{{img}}' id=\"imgeach\">\r\n    </div>\r\n    <div class=\"col-lg-7\" id=\"detail\">\r\n        <div id=\"content\">\r\n            <h3 id=\"name1\"><b>  {{name}}. </b></h3>\r\n            <hr>\r\n            <h3 id=\"name\"><b>Brand:</b> {{brand}}.</h3>\r\n            <h3 id=\"name\"><b>Country:</b> {{country}}.</h3>\r\n            <h3 id=\"name\"><b>Color:</b>  {{color}}.</h3>\r\n            <h3 id=\"name\"><b>ABV%:</b> {{degree}}.</h3>\r\n            <h3 id=\"name\"><b>Price:</b>  {{price}} Bath.</h3>\r\n            <h3 id=\"name\"><b>Type:</b>  {{type}}.</h3>\r\n            <h3 id=\"name\"><b>Type:</b>  {{date | date: 'dd/MM/yyyy'}}.</h3>\r\n            <button id=\"addtocart\" (click)='sentIDToCart(id)'><b>ADD TO CART </b><img id=\"imgcart\" src=\"assets/cart.png\"></button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<hr>\r\n<div id=\"review\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-1\"></div>\r\n        <div class=\"col-lg-8\">\r\n            <h3><b>REVIEW</b></h3>\r\n            <div id=\"bor\">\r\n                <ul>\r\n                    <li *ngFor=\"let review of reView; let i = index; trackBy: trackByFn\">\r\n                        <div class=\"row\" id=\"left\">\r\n                            <h5><b>Name: </b> {{review.name}}</h5>\r\n                            <h5><b>Date: </b>{{review.date}}</h5>\r\n                            <h4><b>Comment: </b>{{review.comment}}</h4>\r\n                        </div>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div id=\"textwrite\">\r\n                <h5><b>Write Review</b></h5>\r\n                <textarea rows=\"4\" cols=\"37\" [(ngModel)]=\"textarea\" placeholder=\"comment\" value=\"gmine\"></textarea>\r\n                <br>\r\n                <h6><b>Select Rating</b></h6>\r\n                <fieldset class=\"rating\">\r\n                    <input type=\"radio\" id=\"star5\" [(ngModel)]=\"rate\" name=\"rating\" value=\"5\" />\r\n                    <label class=\"full\" for=\"star5\" title=\"Awesome - 5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star4half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4.5\" />\r\n                    <label class=\"half\" for=\"star4half\" title=\"Pretty good - 4.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star4\" [(ngModel)]=\"rate\" name=\"rating\" value=\"4\" />\r\n                    <label class=\"full\" for=\"star4\" title=\"Pretty good - 4 stars\"></label>\r\n                    <input type=\"radio\" id=\"star3half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3.5\" />\r\n                    <label class=\"half\" for=\"star3half\" title=\"Meh - 3.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star3\" [(ngModel)]=\"rate\" name=\"rating\" value=\"3\" />\r\n                    <label class=\"full\" for=\"star3\" title=\"Meh - 3 stars\"></label>\r\n                    <input type=\"radio\" id=\"star2half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2.5\" />\r\n                    <label class=\"half\" for=\"star2half\" title=\"Kinda bad - 2.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star2\" [(ngModel)]=\"rate\" name=\"rating\" value=\"2\" />\r\n                    <label class=\"full\" for=\"star2\" title=\"Kinda bad - 2 stars\"></label>\r\n                    <input type=\"radio\" id=\"star1half\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1.5\" />\r\n                    <label class=\"half\" for=\"star1half\" title=\"Meh - 1.5 stars\"></label>\r\n                    <input type=\"radio\" id=\"star1\" [(ngModel)]=\"rate\" name=\"rating\" value=\"1\" />\r\n                    <label class=\"full\" for=\"star1\" title=\"Sucks big time - 1 star\"></label>\r\n                    <input type=\"radio\" id=\"starhalf\" [(ngModel)]=\"rate\" name=\"rating\" value=\"0.5\" />\r\n                    <label class=\"half\" for=\"starhalf\" title=\"Sucks big time - 0.5 stars\"></label>\r\n                </fieldset>\r\n                <!-- <h1>{{rate}}</h1> -->\r\n            </div>\r\n            <div class=\"col-lg-3\" id=\"sarm\">\r\n                <button id=\"writereview\" (click)='sendComment(textarea,rate)'><b>Submit</b></button>\r\n                <!-- [routerLink]=\"['/writereview']\" -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1397,14 +1412,14 @@ module.exports = "<div class=\"content\">\r\n    <div class=\"row\">\r\n        
 /***/ 706:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"review\">\r\n    <header>\r\n        <div>\r\n            <span class=\"spacer\"></span>\r\n            <h1>REVIEW</h1>\r\n            <span class=\"spacer\"></span>\r\n        </div>\r\n    </header>\r\n    <div id=\"centeredmenu\">\r\n        <ul>\r\n            <li *ngFor=\"let product of popProduct; let i = index; trackBy: trackByFn \">\r\n                <div id=\"each\">\r\n                    <a [routerLink]=\"['/each']\" (click)='sentID(product._id)'>\r\n                        <img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\r\n                        <br>\r\n                        <br>\r\n                    </a>\r\n                    <h3>{{product.name}}</h3>\r\n                    <h3>{{product.price}}</h3>\r\n                    <br>\r\n                    <span>star review</span>\r\n                    <br>\r\n                    <button id=\"seemore\" (click)='sentIDToCart(product._id)' >\r\n                        <h3 >ADD TO CART</h3></button>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n        <div   *ngIf=\"popProduct2===0\">\r\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\r\n        </div>\r\n    </div>\r\n    <div id=\"button\">\r\n        <button id=\"seemore\" *ngIf=\"popProduct!=0\" [routerLink]=\"['/beer']\">\r\n            <h3>SEE MORE</h3></button>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div id=\"review\">\r\n    <header>\r\n        <div>\r\n            <span class=\"spacer\"></span>\r\n            <h1>REVIEW</h1>\r\n            <span class=\"spacer\"></span>\r\n        </div>\r\n    </header>\r\n    <div id=\"centeredmenu\">\r\n        <ul>\r\n            <li *ngFor=\"let product of popProduct; let i = index; trackBy: trackByFn \">\r\n                <div id=\"each\">\r\n                    <a [routerLink]=\"['/each']\" (click)='sentID(product._id)'>\r\n                        <img src=\"http://localhost:3000/view/img/{{product.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\r\n                        <br>\r\n                        <br>\r\n                    </a>\r\n                    <h3>{{product.name}}</h3>\r\n                    <h3>{{product.price}}</h3>\r\n                    <br>\r\n                    <span>{{product.rate}}</span>\r\n                    <br>\r\n                    <button id=\"seemore\" (click)='sentIDToCart(product._id)' >\r\n                        <h3 >ADD TO CART</h3></button>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n        <div   *ngIf=\"popProduct2===0\">\r\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\r\n        </div>\r\n    </div>\r\n    <div id=\"button\">\r\n        <button id=\"seemore\" *ngIf=\"popProduct!=0\" [routerLink]=\"['/beer']\">\r\n            <h3>SEE MORE</h3></button>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
 /***/ 707:
 /***/ (function(module, exports) {
 
-module.exports = "<app-advertise></app-advertise>\r\n<div id=\"content1\">\r\n    <div id=\"content\">\r\n        \t<h3 id=\"cart\"><b>CART</b></h3>\r\n       \r\n    </div>\r\n     <div id=\"sub\" >\r\n            <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\r\n                <h3 >BUY !!</h3></button>\r\n        </div>\r\n</div>\r\n"
+module.exports = "<app-advertise></app-advertise>\r\n<div id=\"content1\">\r\n    <div id=\"content\">\r\n        <h3 id=\"cart\"><b>Recommend</b></h3>\r\n        <h3 id=\"cart2\">Customer who buy this beer also buy:</h3>\r\n        <div class=\"row\">\r\n            <div class=\"col-lg-4\"></div>\r\n            <div class=\"col-lg-2\">Price</div>\r\n            <!-- <div class=\"col-lg-2\">Quantity</div> -->\r\n            <!-- <div class=\"col-lg-2\">Total</div> -->\r\n        </div>\r\n        <div id=\"proincart\" *ngFor=\"let recc of rec; let i = index; trackBy: trackByFn\">\r\n            <div class=\"row\">\r\n                <div class=\"col-lg-4\">\r\n                    <div id=\"centeredmenu\">\r\n                        <ul>\r\n                            <li>\r\n                                <div id=\"each\">\r\n                                    <a>\r\n                                        <img src=\"http://localhost:3000/view/img/{{recc.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\r\n                                        <br>\r\n                                        <h3>{{recc.name}}</h3>\r\n                                        <br>\r\n                                    </a>\r\n                                    <h3></h3>\r\n                                    <br>\r\n                                </div>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-lg-2\" id=\"col\"><b>{{recc.price}}</b></div>\r\n                <!-- <div class=\"col-lg-2\" id=\"col\"><b>{{recc.qty}}</b></div> -->\r\n                <!-- <div class=\"col-lg-2\" id=\"col\"><b>{{crt.price}} Bath.</b></div> -->\r\n            </div>\r\n        </div>\r\n      <!--   <div *ngIf=\"cart2===0\">\r\n            <div id=\"no\">\r\n                <h3 id=\"nono\">NO PRODUCT YET</h3></div>\r\n        </div> -->\r\n    </div>\r\n    <div id=\"sub\" >\r\n        <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\r\n            <h3>Back to Shopping</h3></button>\r\n    </div>\r\n    <div id=\"sub\" >\r\n        <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\r\n            <h3>Go to payment</h3></button>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 

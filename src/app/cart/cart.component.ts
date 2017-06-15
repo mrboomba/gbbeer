@@ -25,10 +25,9 @@ export class CartComponent implements OnInit {
 
 	public getcart(data){
   		this.cart= JSON.parse(data._body).beers
-      this.cart2= JSON.parse(data._body).beers.length
+     this.cart2= JSON.parse(data._body).beers.length
   		this.totalPrice =JSON.parse(data._body).totalPrice
-  		console.log(this.cart.item.img)
-  		console.log(this.totalPrice)
+  		console.log(this.cart2)
   	}
 
   ngOnInit() {

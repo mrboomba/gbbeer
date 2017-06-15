@@ -1,11 +1,50 @@
 <app-advertise></app-advertise>
 <div id="content1">
     <div id="content">
-        	<h3 id="cart"><b>CART</b></h3>
-       
-    </div>
-     <div id="sub" >
-            <button id="addtocart" [routerLink]="['/writereview']">
-                <h3 >BUY !!</h3></button>
+        <h3 id="cart"><b>Recommend</b></h3>
+        <h3 id="cart2">Customer who buy this beer also buy:</h3>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-2">Price</div>
+            <!-- <div class="col-lg-2">Quantity</div> -->
+            <!-- <div class="col-lg-2">Total</div> -->
         </div>
+        <div id="proincart" *ngFor="let recc of rec; let i = index; trackBy: trackByFn">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div id="centeredmenu">
+                        <ul>
+                            <li>
+                                <div id="each">
+                                    <a>
+                                        <img src="http://localhost:3000/view/img/{{recc.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
+                                        <br>
+                                        <h3>{{recc.name}}</h3>
+                                        <br>
+                                    </a>
+                                    <h3></h3>
+                                    <br>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2" id="col"><b>{{recc.price}}</b></div>
+                <!-- <div class="col-lg-2" id="col"><b>{{recc.qty}}</b></div> -->
+                <!-- <div class="col-lg-2" id="col"><b>{{crt.price}} Bath.</b></div> -->
+            </div>
+        </div>
+      <!--   <div *ngIf="cart2===0">
+            <div id="no">
+                <h3 id="nono">NO PRODUCT YET</h3></div>
+        </div> -->
+    </div>
+    <div id="sub" >
+        <button id="addtocart" [routerLink]="['/beer']">
+            <h3>Back to Shopping</h3></button>
+    </div>
+    <div id="sub" >
+        <button id="addtocart" [routerLink]="['']" (click)="sentbil()">
+            <h3>Go to payment</h3></button>
+    </div>
 </div>
