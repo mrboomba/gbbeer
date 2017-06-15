@@ -28,9 +28,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2" id="col">{{crt.item.price}}</div>
-                <div class="col-lg-2" id="col">{{crt.qty}}</div>
-                <div class="col-lg-2" id="col">{{crt.price}} Bath.</div>
+                <div class="col-lg-2" id="col"><b>{{crt.item.price}}</b></div>
+                <div class="col-lg-2" id="col"><b>{{crt.qty}}</b></div>
+                <div class="col-lg-2" id="col"><b>{{crt.price}} Bath.</b></div>
             </div>
         </div>
         <div   *ngIf="cart2===0">
@@ -42,7 +42,12 @@
 
     </div>
      <div id="sub" *ngIf="cart2!=0">
+<<<<<<< HEAD
             <button id="addtocart">
                 <h3> BUY !!</h3></button>
+=======
+            <button id="addtocart" [routerLink]="['/writereview']">
+                <h3 >BUY !!</h3></button>
+>>>>>>> b89fad75327c5bc5739eb10da0d98d6427f74926
         </div>
 </div>

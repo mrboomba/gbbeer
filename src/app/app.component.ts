@@ -16,16 +16,24 @@ export class AppComponent {
   check= true;
   pop=true;
   private isLogin
+   private isLogout
 
    constructor(private register: RegisterService) {
    this.register.checkAuth().subscribe(data => this.getData(data))
 
   }
 
+
   getData(data){
      let value = JSON.parse(data._body)
      console.log(value.status)
      this.isLogin = value.status
+  }
+
+  getDataLogout(data){
+  let value = JSON.parse(data._body)
+     console.log(value.status)
+     this.isLogout = value.status
   }
 
 
@@ -42,6 +50,9 @@ export class AppComponent {
   toggleExists4() {
     this.check= false;
     this.pop = false;
+  }
+  toggleExists5() {
+    this.register.logout().subscribe(data => this.getDataLogout(data))
   }
    
    
