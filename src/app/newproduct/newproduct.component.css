@@ -20,7 +20,15 @@
     background-color: #FFF;
     border: 1px solid #818181;
     height: 30px;
+
 }
+#ADD:hover{
+    background-color: #FFF;
+}
+#seemore:hover{
+    background-color: #000;
+}
+
  h3{
     margin: 0;
     font-size: 100%;
