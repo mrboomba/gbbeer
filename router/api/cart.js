@@ -9,7 +9,7 @@ module.exports = (() => {
   const checkAuth = (req, res, next) => {
   if (!req.session.user_id) {
     req.session.redirectTo = req.headers.referer || req.originalUrl || req.url;
-    res.json('status':'fail');
+    res.json({'status':'fail'});
   } else {
     next();
   }
