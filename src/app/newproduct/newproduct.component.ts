@@ -41,6 +41,7 @@ constructor(private productService:ProductService,private reviewService:ReviewSe
 
 public sentIDToCart(id :String) {
     this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+    window.location.href =''
   }
  getaddcart(data){
   console.log(JSON.parse(data._body))

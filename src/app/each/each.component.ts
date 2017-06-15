@@ -36,6 +36,7 @@ private type;
 
   public getReview(data){
   this.reView= JSON.parse(data._body).beer
+
   }
   public sentIDToCart(id :String) {
     this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
@@ -43,7 +44,11 @@ private type;
  getaddcart(data){
   console.log(JSON.parse(data._body))
  }
+  
+public getreview(){
+  this.reviewService.getReview(this.id).subscribe(data => this.getReview(data))
 
+}
 
   public getBeer(data){
   this.beer= JSON.parse(data._body)
@@ -68,12 +73,17 @@ public sendComment(comment:String, star:String) {
   "star" : star,
   "beer":this.id
   }
-  	this.reviewService.comment(user).subscribe(data => this.getUser(data))  }
+    
+  	this.reviewService.comment(user).subscribe(data => this.getUser(data))
+    this.reviewService.getReview(this.id).subscribe(data => this.getReview(data))
+    console.log(this.reView)
+      }
 
 getUser(data) {
-  console.log(data._body)
+  
 
   }
+
 
 
   ngOnInit() {

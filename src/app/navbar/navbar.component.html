@@ -8,8 +8,12 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                <!-- <li *ngIf="!cart"><img [routerLink]="['/cart']"   id="imgcart" src="assets/cart.png"></li> -->
+               <div *ngIf="isEmptyCart">
                <li ><img [routerLink]="['/cart']"   id="imgcart" src="assets/cart.png"></li>
-               <!-- <li *ngIf="cart"><img [routerLink]="['/cart']"   id="imgcart" src="assets/redcart.png"></li> -->
+               </div>
+                <div *ngIf="!isEmptyCart">
+               <li ><img [routerLink]="['/cart']"  (click)="clearCart()" id="imgcart" src="assets/redcart.png"></li>
+               </div>
             </ul>
           </div>
         </div>
