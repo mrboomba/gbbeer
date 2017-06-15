@@ -41,7 +41,8 @@ module.exports = (() => {
 
   router.get('/cart',checkAuth,function(req,res) {
     if(!req.session.cart){
-      res.json({'status':'empty'});
+      var tmp = [];
+      res.json({beers:tmp,totalPrice: 0});
     }
     else{
       var cart = new Cart(req.session.cart);
@@ -59,7 +60,6 @@ router.get('/buy',checkAuth,function(req,res) {
     var tmp2 = tmp.map(function(a){
       return {'beer':a.item._id,'amount':a.qty};
     })
-    console.log(tmp);
     var createObj = {};
     createObj['user'] = req.session.user_id;
     createObj['beers'] = tmp2;
@@ -81,9 +81,12 @@ router.get('/recommend',function (req,res) {
   var cart = new Cart(req.session.cart);
   var tmp = cart.generateArray();
   ModelControllers.transaction.getRecomend(tmp,function(err,doc){
-    res.json({'status':'success'});
+    if(err) {res.json({'status':'fail'})}
+    else
+    res.json(doc);
   });
-})
+  return;
+});
 
   return router;
 })();
