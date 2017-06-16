@@ -90,4 +90,94 @@
     "price":129,
     "type":"American Pale Ale (APA)",
     "img":"chalawan-pale-ale.jpg"
+},{
+    "name":"Leffe Brune",
+    "degree":6.5,
+    "color":"Brown",
+    "brand":"InBev",
+    "country":"Belgium",
+    "price":190,
+    "type":"Dark Ale",
+    "img":"leffe-brune.jpg"
+},{
+    "name":"Tripel Karmeliet",
+    "degree":8.4,
+    "color":"Blond",
+    "brand":"Brouwerij Bosteels (AB-InBev)",
+    "country":"Belgium",
+    "price":209,
+    "type":"Abbey Tripel",
+    "img":"tripel-karmeliet.jpg"
+},{
+    "name":"Coedo Beniaka (Sweet Potato)",
+    "degree":7,
+    "color":"Blond",
+    "brand":"Kyodo Shoji Koedo Brewery",
+    "country":"Japan",
+    "price":170,
+    "type":"Fruit/Vegetable Beer",
+    "img":"coedo-beniaka-sweet-potato.jpg"
+},{
+    "name":"Owa Yuzu Lambic",
+    "degree":5.2,
+    "color":"Blond",
+    "brand":"OWA Brewery SPRL",
+    "country":"Belgium",
+    "price":1275,
+    "type":"Fruit Lambic",
+    "img":"yuzu-lambic.jpg"
+},{
+    "name":"Stone Head 7 days Witbier",
+    "degree":5.5,
+    "color":"Blond",
+    "brand":"Stone Head Co., Ltd.",
+    "country":"Thailand",
+    "price":160,
+    "type":"Witbier",
+    "img":"stone-head-7days-witbier.jpg"
+},{
+    "name":"Hitachino Nest Lager",
+    "degree":5,
+    "color":"Blond",
+    "brand":"Kiuchi Brewery",
+    "country":"Japan",
+    "price":200,
+    "type":"Amber Lager / Vienna",
+    "img":"hitachino-nest-lager.jpg"
+},{
+    "name":"Prearis IPA",
+    "degree":6.7,
+    "color":"Blond",
+    "brand":"De Proefbrouwerij",
+    "country":"Belgium",
+    "price":120,
+    "type":"India Pale Ale (IPA)",
+    "img":"prearis-ipa.jpg"
+},{
+    "name":"Mahanakhon Rak Sud Jai Pale Ale",
+    "degree":5.5,
+    "color":"Blond",
+    "brand":"Redpoint",
+    "country":"Thailand",
+    "price":160,
+    "type":"Pale Ale",
+    "img":"mahanakorn-rak-sud-jai-pale-ale.jpg"
+},{
+    "name":"Baird Red Rose Amber Ale ",
+    "degree":5.4,
+    "color":"Amber",
+    "brand":"Baird Brewing Co.",
+    "country":"Japan",
+    "price":159,
+    "type":"Amber / Red Ale",
+    "img":"baird-red-rose-amber-ale.jpg"
+},{
+    "name":"Rodenbach Grand Cru",
+    "degree":6,
+    "color":"Amber",
+    "brand":"Brouwerij Rodenbach (Palm)",
+    "country":"Belgium",
+    "price":230,
+    "type":"Flanders Red",
+    "img":"rodenbach-grand-cru.jpg"
 }]
