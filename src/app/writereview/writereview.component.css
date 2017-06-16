@@ -26,7 +26,8 @@
 }
 #ADD:hover {
     background-color: #818181;
-}#addtocart{
+}
+#addtocart:hover{
   background-color: #D2D2D2;
   }
 
