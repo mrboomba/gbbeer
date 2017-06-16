@@ -46,6 +46,10 @@
 	position: absolute;
 	bottom: 70px;
 }
+#addtocart:hover{
+	background-color: #D2D2D2;
+	
+}
 #imgcart{
 	width: 20%;
 }
@@ -62,6 +66,10 @@
 	width: 80%;
 	height: 50px;
 	bottom: 0;
+}
+#writereview:hover{
+	background-color: #D2D2D2;
+	
 }
 #sarm{
 	text-align: right;

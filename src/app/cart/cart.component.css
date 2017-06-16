@@ -27,7 +27,12 @@
   /*position: absolute;*/
   margin: 2%;
   /*bottom: 0px;*/
-}#sub{
+}
+#addtocart:hover{
+  background-color: #D2D2D2;
+  
+}
+#sub{
   text-align: center;
 }
 

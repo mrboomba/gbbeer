@@ -33,15 +33,15 @@
                 <div class="col-lg-2" id="col"><b>{{crt.price}} Bath.</b></div>
             </div>
         </div>
-        <div   *ngIf="cart2===0">
+        <div   *ngIf="cart2===0 || cart2==null">
              <div id="no"><h3 id="nono">NO PRODUCT YET</h3></div>
         </div>
-        <div   *ngIf="cart2!=0" id="total">
+        <div  id="total"  *ngIf="cart2!=0 || cart2!=null" >
              <h3><b>Total Price: </b> {{totalPrice}} Bath.</h3>
         </div>
 
     </div>
-     <div id="sub" *ngIf="cart2!=0">
+     <div id="sub" *ngIf="cart2!=0 || cart2!=null">
 
             <button id="addtocart" [routerLink]="['/writereview']">
                 <h3 >BUY !!</h3></button>

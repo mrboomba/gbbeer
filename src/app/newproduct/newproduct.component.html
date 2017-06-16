@@ -1,31 +1,32 @@
 <div id="newproduct">
-	<header>
-		<div>
-			<span class="spacer"></span>
-				<h1>NEW PRODUCTS</h1>
-			<span class="spacer"></span>
-		</div>
-	</header>
-
-
-
-<div id="centeredmenu">
-  <ul >
-      <li *ngFor="let product of newProduct; let i = index; trackBy: trackByFn">
-      <div id="each" *ngIf = "i<4">
-      <a [routerLink]="['/each']" (click)='sentID(product._id)' >
-			<img src="http://localhost:3000/view/img/{{product.img}}" style="width: 170px;height: 200px ;margin-top: 20px;"><br><br>
-      </a>
-      	 <h3>{{product.name}} .</h3><br>
-     		 <h3>{{product.price}} Bath.</h3><br>
-      		<button id="ADD" (click)='sentIDToCart(product._id)'><h3 >ADD TO CART</h3></button>
-      </div>
-      </li>
-   </ul>
-</div>
-
-
-	<div id="button">
-		<button id="seemore" [routerLink]="['/beer']"><h3 >SEE MORE</h3></button>
-	</div>
+    <header>
+        <div>
+            <span class="spacer"></span>
+            <h1>NEW PRODUCTS</h1>
+            <span class="spacer"></span>
+        </div>
+    </header>
+    <div id="centeredmenu">
+        <ul>
+            <li *ngFor="let product of newProduct; let i = index; trackBy: trackByFn">
+                <div id="each" *ngIf="i<4">
+                    <a [routerLink]="['/each']" (click)='sentID(product._id)'>
+                        <img src="http://localhost:3000/view/img/{{product.img}}" style="width: 170px;height: 200px ;margin-top: 20px;">
+                        <br>
+                        <br>
+                    </a>
+                    <h3>{{product.name}} .</h3>
+                    <br>
+                    <h3>{{product.price}} Bath.</h3>
+                    <br>
+                    <button id="ADD" (click)='sentIDToCart(product._id)'>
+                        <h3>ADD TO CART</h3></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="button">
+        <button id="seemore" [routerLink]="['/beer']">
+            <h3>SEE MORE</h3></button>
+    </div>
 </div>

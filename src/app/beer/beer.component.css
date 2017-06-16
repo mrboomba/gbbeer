@@ -17,6 +17,10 @@
   margin-top: 10%;
   margin-left: 5%;
 }
+#ADD:hover {
+    background-color: #818181;
+}
+
 #all2{
   font-size: 20px;
   margin-top: 1%;

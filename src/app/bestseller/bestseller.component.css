@@ -31,6 +31,13 @@
     border: 1px solid #818181;
     height: 30px;
 }
+#ADD:hover{
+    background-color: #818181;
+}
+#seemore:hover{
+   background-color: #F0D041;
+    color: black;
+}
  h3{
     margin: 0;
     font-size: 100%;

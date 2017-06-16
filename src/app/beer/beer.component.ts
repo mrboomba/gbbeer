@@ -33,6 +33,7 @@ export class BeerComponent implements OnInit {
   }
 public sentIDToCart(id :String) {
     this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+     this.router.navigate(['']);
   }
  getaddcart(data){
   console.log(JSON.parse(data._body))

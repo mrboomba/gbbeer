@@ -18,9 +18,9 @@
                     <h3>{{product.name}}</h3>
                     <h3>{{product.price}} Bath.</h3>
                     <br>
-                    <span>Rating: {{product.rate}} </span>
+                    <span>Rating: {{product.rate|number}} </span>
                     <br>
-                    <button id="seemore" (click)='sentIDToCart(product._id)' >
+                    <button id="ADD" (click)='sentIDToCart(product._id)' >
                         <h3 >ADD TO CART</h3></button>
                 </div>
             </li>

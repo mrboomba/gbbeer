@@ -14,14 +14,28 @@
 #nono{
   margin-top: 10%;
   font-size: 30px;
+}#mar{
+  margin:5%;
 }
+#ADD{
+    color: #000;
+    background-color: #FFF;
+    border: 1px solid #818181;
+    height: 30px;
+
+}
+#ADD:hover {
+    background-color: #818181;
+}#addtocart{
+  background-color: #D2D2D2;
+  }
 
 #addtocart{
   background-color: #F0D041;
   color: black;
   border: 1px solid #D2D2D2;
   border-radius: 10px;
-  width: 30%;
+  width: 50%;
   height: 50px;
   /*right: 400px;*/
   display: inline-block;
@@ -44,17 +58,18 @@
 	margin-left: 3%;
 	margin-bottom: 5%;
 }
-#proincart{
+/*#proincart{
 	border: 1px solid #D2D2D2;
 	margin: 5px;
 	padding: 2%;
 	text-align: center;
-}#ADD{
+}*/
+/*#ADD{
     color: #000;
     background-color: #F0D041;
     border: 1px solid #818181;
     height: 30px;
-} 
+}*/ 
 #addto{
     margin: 0;
     font-size: 100%;
@@ -68,28 +83,37 @@
 #cart{
 	margin: 5%;
 }
+
+#col{
+	margin-top: 10%;
+}
+
+#centeredmenu{
+  margin-left: 8%;
+}
 #centeredmenu ul li #each {
-   display:block;
-   margin:20px 0 0 40px;
-   padding:3px 10px;
-   background:#FFF;
-   color:#000;
-   text-decoration:none;
-   line-height:1.3em;
-   height: 280px;
-   width:250px;
+    display: block;
+    margin: 20px 0 0 40px;
+    padding: 3px 10px;
+    background: #FFF;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.3em;
+    height: 360px;
+    width: 250px;
+}h3 {
+    margin: 0;
+    font-size: 100%;
 }
 
 #centeredmenu ul li #each:hover {
-   background:#F0D041;
-   color:#fff;
+    background: #F0D041;
+    color: #fff;
 }
+
 ul li {
     position: relative;
     text-align: center;
     display: inline-block;
     vertical-align: top;
-} 
-#col{
-	margin-top: 10%;
 }

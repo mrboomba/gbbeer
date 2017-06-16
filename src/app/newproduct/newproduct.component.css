@@ -23,10 +23,11 @@
 
 }
 #ADD:hover{
-    background-color: #FFF;
+    background-color: #818181;
 }
 #seemore:hover{
-    background-color: #000;
+    background-color: #F0D041;
+    color: black;
 }
 
  h3{

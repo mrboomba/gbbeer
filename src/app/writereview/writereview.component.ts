@@ -34,4 +34,10 @@ ngOnInit() {
 getPopproduct2(data) {
   console.log(JSON.parse(data._body)) 
   }
+  public sentIDToCart(id :String) {
+    this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+  }
+ getaddcart(data){
+  console.log(JSON.parse(data._body))
+ }
 }

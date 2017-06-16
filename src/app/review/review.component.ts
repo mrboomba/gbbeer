@@ -33,6 +33,7 @@ export class ReviewComponent implements OnInit {
   }
   public sentIDToCart(id :String) {
     this.productService.getSendToCartproduct(id).subscribe(data => this.getaddcart(data))
+    window.location.href =''
   }
  getaddcart(data){
   console.log(JSON.parse(data._body))
