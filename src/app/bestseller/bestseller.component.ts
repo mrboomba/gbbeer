@@ -15,6 +15,7 @@ export class BestsellerComponent implements OnInit {
 
   private bestProduct ;
   private bestProduct2 ;
+  private checkfalse;
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getBestproduct().subscribe(data => this.getBestproduct(data)) }
@@ -35,7 +36,11 @@ public sentIDToCart(id :String) {
     window.location.href =''
   }
  getaddcart(data){
-  console.log(JSON.parse(data._body))
+  this.checkfalse = JSON.parse(data._body).status
+  if(this.checkfalse=='fail'){
+  window.location.href ='/#popup1'
+  }
+  console.log(this.checkfalse)
  }
   ngOnInit() {
   }

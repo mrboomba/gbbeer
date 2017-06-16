@@ -4,11 +4,13 @@
             </h3>
         <h2 id="all4">Price</h2>
         <div class="range-slider">
+            <h3 id="min"> 60 - 500</h3>
+        
             <input [(ngModel)]="valueSlide" class="range-slider__range" type="range" value="250" min="0" max="500" step="50" (change)="rangeValueChanged(valueSlide)">
-            <span class="range-slider__value">0</span>
+            <!-- <span class="range-slider__value">0</span> -->
         </div>
         <h2 id="all4">Color</h2>
-        <select [(ngModel)]="color" (change)="getColor(color)" id="check2">
+        <select [(ngModel)]="color" (change)="getColor(color)" id="check2" >
             <option value="All">All
                 <div id="cl1"></div>
             </option>

@@ -23,6 +23,7 @@ private degree;
 private price;
 private rate;
 private type;
+private checkfalse;
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
 	//this.reView= this.reviewService.getstoreUser()
@@ -44,7 +45,11 @@ private type;
   }
 
  getaddcart(data){
-  console.log(JSON.parse(data._body))
+  this.checkfalse = JSON.parse(data._body).status
+  if(this.checkfalse=='fail'){
+  window.location.href ='/#popup1'
+  }
+  console.log(this.checkfalse)
  }
   
 public getreview(){

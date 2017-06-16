@@ -14,7 +14,7 @@ import {ReviewService} from '../services/review.service';
 export class NewproductComponent implements OnInit {
 
 	private newProduct ;
-  
+  private checkfalse;
  
 
 constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
@@ -44,7 +44,11 @@ public sentIDToCart(id :String) {
     window.location.href =''
   }
  getaddcart(data){
-  console.log(JSON.parse(data._body))
+  this.checkfalse = JSON.parse(data._body).status
+  if(this.checkfalse=='fail'){
+  window.location.href ='/#popup1'
+  }
+  console.log(this.checkfalse)
  }
 
  ngOnInit() {
