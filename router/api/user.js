@@ -80,6 +80,7 @@ module.exports = (() => {
 
 router.get('/logout',checkAuth, function (req, res) {
   delete req.session.user_id;
+  delete req.session.cart;
   res.json({'status':'success'});
 });
 
