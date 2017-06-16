@@ -22,9 +22,12 @@
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.3",
+    "ng2-slideable-directive": "^1.0.13",
+    "ng2-slider-component": "^1.0.9",
+    "ng2-styled-directive": "^1.0.5",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1",
-    "cors": "^2.8.3"
+    "passport-jwt": "^2.2.1"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",
