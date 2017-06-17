@@ -483,11 +483,14 @@ var BeerComponent = (function () {
         this.productService = productService;
         this.reviewService = reviewService;
         this.router = router;
+        this.colorProduct = 'All';
+        this.countryProduct = 'All';
         this.productService.getAllproduct().subscribe(function (data) { return _this.getAllproduct(data); });
     }
     BeerComponent.prototype.getAllproduct = function (data) {
         console.log(JSON.parse(data._body));
         this.allProduct = JSON.parse(data._body);
+        this.allProductTemp = JSON.parse(data._body);
     };
     BeerComponent.prototype.ngOnInit = function () {
     };
@@ -509,6 +512,75 @@ var BeerComponent = (function () {
     BeerComponent.prototype.getId = function (id) {
         console.log(id);
         console.log("id");
+    };
+    BeerComponent.prototype.compare = function (a, b) {
+        if (a.name < b.name)
+            return -1;
+        if (a.name > b.name)
+            return 1;
+        return 0;
+    };
+    BeerComponent.prototype.compare2 = function (a, b) {
+        if (a.price < b.price)
+            return -1;
+        if (a.price > b.price)
+            return 1;
+        return 0;
+    };
+    BeerComponent.prototype.getFilter = function () {
+        var temp = this.allProductTemp;
+        this.allProduct = new Array();
+        if (this.colorProduct === 'All' && this.countryProduct === 'All') {
+            for (var _i = 0, temp_1 = temp; _i < temp_1.length; _i++) {
+                var beer = temp_1[_i];
+                if (beer.price <= this.price) {
+                    this.allProduct.push(beer);
+                }
+            }
+        }
+        else if (this.colorProduct != 'All' && this.countryProduct != 'All') {
+            for (var _a = 0, temp_2 = temp; _a < temp_2.length; _a++) {
+                var beer = temp_2[_a];
+                if (beer.color === this.colorProduct && beer.country === this.countryProduct && beer.price <= this.price) {
+                    this.allProduct.push(beer);
+                }
+            }
+        }
+        else if (this.colorProduct === 'All') {
+            for (var _b = 0, temp_3 = temp; _b < temp_3.length; _b++) {
+                var beer = temp_3[_b];
+                if (beer.country === this.countryProduct && beer.price <= this.price) {
+                    this.allProduct.push(beer);
+                }
+            }
+        }
+        else if (this.countryProduct === 'All') {
+            for (var _c = 0, temp_4 = temp; _c < temp_4.length; _c++) {
+                var beer = temp_4[_c];
+                if (beer.color === this.colorProduct && beer.price <= this.price) {
+                    this.allProduct.push(beer);
+                }
+            }
+        }
+    };
+    BeerComponent.prototype.getCountry = function (country) {
+        this.countryProduct = country;
+        this.getFilter();
+    };
+    BeerComponent.prototype.getColor = function (color) {
+        this.colorProduct = color;
+        this.getFilter();
+    };
+    BeerComponent.prototype.getSortBy = function (type) {
+        if (type === 'Name')
+            this.allProduct.sort(this.compare);
+        else if (type === 'Price')
+            this.allProduct.sort(this.compare2);
+    };
+    BeerComponent.prototype.rangeValueChanged = function (value) {
+        this.price = value;
+        console.log(value);
+        this.getFilter();
     };
     BeerComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_6" /* Component */])({
@@ -1289,7 +1361,7 @@ module.exports = "/*=========================\n  Icons\n ================= */\n 
 /***/ 681:
 /***/ (function(module, exports) {
 
-module.exports = "#left{\n\tbackground-color: #FFF;\n\theight: 1850px;\n\tborder: 1px solid #D2D2D2;\n\n\t\n}\n#check{\n  margin-left: 20%;\n}\n#check2{\n  margin-left: 20%;\n  width: 150px;\n}\n#all{\n  font-size: 25px;\n  margin-top: 10%;\n  margin-left: 5%;\n}\n#ADD:hover {\n    background-color: #818181;\n}\n\n#all2{\n  font-size: 20px;\n  margin-top: 1%;\n  margin-left: 5%;\n}\n#cl1{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#cl2{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#sel{\n  width: 150px;\n}\n#cl3{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#cl4{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#cl5{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#all3{\n  font-size: 30px;\n  margin-top: 60%;\n  margin-left: 10%;\n}\n#all4{\n  font-size: 30px;\n  /*margin-top: 30%;*/\n  margin-left: 15%;\n}\n#ADD{\n    color: #000;\n    background-color: #FFF;\n    border: 1px solid #818181;\n    height: 30px;\n}\n#right{\n\tpadding: 0;\n}\n#top{\n\theight: 200px;\n\tbackground-color: #FFF;\n\tborder: 1px solid #D2D2D2;\n}ul{ \n    /*text-align:center;*/\n    padding: 0;\n    margin: 0; \n}ul li {\n    position: relative;\n    text-align: center;\n    display: inline-block;\n    vertical-align: top;\n}#content ul li #each {\n   display:block;\n   margin:20px 0 10px 40px;\n   padding:3px 10px;\n   background:#FFF;\n   color:#000;\n   text-decoration:none;\n   line-height:1.3em;\n   height: 360px;\n   width:250px;\n}\n#content{\n\tmargin-left: 20px;\n}\n\n#content ul li #each:hover {\n   background:#F0D041;\n   color:#fff;\n}\n#seemore{\n    color: #CACACA;\n    background-color: #FFF;\n    border: 1px solid #818181;\n    height: 30px;\n}h3{\n    margin-top: 3px;\n    font-size: 100%;\n}"
+module.exports = "#left{\n\tbackground-color: #FFF;\n\theight: 1850px;\n\tborder: 1px solid #D2D2D2;\n\n\t\n}\n#check{\n  margin-left: 20%;\n}\n#check2{\n  margin-left: 20%;\n  width: 150px;\n}\n#all{\n  font-size: 25px;\n  margin-top: 10%;\n  margin-left: 5%;\n}\n#ADD:hover {\n    background-color: #818181;\n}\n\n#all2{\n  font-size: 20px;\n  margin-top: 1%;\n  margin-left: 5%;\n}\n#cl1{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#cl2{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#sel{\n  width: 150px;\n}\n#cl3{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#cl4{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#cl5{\n  background-color: #000;\n  width:10px;\n  height: 10px;\n}\n#all3{\n  font-size: 30px;\n  margin-top: 60%;\n  margin-left: 10%;\n}\n#all4{\n  font-size: 30px;\n  /*margin-top: 30%;*/\n  margin-left: 15%;\n}\n#ADD{\n    color: #000;\n    background-color: #FFF;\n    border: 1px solid #818181;\n    height: 30px;\n}\n#right{\n\tpadding: 0;\n}\n#top{\n\theight: 200px;\n\tbackground-color: #FFF;\n\tborder: 1px solid #D2D2D2;\n}ul{ \n    /*text-align:center;*/\n    padding: 0;\n    margin: 0; \n}ul li {\n    position: relative;\n    text-align: center;\n    display: inline-block;\n    vertical-align: top;\n}#content ul li #each {\n   display:block;\n   margin:20px 0 10px 40px;\n   padding:3px 10px;\n   background:#FFF;\n   color:#000;\n   text-decoration:none;\n   line-height:1.3em;\n   height: 400px;\n   width:250px;\n}\n#content{\n\tmargin-left: 20px;\n}\n\n#content ul li #each:hover {\n   background:#F0D041;\n   color:#fff;\n}\n#seemore{\n    color: #CACACA;\n    background-color: #FFF;\n    border: 1px solid #818181;\n    height: 30px;\n}h3{\n    margin-top: 3px;\n    font-size: 100%;\n}\n\n$shade-10: #2c3e50 !default;\n$shade-1: #d7dcdf !default;\n$shade-0: #fff !default;\n$teal: #1abc9c !default;\n\n\n\n* {\n  &,\n  &:before,\n  &:after {\n    box-sizing: border-box;\n  }\n}\n\n\n\n.range-slider {\n  margin: 60px 0 0 0%;\n}\n\n\n\n$range-width: 100% !default;\n\n$range-handle-color: $shade-10 !default;\n$range-handle-color-hover: $teal !default;\n$range-handle-size: 20px !default;\n\n$range-track-color: $shade-1 !default;\n$range-track-height: 10px !default;\n\n$range-label-color: $shade-10 !default;\n$range-label-width: 60px !default;\n\n.range-slider {\n  width: $range-width;\n}\n\n.range-slider__range {\n  -webkit-appearance: none;\n  width: calc(100% - (#{$range-label-width + 13px}));\n  height: $range-track-height;\n  border-radius: 5px;\n  background: $range-track-color;\n  outline: none;\n  padding: 0;\n  margin: 0;\n\n\n  &::-webkit-slider-thumb {\n    -webkit-appearance: none;\n            appearance: none;\n    width: $range-handle-size;\n    height: $range-handle-size;\n    border-radius: 50%;\n    background: $range-handle-color;\n    cursor: pointer;\n    transition: background .15s ease-in-out;\n\n    &:hover {\n      background: $range-handle-color-hover;\n    }\n  }\n\n  &:active::-webkit-slider-thumb {\n    background: $range-handle-color-hover;\n  }\n\n  &::-moz-range-thumb {\n    width: $range-handle-size;\n    height: $range-handle-size;\n    border: 0;\n    border-radius: 50%;\n    background: $range-handle-color;\n    cursor: pointer;\n    transition: background .15s ease-in-out;\n\n    &:hover {\n      background: $range-handle-color-hover;\n    }\n  }\n\n  &:active::-moz-range-thumb {\n    background: $range-handle-color-hover;\n  }\n}\n\n\n\n.range-slider__value {\n  display: inline-block;\n  position: relative;\n  width: $range-label-width;\n  color: $shade-0;\n  line-height: 20px;\n  text-align: center;\n  border-radius: 3px;\n  background: $range-label-color;\n  padding: 5px 10px;\n  margin-left: 8px;\n\n  &:after {\n    position: absolute;\n    top: 8px;\n    left: -7px;\n    width: 0;\n    height: 0;\n    border-top: 7px solid transparent;\n    border-right: 7px solid $range-label-color;\n    border-bottom: 7px solid transparent;\n    content: '';\n  }\n}\n\n\n"
 
 /***/ }),
 
@@ -1394,7 +1466,7 @@ module.exports = "<div id=\"container\">\n    <div id=\"header\">\n         <div
 /***/ 696:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col-lg-3\" id=\"left\">\n        <h3 id=\"all3\">Catagory\n            </h3>\n        <h2 id=\"all4\">Price</h2>\n        <form id=\"check\">\n            <div class=\"checkbox\">\n                <label>\n                    <input type=\"checkbox\"  value=\"\">0 - 100</label>\n            </div>\n            <div class=\"checkbox\">\n                <label>\n                    <input type=\"checkbox\" value=\"\">101-200</label>\n            </div>\n            <div class=\"checkbox\">\n                <label>\n                    <input type=\"checkbox\"  value=\"\">201-300</label>\n            </div>\n            <div class=\"checkbox\">\n                <label>\n                    <input type=\"checkbox\"  value=\"\">301-400</label>\n            </div>\n            <div class=\"checkbox\">\n                <label>\n                    <input type=\"checkbox\"  value=\"\" >401-500</label>\n            </div>\n            <div class=\"checkbox\">\n                <label>\n                    <input type=\"checkbox\"  value=\"\" >500++</label>\n            </div>\n        </form>\n        <h2 id=\"all4\">Color</h2>\n        <select id=\"check2\">\n            <option value=\"Amber\">Amber <div id=\"cl1\"></div></option>\n            <option value=\"Blond\">Blond <div id=\"cl2\"></div></option>\n            <option value=\"Rose\">Rose <div id=\"cl3\"></div></option>\n            <option value=\"Ruby\">Ruby <div id=\"cl4\"></div></option>\n            <option value=\"Wit\">White <div id=\"cl5\"></div></option>\n            <!-- <option value=\"audi\">Audi</option> -->\n        </select>\n        <h2 id=\"all4\">Country</h2>\n        <select id=\"check2\">\n            <option value=\"Belgium\">Belgium </option>\n            <option value=\"CzechRepublic\">Czech Republic</option>\n            <option value=\"Japan\">Japan</option>\n            <option value=\"Spain \">Spain </option>\n            <option value=\"Thailand\">Thailand</option>\n            <!-- <option value=\"audi\">Audi</option> -->\n        </select>\n    </div>\n    <div class=\"col-lg-9\" id=\"right\">\n        <div id=\"top\">\n            <h3 id=\"all\">ALL PRODUCT</h3>\n            <h4 id=\"all2\">Sort By&nbsp;&nbsp;<select>\n                <option value=\"Name\">Name</option>\n                <option value=\"Price\">Price</option>\n                <option value=\"Popular\">Popular</option>\n                <!-- <option value=\"audi\">Audi</option> -->\n            </select></h4>\n        </div>\n        <div id=\"content\">\n            <ul>\n                <li *ngFor=\"let all of allProduct; let i = index; trackBy: trackByFn \">\n                    <div id=\"each\">\n                        <a [routerLink]=\"['/each']\" (click)='sentID(all._id)'>\n                            <img src=\"http://localhost:3000/view/img/{{all.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                            <br>\n                            <br>\n                        </a>\n                        <h3>{{all.name}}</h3>\n                        <h3>{{all.price}}</h3>\n                        <br>\n                        <button id=\"ADD\" (click)=\"getId(all._id)\" (click)='sentIDToCart(all._id)'>\n                            <h3 >ADD TO CART</h3> </button>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row\">\n    <div class=\"col-lg-3\" id=\"left\">\n        <h3 id=\"all3\">Catagory\n            </h3>\n        <h2 id=\"all4\">Price</h2>\n        <div class=\"range-slider\">\n            <input [(ngModel)]=\"valueSlide\" class=\"range-slider__range\" type=\"range\" value=\"250\" min=\"0\" max=\"500\" step=\"50\" (change)=\"rangeValueChanged(valueSlide)\">\n            <span class=\"range-slider__value\">0</span>\n        </div>\n        <h2 id=\"all4\">Color</h2>\n        <select [(ngModel)]=\"color\" (change)=\"getColor(color)\" id=\"check2\">\n            <option value=\"All\">All\n                <div id=\"cl1\"></div>\n            </option>\n            <option value=\"Amber\">Amber\n                <div id=\"cl1\"></div>\n            </option>\n            <option value=\"Blond\">Blond\n                <div id=\"cl2\"></div>\n            </option>\n            <option value=\"Rose\">Rose\n                <div id=\"cl3\"></div>\n            </option>\n            <option value=\"Ruby\">Ruby\n                <div id=\"cl4\"></div>\n            </option>\n            <option value=\"Wit\">White\n                <div id=\"cl5\"></div>\n            </option>\n            <!-- <option value=\"audi\">Audi</option> -->\n        </select>\n        <h2 id=\"all4\">Country</h2>\n        <select [(ngModel)]=\"selectedvalue\" (change)=\"getCountry(selectedvalue)\" id=\"check2\">\n            <option value=\"All\">All </option>\n            <option value=\"Belgium\">Belgium </option>\n            <option value=\"Czech Republic\">Czech Republic</option>\n            <option value=\"Japan\">Japan</option>\n            <option value=\"Spain\">Spain </option>\n            <option value=\"Thailand\">Thailand</option>\n            <!-- <option value=\"audi\">Audi</option> -->\n        </select>\n    </div>\n    <div class=\"col-lg-9\" id=\"right\">\n        <div id=\"top\">\n            <h3 id=\"all\">ALL PRODUCT</h3>\n            <h4 id=\"all2\">Sort By&nbsp;&nbsp;\n            <select [(ngModel)]=\"selectedsort\" (change)=\"getSortBy\n(selectedsort)\">\n                <option value=\"Name\">Name</option>\n                <option value=\"Price\">Price</option>\n               \n                <!-- <option value=\"audi\">Audi</option> -->\n            </select></h4>\n        </div>\n        <div id=\"content\">\n            <ul>\n                <li *ngFor=\"let all of allProduct; let i = index; trackBy: trackByFn \">\n                    <div id=\"each\">\n                        <a [routerLink]=\"['/each']\" (click)='sentID(all._id)'>\n                            <img src=\"http://localhost:3000/view/img/{{all.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                            <br>\n                            <br>\n                        </a>\n                        <h3>{{all.name}}</h3>\n                        <h3>Colot: {{all.color}}</h3>\n                         <h3>Country: {{all.country}}</h3>\n                        <h3>{{all.price}} Bath.</h3>\n                        <br>\n                        <button id=\"ADD\" (click)=\"getId(all._id)\" (click)='sentIDToCart(all._id)'>\n                            <h3>ADD TO CART</h3> </button>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -1408,7 +1480,7 @@ module.exports = "<div id=\"bestseller\">\n    <header>\n        <div>\n        
 /***/ 698:
 /***/ (function(module, exports) {
 
-module.exports = "<app-advertise></app-advertise>\n<div id=\"content1\">\n    <div id=\"content\">\n        <h3 id=\"cart\"><b>CART</b></h3>\n        <div class=\"row\" *ngIf=\"cart2!=0\">\n            <div class=\"col-lg-4\"></div>\n            <div class=\"col-lg-2\">Price</div>\n            <div class=\"col-lg-2\">Quantity</div>\n            <div class=\"col-lg-2\">Total</div>\n        </div>\n        <div id=\"proincart\" *ngFor=\"let crt of cart; let i = index; trackBy: trackByFn\">\n            <div class=\"row\">\n                <div class=\"col-lg-4\">\n                    <div id=\"centeredmenu\">\n                        <ul>\n                            <li>\n                                <div id=\"each\">\n                                    <a >\n                                        <img src=\"http://localhost:3000/view/img/{{crt.item.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                                        <br>\n                                        <h3>{{crt.item.name}}</h3>\n                                        <br>\n                                    </a>\n                                    <h3></h3>\n                                    <br>\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.item.price}}</b></div>\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.qty}}</b></div>\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.price}} Bath.</b></div>\n            </div>\n        </div>\n        <div   *ngIf=\"cart2===0 || cart2==null\">\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\n        </div>\n        <div  id=\"total\"  *ngIf=\"cart2!=0 || cart2!=null\" >\n             <h3><b>Total Price: </b> {{totalPrice}} Bath.</h3>\n        </div>\n\n    </div>\n     <div id=\"sub\" *ngIf=\"cart2!=0 || cart2!=null\">\n\n            <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\n                <h3 >BUY !!</h3></button>\n\n        </div>\n</div>\n"
+module.exports = "<app-advertise></app-advertise>\n<div id=\"content1\">\n    <div id=\"content\">\n        <h3 id=\"cart\"><b>CART</b></h3>\n        <div class=\"row\" *ngIf=\"cart2!=0\">\n            <div class=\"col-lg-4\"></div>\n            <div class=\"col-lg-2\">Price</div>\n            <div class=\"col-lg-2\">Quantity</div>\n            <div class=\"col-lg-2\">Total</div>\n        </div>\n        <div id=\"proincart\" *ngFor=\"let crt of cart; let i = index; trackBy: trackByFn\">\n            <div class=\"row\">\n                <div class=\"col-lg-4\">\n                    <div id=\"centeredmenu\">\n                        <ul>\n                            <li>\n                                <div id=\"each\">\n                                    <a >\n                                        <img src=\"http://localhost:3000/view/img/{{crt.item.img}}\" style=\"width: 170px;height: 200px ;margin-top: 20px;\">\n                                        <br>\n                                        <h3>{{crt.item.name}}</h3>\n                                        <br>\n                                    </a>\n                                    <h3></h3>\n                                    <br>\n                                </div>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.item.price}}</b></div>\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.qty}}</b></div>\n                <div class=\"col-lg-2\" id=\"col\"><b>{{crt.price}} Bath.</b></div>\n            </div>\n        </div>\n        <div   *ngIf=\"cart2===0 \">\n             <div id=\"no\"><h3 id=\"nono\">NO PRODUCT YET</h3></div>\n        </div>\n        <div  id=\"total\"  *ngIf=\"cart2!=0 \" >\n             <h3><b>Total Price: </b> {{totalPrice}} Bath.</h3>\n        </div>\n\n    </div>\n     <div id=\"sub\" *ngIf=\"cart2!=0 \">\n\n            <button id=\"addtocart\" [routerLink]=\"['/writereview']\">\n                <h3 >BUY !!</h3></button>\n\n        </div>\n</div>\n"
 
 /***/ }),
 
