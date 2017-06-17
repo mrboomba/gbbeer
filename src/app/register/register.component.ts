@@ -11,8 +11,9 @@ import {RegisterService} from '../services/register.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  private check;
 
-  constructor(private registerService:RegisterService) { }
+  constructor(private registerService:RegisterService) { this.check ='success' }
 
   ngOnInit() {
   }
@@ -31,9 +32,13 @@ export class RegisterComponent implements OnInit {
   	this.registerService.register(user).subscribe(data => this.getUser(data)) }
 
   getUser(data) {
-  console.log(JSON.parse(data._body))
+  if(JSON.parse(data._body).status === 'success'){
+  window.location.href ='/'
+  }
+  else
+  this.check = 'false'
 
   }
- 
+
 
 }

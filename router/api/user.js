@@ -51,6 +51,7 @@ module.exports = (() => {
         if (err) {
           res.status(200).json({'status':'false'});
         } else {
+          req.session.user_id = doc._id;
           res.status(200).json({'status':'success'});
         }
       });
@@ -61,14 +62,8 @@ module.exports = (() => {
   ModelControllers.user.logIn(post,(err,isMatch,user) => {
     if (isMatch) {
       req.session.user_id = user._id;
-      if(req.session.redirectTo=='undefined'){
-
-        res.status(200).redirect(req.session.redirectTo);
-      }
-      else {
-
         res.status(200).json({'status':'success'});
-      }
+
     } else {
       res.status(200).json({'status':'false'});
     }

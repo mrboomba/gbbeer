@@ -21,7 +21,7 @@ module.exports = (() => {
   }
 
   const getBeerByDate = (callback) => {
-    models.beer.find({}).sort({'date':-1}).limit(5).exec((err, doc) => callback(err, doc));
+    models.beer.find({}).sort({'date':-1}).limit(4).exec((err, doc) => callback(err, doc));
     return;
   }
   const getBeerBySell = (callback)=>{
@@ -37,7 +37,7 @@ module.exports = (() => {
         // Sorting pipeline
         { "$sort": { "count": -1 } },
         // Optionally limit results
-        { "$limit": 5 }
+        { "$limit": 4 }
 
     ], function (err, result) {
         if (err) {
@@ -60,7 +60,7 @@ module.exports = (() => {
         }},
         { "$sort": { "starAvg": -1 } },
         // Optionally limit results
-        { "$limit": 5 }
+        { "$limit": 4 }
     ], function (err, results) {
         if (err) {
             callback(err);

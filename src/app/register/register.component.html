@@ -11,7 +11,7 @@
             <input id="textbox" [(ngModel)]="password" type="Password" name="" placeholder=" Password">
             <h5><b>E-Mail</b></h5>
             <input id="textbox" [(ngModel)]="email" type="text" name="" placeholder=" E-Mail">
-            
+
             <br>
             <br>
         </div>
@@ -37,5 +37,8 @@
     </div>
     <br>
     <br>
+    <div *ngIf="check==='false'">
+    <p >register fail<p>
+    </div>
     <button id="bttnsignin" (click)='register(username,password,firstname,lastname,expDate.value,address,email,result)'>Register</button>
 </div>

@@ -14,6 +14,7 @@ export class ReviewComponent implements OnInit {
 
   private popProduct ;
   private popProduct2 ;
+  private checkfalse;
 
   constructor(private productService:ProductService,private reviewService:ReviewService,private router: Router) {
   this.productService.getPopproduct().subscribe(data => this.getPopproduct(data)) }
@@ -36,7 +37,11 @@ export class ReviewComponent implements OnInit {
     window.location.href =''
   }
  getaddcart(data){
-  console.log(JSON.parse(data._body))
+  this.checkfalse = JSON.parse(data._body).status
+  if(this.checkfalse=='fail'){
+  window.location.href ='/#popup1'
+  }
+  console.log(this.checkfalse)
  }
 
   ngOnInit() {
